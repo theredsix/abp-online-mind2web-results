@@ -1,6 +1,6 @@
 # 🤖 Claude on Online Mind2Web
 
-Can an AI agent actually browse the web like a human? We put Claude to the test on [Online Mind2Web](https://github.com/OSU-NLP-Group/Mind2Web), a benchmark of **300 real-world browser tasks** across a wild variety of websites. No hand-holding. No hints. Just Claude, a browser, and a task to complete.
+Results from running [agent browser protocol](https://github.com/theredsix/agent-browser-protocol) with opus-4.6 on the [Online Mind2Web](https://github.com/OSU-NLP-Group/Mind2Web) benchmark — a web agent benchmark of real-world browser tasks across diverse websites.
 
 **TL;DR: It went really well.** 🎉
 
@@ -53,7 +53,7 @@ Want to see Claude navigate the web in real time? Here's how to run the benchmar
 ### Prerequisites
 
 - Node.js 18+
-- An Anthropic API key set as `ANTHROPIC_API_KEY`
+- An Anthropic API key set as `ANTHROPIC_API_KEY` OR Claude Code OAuth login
 - Agent Browser Protocol (ABP) server running on port 8222 (default)
 
 ### Install dependencies
