@@ -1,10 +1,14 @@
-# Claude on Online Mind2Web
+# 🤖 Claude on Online Mind2Web
 
-Results from running Claude on the [Online Mind2Web](https://github.com/OSU-NLP-Group/Mind2Web) benchmark — a web agent benchmark of real-world browser tasks across diverse websites.
+Can an AI agent actually browse the web like a human? We put Claude to the test on [Online Mind2Web](https://github.com/OSU-NLP-Group/Mind2Web), a benchmark of **300 real-world browser tasks** across a wild variety of websites. No hand-holding. No hints. Just Claude, a browser, and a task to complete.
 
-## Results
+**TL;DR: It went really well.** 🎉
+
+## 📊 Results
 
 ### Overall (excluding impossible tasks)
+
+> "Impossible" tasks are ones that human evaluators confirmed can't be completed (broken sites, tasks requiring accounts that don't exist, etc). Not a fair fight, so we track them separately.
 
 | Level  | Passing | Total | Pass Rate |
 |--------|---------|-------|-----------|
@@ -12,6 +16,8 @@ Results from running Claude on the [Online Mind2Web](https://github.com/OSU-NLP-
 | Medium | 124     | 138   | 89.86%    |
 | Hard   | 59      | 69    | 85.51%    |
 | **Total** | **258** | **285** | **90.53%** |
+
+**90.5% overall. On hard tasks, 85.5%.** 🔥
 
 ### Including impossible tasks
 
@@ -22,23 +28,27 @@ Results from running Claude on the [Online Mind2Web](https://github.com/OSU-NLP-
 | Hard   | 59      | 77    | 76.62%    |
 | **Total** | **258** | **300** | **86.00%** |
 
-### Human evaluation breakdown
+### 🔍 Human evaluation breakdown
 
-| Level  | human_eval | Count |
-|--------|-----------|-------|
+Tasks were labeled by human evaluators as: impossible (0), pass (1), or fail (2).
+
+| Level  | Verdict | Count |
+|--------|---------|-------|
 | Easy   | 0 (impossible) | 3  |
-| Easy   | 1 (pass)       | 75 |
-| Easy   | 2 (fail)       | 2  |
+| Easy   | 1 (✅ pass)    | 75 |
+| Easy   | 2 (❌ fail)    | 2  |
 | Medium | 0 (impossible) | 14 |
-| Medium | 1 (pass)       | 124|
-| Medium | 2 (fail)       | 5  |
+| Medium | 1 (✅ pass)    | 124|
+| Medium | 2 (❌ fail)    | 5  |
 | Hard   | 0 (impossible) | 10 |
-| Hard   | 1 (pass)       | 59 |
-| Hard   | 2 (fail)       | 8  |
+| Hard   | 1 (✅ pass)    | 59 |
+| Hard   | 2 (❌ fail)    | 8  |
 
-Full run details: [Google Sheets](https://docs.google.com/spreadsheets/d/1KyeMHCJdSe6G-8zynFNPuWlCfwz7akCUWUiU6ByYEDo/edit?usp=sharing)
+Full run details with per-task breakdowns: [Google Sheets](https://docs.google.com/spreadsheets/d/1KyeMHCJdSe6G-8zynFNPuWlCfwz7akCUWUiU6ByYEDo/edit?usp=sharing)
 
-## Running the benchmark
+## 🚀 Run it yourself
+
+Want to see Claude navigate the web in real time? Here's how to run the benchmark.
 
 ### Prerequisites
 
@@ -66,7 +76,7 @@ cd harness
 npx tsx src/index.ts [options]
 ```
 
-### Options
+### ⚙️ Options
 
 | Flag | Default | Description |
 |------|---------|-------------|
@@ -75,38 +85,38 @@ npx tsx src/index.ts [options]
 | `--abp-port <n>` | `8222` | Port for the ABP browser server |
 | `--output-dir <path>` | `./results` | Directory to write results |
 | `--dataset <path>` | `./Online_Mind2Web.json` | Path to dataset file |
-| `--level <easy\|medium\|hard>` | — | Filter tasks by difficulty |
-| `--task <id>` | — | Run a single task by ID |
-| `--limit <n>` | — | Run only the first N tasks |
+| `--level <easy\|medium\|hard>` | (none) | Filter tasks by difficulty |
+| `--task <id>` | (none) | Run a single task by ID |
+| `--limit <n>` | (none) | Run only the first N tasks |
 | `--resume` | `false` | Skip tasks that already have results |
-| `--result-dirs <path>` | — | Additional dirs to check when resuming (repeatable) |
+| `--result-dirs <path>` | (none) | Additional dirs to check when resuming (repeatable) |
 
-### Examples
+### 💡 Examples
 
 ```bash
-# Run all tasks
+# Run all 300 tasks (grab a coffee ☕)
 npm start
 
 # Run only easy tasks with a faster model
 npm start --level easy --model claude-haiku-4-5-20251001
 
-# Run a single task
+# Run a single task to see what it looks like
 npm start --task <task_id>
 
-# Resume an interrupted run
+# Resume an interrupted run (no wasted work!)
 npm start --resume --output-dir ./results
 
-# Run with a limit of 10 tasks
+# Sanity check with 10 tasks first
 npm start --limit 10
 ```
 
-### Output
+### 📁 Output
 
 Each task writes a `result.json` under `<output-dir>/<task_id>/`. After all tasks complete, a `run_summary.json` is written to the output directory with aggregate stats. Failed tasks are also logged to `failures.json`.
 
-## Acknowledgements
+## 🙏 Acknowledgements
 
-Thanks to the [Online Mind2Web](https://github.com/OSU-NLP-Group/Mind2Web) team for creating such an engaging benchmark.
+Huge thanks to the [Online Mind2Web](https://github.com/OSU-NLP-Group/Mind2Web) team at OSU for building such a thorough and genuinely challenging benchmark. It's a great way to stress-test real agentic behavior on the messy, unpredictable real web.
 
 ## License
 
