@@ -43,7 +43,7 @@ Full run details: [Google Sheets](https://docs.google.com/spreadsheets/d/1KyeMHC
 ### Prerequisites
 
 - Node.js 18+
-- An Anthropic API key set as `ANTHROPIC_API_KEY`
+- An Anthropic API key set as `ANTHROPIC_API_KEY` OR Claude Code OAuth login
 - Agent Browser Protocol (ABP) server running on port 8222 (default)
 
 ### Install dependencies
