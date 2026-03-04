@@ -39,6 +39,16 @@ export interface TaskTrajectory {
   error?: string;
 }
 
+/** Result of running a single task */
+export interface TaskResult {
+  task_id: string;
+  outcome: "success" | "failure" | "impossible";
+  steps: number;
+  resultPath?: string;
+  error?: string;
+  durationMs: number;
+}
+
 /** Benchmark configuration */
 export interface BenchmarkConfig {
   model: string;
@@ -46,8 +56,6 @@ export interface BenchmarkConfig {
   abpPort: number;
   outputDir: string;
   resultDirs: string[];
-  headless: boolean;
-  naive: boolean;
   resume: boolean;
   datasetPath: string;
   taskId?: string;

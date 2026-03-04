@@ -7,15 +7,12 @@ const DEFAULT_CONFIG: BenchmarkConfig = {
   abpPort: 8222,
   outputDir: new URL("../../results", import.meta.url).pathname,
   resultDirs: [],
-  headless: false,
-  naive: false,
   resume: false,
   datasetPath: new URL("../../Online_Mind2Web.json", import.meta.url).pathname,
 };
 
 export function parseConfig(argv: string[]): BenchmarkConfig {
   const config = { ...DEFAULT_CONFIG };
-  let outputDirExplicit = false;
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     const next = argv[i + 1];
@@ -34,14 +31,7 @@ export function parseConfig(argv: string[]): BenchmarkConfig {
         break;
       case "--output-dir":
         config.outputDir = next;
-        outputDirExplicit = true;
         i++;
-        break;
-      case "--headless":
-        config.headless = true;
-        break;
-      case "--naive":
-        config.naive = true;
         break;
       case "--resume":
         config.resume = true;
@@ -67,12 +57,6 @@ export function parseConfig(argv: string[]): BenchmarkConfig {
         i++;
         break;
     }
-  }
-
-  // When --naive is set without explicit --output-dir, use timestamped directory
-  if (config.naive && !outputDirExplicit) {
-    const ts = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d+Z$/, "");
-    config.outputDir = new URL(`../../results_naive_${ts}`, import.meta.url).pathname;
   }
 
   return config;

@@ -6,7 +6,7 @@ import { AbpHelper } from "./abp.js";
 import { convertAndSave } from "./converter.js";
 import { startHarnessTools } from "./harness-tools.js";
 import { startTrajectoryProxy } from "./trajectory-proxy.js";
-import type { TaskResult } from "./runner.js";
+import type { TaskResult } from "./types.js";
 import type {
   BenchmarkConfig,
   Mind2WebTask,

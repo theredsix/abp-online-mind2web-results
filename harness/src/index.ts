@@ -2,8 +2,8 @@
 import { readFile, writeFile, access, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 import { parseConfig } from "./config.js";
-import { runTask, type TaskResult } from "./runner.js";
 import { runNaiveTask } from "./naive-runner.js";
+import type { TaskResult } from "./types.js";
 import type { Mind2WebTask } from "./types.js";
 
 async function main() {
@@ -32,9 +32,8 @@ async function main() {
     process.exit(1);
   }
 
-  const mode = config.naive ? "naive" : "browser-agent";
   console.log(
-    `Running ${tasks.length} tasks [${mode}] (model: ${config.model}, max turns: ${config.maxTurns})`,
+    `Running ${tasks.length} tasks (model: ${config.model}, max turns: ${config.maxTurns})`,
   );
   console.log(`Output: ${config.outputDir}`);
   console.log("");
@@ -71,9 +70,7 @@ async function main() {
       `${progress} RUN  ${task.task_id} (${task.level}): ${task.confirmed_task.slice(0, 80)}...`,
     );
 
-    const result = config.naive
-      ? await runNaiveTask(task, config)
-      : await runTask(task, config);
+    const result = await runNaiveTask(task, config);
     results.push(result);
 
     if (result.outcome === "success") {
