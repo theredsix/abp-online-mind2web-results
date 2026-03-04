@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build
+dist/
+*.tsbuildinfo
+
+# Results / data (large, generated)
+results/
+results_run_1/
+eval_results/
+
+# Logs
+*.log
+
+# Agent memory
+.memory/
+
+results*

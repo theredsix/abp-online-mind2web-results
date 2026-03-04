@@ -1,0 +1,34 @@
+{
+    "task_id": "0e5536aaad9d3462b06cf725e6ed535a",
+    "task": "Show me the page with average wait times for U.S. citizens arriving at Raleigh-Durham International Airport on 2025-03-12.",
+    "final_result_response": "The page is now showing the **CBP Airport Wait Times report for Raleigh-Durham International Airport (RDU) on 2025-03-12**. \n\nHere's what's displayed on the page:\n\n**Results for Raleigh-Durham International Airport from 2025-03-12 to 2025-03-12** (Terminal 2)\n\nThe table includes 5 hourly time slots with U.S. Citizen average wait times:\n\n| Hour | U.S. Citizen Avg Wait | U.S. Citizen Max Wait |\n|---|---|---|\n| 1300–1400 | 6 min | 15 min |\n| 1400–1500 | 9 min | 30 min |\n| 1600–1700 | 23 min | 47 min |\n| 1700–1800 | 44 min | 92 min |\n| 1900–2000 | 21 min | 42 min |\n\n**Overall Averages**: U.S. Citizen Average Wait = **20 min**, Max = **45 min**\n\nThe page also shows Non-U.S. Citizen wait times (avg 21 min), combined \"All\" wait times (avg 21 min), and passenger volume breakdowns by time interval. The page is accessible at **awt.cbp.gov**.",
+    "result_status": "success",
+    "action_history": [
+        "Navigate to https://www.cbp.gov/",
+        "Navigate to https://awt.cbp.gov/",
+        "Click at (618, 414)",
+        "Type \"Raleigh\"",
+        "Click at (503, 455)",
+        "Click at (480, 501)",
+        "Click at (387, 181)",
+        "Click at (791, 335)",
+        "Click at (791, 335)",
+        "Click at (627, 557)",
+        "Type \"\"",
+        "Type \"\""
+    ],
+    "thoughts": [
+        "",
+        "I can see the CBP homepage with a \"Border Wait Times\" link. Let me navigate directly to the airport wait times page for Raleigh-Durham International Airport.",
+        "I'm on the CBP Airport Wait Times page. I need to:\n1. Select Raleigh-Durham International Airport from the dropdown\n2. Set the date range to include 2025-03-12\n\nLet me first click on the airport dropdown to select Raleigh-Durham.",
+        "The dropdown is open and showing airports. I need to search for \"Raleigh\" to find Raleigh-Durham International Airport. Let me type in the search box.",
+        "I can see \"Raleigh-Durham International Airport\" in the dropdown. Let me click on it to select it.",
+        "Raleigh-Durham International Airport is selected. Now I need to change the date range to include 2025-03-12. The current dates show 2026-02-20 to 2026-02-26. I need to set it to 2025-03-12. Let me click on the start date field to change it.",
+        "\n\nA calendar picker is showing Feb 2026 and Mar 2026. I need to navigate back to March 2025. Let me click the left arrow to go back in months. I'll need to go back about 11 months. Let me click the double left arrow (<<) to go back a year.",
+        "Now I can see Feb 2025 and Mar 2025. I need to select March 12, 2025. I can see the March 2025 calendar on the right side. Let me click on the 12th in the March 2025 calendar.",
+        "I've selected March 12, 2025 as the start date (shown as 2025-03-12 in the date field). Now I need to select the end date. Since we want just March 12, I'll click on March 12 again to set it as both the start and end date.",
+        "The date range is now set to 2025-03-12 → 2025-03-12, and the airport is \"Raleigh-Durham International Airport\". Now let me click the \"Create Report\" button to generate the report.",
+        "The report has been generated showing the average wait times for Raleigh-Durham International Airport (RDU) on 2025-03-12. The page displays data for Terminal 2 with the following columns:\n\n- **U.S. Citizen**: Average Wait Time and Max Wait Time\n- **Non U.S. Citizen**: Average Wait Time and Max Wait Time\n- **All**: Average Wait Time, Max Wait Time, and breakdown by passenger time intervals\n\nThe data shows 5 time slots with U.S. Citizen average wait times ranging from 6 to 44 minutes, with an overall average of 20 minutes. This is the page the user requested.",
+        "The page is now displaying the results. Here's a summary of what's shown:\n\n**Results for Raleigh-Durham International Airport from 2025-03-12 to 2025-03-12** (Terminal 2)\n\nThe report shows **U.S. Citizen average wait times** by hour:\n\n| Hour | U.S. Citizen Avg Wait | U.S. Citizen Max Wait |\n|---|---|---|\n| 1300–1400 | 6 min | 15 min |\n| 1400–1500 | 9 min | 30 min |\n| 1600–1700 | 23 min | 47 min |\n| 1700–1800 | 44 min | 92 min |\n| 1900–2000 | 21 min | 42 min |\n\n**Current View Averages**: U.S. Citizen Average Wait Time = **20 minutes**, Max = **45 minutes**.\n\nThe page is live at `awt.cbp.gov` with the full data table including Non-U.S. Citizen wait times and passenger volume breakdowns. The task is complete — the requested page is now displayed in the browser."
+    ]
+}

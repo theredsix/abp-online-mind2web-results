@@ -1,0 +1,42 @@
+{
+    "task_id": "7abdceee212151f187ee1a1744c57606",
+    "task": "Can you show me the page with the filing fee for a self-petitioned I-140 application?",
+    "final_result_response": "Now I can see the complete I-140 fee table, which includes information about self-petitioners. The table shows:\n\n**I-140, Immigrant Petition for Alien Workers**\n\n| Filing Category | Paper Filing Fee | Online Filing Fee |\n|---|---|---|\n| General Filing | $715 plus additional fees, if applicable | $665 plus additional fees, if applicable |\n| **Additional Fees: Asylum Program Fee** | | |\n| a. If you are a Regular Petitioner | a. $600 | a. $600 |\n| b. If filing as a Nonprofit | b. $0 | b. $0 |\n| c. If filing as a Small Employer or **self-petitioner** | c. $300 | c. $300 |\n\nThis is exactly the page showing the filing fee for a self-petitioned I-140. The page is currently displayed at `https://www.uscis.gov/feecalculator`. The self-petitioner falls under category \"c\" for the Asylum Program Fee, paying $300 (instead of $600 for regular petitioners), in addition to the base filing fee of $715 (paper) or $665 (online).\n\nI have successfully navigated to and displayed the page with the I-140 filing fee information for self-petitioners. The page is now visible on screen showing all the relevant fee details.",
+    "result_status": "success",
+    "action_history": [
+        "Navigate to https://www.uscis.gov/",
+        "Click at (775, 82)",
+        "Type \"I-140 filing fee\"",
+        "Press ENTER",
+        "Click at (628, 485)",
+        "Click at (165, 458)",
+        "Click at (174, 524)",
+        "Scroll (delta_x=0, delta_y=600)",
+        "Scroll (delta_x=0, delta_y=600)",
+        "Navigate back",
+        "Click at (176, 488)",
+        "Scroll (delta_x=0, delta_y=600)",
+        "Click at (769, 327)",
+        "Type \"I-140\"",
+        "Click at (769, 426)",
+        "Scroll (delta_x=0, delta_y=400)"
+    ],
+    "thoughts": [
+        "",
+        "The USCIS homepage is loaded. Let me search for the I-140 filing fee information.",
+        "The USCIS homepage is loaded. Let me search for the I-140 filing fee information.",
+        "The USCIS homepage is loaded. Let me search for the I-140 filing fee information.",
+        "I can see search results. The first result is the I-140 form page, and the second is \"Filing Fees.\" Let me click on the I-140 page first to see if it has fee information, specifically for self-petitioned applications.",
+        "I'm on the I-140 page. I can see there's a \"Filing Fees\" section in the left sidebar. Let me click on it to expand it and see the filing fee details.",
+        "I'm on the Filing Fees page. I can see there's a \"Fee Schedule\" link and a \"Fee Calculator\" link in the left sidebar. The Fee Schedule would likely have the specific I-140 filing fee. Let me also see the \"Fee Calculator\" which might let me look up the specific fee for a self-petitioned I-140. Let me click on \"Fee Schedule\" to find the I-140 fee.",
+        "I'm on the Fee Schedule page (G-1055). I need to scroll down to find the I-140 filing fee information. Let me scroll down to see the fee table.",
+        "I can see the fee schedule page is loading with general information. Let me scroll down further to find the specific I-140 fee table.",
+        "I can see general fee information. The actual fee table hasn't appeared yet. Let me go back and try the Fee Calculator instead, which might be more direct for finding the specific I-140 self-petition fee. Let me go back and use the Fee Calculator.",
+        "Good, I'm back on the Filing Fees page. Let me click on \"Fee Calculator\" to find the specific I-140 self-petition filing fee.",
+        "I'm on the Fee Calculator page. I need to scroll down to find the actual calculator form where I can select I-140. Let me scroll down to see it.",
+        "I can see the fee calculator with a dropdown to \"Select a form to view details.\" Let me click on this dropdown and select I-140.",
+        "\n\nThe dropdown is open with a searchable list. I can see form options. Let me type \"I-140\" to filter for the I-140 form.",
+        "I can see \"I-140, Immigrant Petition for Alien Workers\" as a dropdown option. Let me click on it.",
+        "Excellent! I can now see the I-140 fee information table. It shows \"General Filing\" with Paper Filing Fee of $715 and Online Filing Fee of $665, plus additional fees. I need to scroll down to see if there's a specific \"self-petitioned\" category in this table."
+    ]
+}
