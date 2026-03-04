@@ -1,6 +1,6 @@
 # Claude on Online Mind2Web
 
-Results from running Claude on the [Online Mind2Web](https://github.com/OSU-NLP-Group/Mind2Web) benchmark — a web agent benchmark of real-world browser tasks across diverse websites.
+Results from running [agent browser protocol](https://github.com/theredsix/agent-browser-protocol) with opus-4.6 on the [Online Mind2Web](https://github.com/OSU-NLP-Group/Mind2Web) benchmark — a web agent benchmark of real-world browser tasks across diverse websites.
 
 ## Results
 
