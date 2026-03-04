@@ -48,7 +48,7 @@ Full run details with per-task breakdowns: [Google Sheets](https://docs.google.c
 
 ## 🚀 Run it yourself
 
-Want to see Claude navigate the web in real time? Here's how to run the benchmark.
+Want to see ABP+Claude navigate the web in real time? Here's how to run the benchmark.
 
 ### Prerequisites
 
