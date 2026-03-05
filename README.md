@@ -1,6 +1,6 @@
 # 🤖 Agent Browser Protocol + Claude on Online Mind2Web
 
-Results from running [agent browser protocol](https://github.com/theredsix/agent-browser-protocol) with opus-4.6 on the [Online Mind2Web](https://github.com/OSU-NLP-Group/Mind2Web) benchmark (a web agent benchmark of real-world browser tasks across diverse websites).
+Results from running [agent browser protocol](https://github.com/theredsix/agent-browser-protocol) with opus-4.6 on the [Online Mind2Web](https://github.com/OSU-NLP-Group/Online-Mind2Web) benchmark (a web agent benchmark of real-world browser tasks across diverse websites).
 
 As of March 3, 2026. These results would be the top of the [public leaderboard](https://huggingface.co/spaces/osunlp/Online_Mind2Web_Leaderboard). Achieving a new high score of 90.53% compared to the 78.7% of the previous leader.
 
