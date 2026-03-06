@@ -68,10 +68,6 @@ export async function runNaiveTask(
   let proxy: Awaited<ReturnType<typeof startTrajectoryProxy>> | null = null;
   let harness: Awaited<ReturnType<typeof startHarnessTools>> | null = null;
 
-  // Remove CLAUDECODE env var so the SDK can spawn a Claude Code subprocess
-  const savedClaudeCode = process.env.CLAUDECODE;
-  delete process.env.CLAUDECODE;
-
   try {
     await abp.waitForReady();
     await abp.resetTabs();
@@ -197,8 +193,6 @@ export async function runNaiveTask(
       durationMs: Date.now() - startTime,
     };
   } finally {
-    // Restore CLAUDECODE env var
-    if (savedClaudeCode !== undefined) process.env.CLAUDECODE = savedClaudeCode;
     if (proxy) await proxy.close();
     if (harness) await harness.close();
   }
