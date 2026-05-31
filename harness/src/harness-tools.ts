@@ -41,7 +41,7 @@ export async function startHarnessTools(): Promise<HarnessTools> {
       result: z
         .string()
         .optional()
-        .describe("The answer to the task, or an explanation of why it is impossible. (Alias: 'answer'.)"),
+        .describe("The answer to the task, or an explanation of why it is impossible. MUST be plain ASCII English only (chars 0x20-0x7E): no Unicode symbols, emoji, smart quotes, em/en dashes, check marks, or accents — use ASCII equivalents (- for dashes, Yes/No or [x]/[ ] for checks, plain quotes). (Alias: 'answer'.)"),
       answer: z
         .string()
         .optional()

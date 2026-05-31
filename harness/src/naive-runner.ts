@@ -53,7 +53,15 @@ Take the task instruction literally. Do exactly what is asked — no more, no le
 
 Call potential_solution early and often to save your progress. Any time you see a plausible answer, call it with status "success". Any time you suspect the task may be impossible, call it with status "impossible" and an explanation. Each call overwrites the previous one, so always call it with your current best answer or assessment. If you run out of steps, your last potential_solution is automatically submitted as your final answer.
 
-When you are confident in your answer, call declare_result to submit it and stop. Do not simply state the answer in text; you must explicitly call declare_result with the answer string. If the task is impossible — due to missing or changed functionality, a site outage, or a feature that clearly does not exist — call declare_result with status "impossible".`;
+When you are confident in your answer, call declare_result to submit it and stop. Do not simply state the answer in text; you must explicitly call declare_result with the answer string. If the task is impossible — due to missing or changed functionality, a site outage, or a feature that clearly does not exist — call declare_result with status "impossible".
+
+## Answer formatting (IMPORTANT)
+
+The answer string you pass to potential_solution and declare_result MUST be plain ASCII English only:
+- Use only standard ASCII characters (codes 0x20-0x7E). Do NOT use Unicode symbols, emoji, smart/curly quotes, em/en dashes, non-breaking spaces, check marks, or box-drawing characters.
+- Replace would-be Unicode with ASCII equivalents: use "-" for dashes, plain quotes ' and ", "Yes"/"No" or "[x]"/"[ ]" instead of check marks, ">=" / "<=" instead of inequality symbols, and "->" for arrows.
+- If a table is needed, format it with ASCII pipes (|) and hyphens (-) only.
+- Transliterate any non-English or accented text to plain ASCII (e.g. "cafe" not "café").`;
 
 /**
  * Write the raw agent event trace to raw_trace.json beside result.json.

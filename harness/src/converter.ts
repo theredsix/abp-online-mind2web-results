@@ -13,6 +13,59 @@ function shotName(step: number): string {
 }
 
 /**
+ * Defensive normalizer: coerce the agent's answer to plain ASCII English.
+ *
+ * The agent is instructed (SYSTEM_PROMPT + tool descriptions) to emit ASCII
+ * only, but models occasionally slip in Unicode punctuation/symbols (and have
+ * even emitted mojibake like a replacement char glued to a dash). This is the
+ * last-line safety net so result.json never contains bytes > 0x7E. It only
+ * normalizes formatting glyphs to ASCII equivalents — it does not change the
+ * meaning of the answer.
+ */
+function toAscii(input: string): string {
+  if (!input) return input;
+  const map: Record<string, string> = {
+    // dashes / hyphens
+    "‐": "-", "‑": "-", "‒": "-", "–": "-",
+    "—": "-", "―": "-", "−": "-",
+    // quotes
+    "‘": "'", "’": "'", "‚": "'", "‛": "'",
+    "“": '"', "”": '"', "„": '"', "‟": '"',
+    "′": "'", "″": '"', "«": '"', "»": '"',
+    // spaces
+    " ": " ", " ": " ", " ": " ", " ": " ",
+    " ": " ", " ": " ", " ": " ", "​": "",
+    // ellipsis / bullets
+    "…": "...", "•": "*", "·": "*", "‣": "*",
+    // checks / crosses
+    "✓": "[x]", "✔": "[x]", "✗": "[ ]", "✘": "[ ]",
+    "✅": "[x]", "❌": "[ ]", "✖": "x",
+    // comparison / math
+    "≤": "<=", "≥": ">=", "≠": "!=", "×": "x",
+    "÷": "/", "±": "+/-",
+    // arrows
+    "→": "->", "←": "<-", "↔": "<->", "⇒": "=>",
+    // currency / misc common
+    "€": "EUR", "£": "GBP", "¥": "JPY", "©": "(c)",
+    "®": "(r)", "™": "(tm)", "°": " deg",
+    "½": "1/2", "¼": "1/4", "¾": "3/4",
+    // replacement char (mojibake artifact)
+    "�": "",
+  };
+  // Apply known mappings first.
+  let s = input.replace(
+    /[‐-―−‘-‟′″«»       ​…•·‣✓✔✗✘✅❌✖≤≥≠×÷±→←↔⇒€£¥©®™°½¼¾�]/g,
+    (ch) => map[ch] ?? "",
+  );
+  // Decompose accents (café -> cafe) then drop any remaining non-ASCII.
+  s = s.normalize("NFKD").replace(/[̀-ͯ]/g, "");
+  // Strip any leftover non-ASCII (control chars below 0x20 except \n and \t are
+  // also removed to keep the answer clean).
+  s = s.replace(/[^\x09\x0A\x20-\x7E]/g, "");
+  return s;
+}
+
+/**
  * Convert a captured TaskTrajectory into an Online-Mind2Web schema_v2
  * submission (data/schema_v2) and write result.json + trajectory/ screenshots.
  *
@@ -89,7 +142,8 @@ export async function convertAndSave(
   }
 
   // Terminal TASK_COMPLETE step. Its answer must mirror agent_final_answer.
-  const answer = trajectory.final_response || "";
+  // Coerce to plain ASCII as a safety net (the agent is also prompted to do so).
+  const answer = toAscii(trajectory.final_response || "");
   const finalSrc = trajectory.final_screenshot || lastSrc;
   await place(finalSrc, stepIdx);
   steps.push({

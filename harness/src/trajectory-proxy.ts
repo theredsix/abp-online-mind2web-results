@@ -424,7 +424,12 @@ async function recordToolCall(
         .map((a: Record<string, any>) => describeSubAction(a))
         .join("; "),
       element_descriptor: null,
-      thought: state.currentThought,
+      // A bundle of >1 sub-action ran as a single atomic step; flag the thought
+      // so the trajectory makes clear several actions were batched together.
+      thought:
+        args.actions.length > 1
+          ? `BATCHED_ACTION: ${state.currentThought}`
+          : state.currentThought,
       screenshot_path: screenshotPath,
       timestamp: Date.now(),
       v2_action: v2action,
