@@ -18,6 +18,8 @@ export interface TrajectoryProxyState {
   entries: TrajectoryEntry[];
   stepCounter: number;
   currentThought: string;
+  /** ABP REST base (e.g. http://localhost:8222) — used to read the live URL. */
+  abpBase: string;
 }
 
 export interface TrajectoryProxy {
@@ -46,6 +48,7 @@ export async function startTrajectoryProxy(
     entries: [],
     stepCounter: 0,
     currentThought: "",
+    abpBase,
   };
 
   const server = http.createServer(async (req, res) => {
@@ -300,6 +303,27 @@ const ACTION_TOOLS = new Set([
   "browser_slider",
 ]);
 
+/**
+ * Read the live URL of the active tab from ABP's REST API. Used to populate the
+ * `url` field of EVERY trajectory step (not just explicit navigations) — e.g. a
+ * click that triggers a client-side route change still gets its resulting URL.
+ * Best-effort: returns null on any failure so recording never breaks.
+ */
+async function getActiveTabUrl(abpBase: string): Promise<string | null> {
+  try {
+    const res = await fetch(`${abpBase}/api/v1/tabs`, {
+      signal: AbortSignal.timeout(2000),
+    });
+    if (!res.ok) return null;
+    const tabs = (await res.json()) as Array<{ url?: string; active?: boolean }>;
+    if (!Array.isArray(tabs) || tabs.length === 0) return null;
+    const active = tabs.find((t) => t.active) ?? tabs[0];
+    return typeof active.url === "string" ? active.url : null;
+  } catch {
+    return null;
+  }
+}
+
 async function recordToolCall(
   params: { name?: string; arguments?: Record<string, any> },
   result: { content?: Array<{ type: string; data?: string; mimeType?: string }> } | undefined,
@@ -311,29 +335,102 @@ async function recordToolCall(
 
   if (!ACTION_TOOLS.has(toolName)) return;
 
-  // Extract screenshot from MCP response (avoids extra REST call)
-  const imageBlock = result?.content?.find(
+  // Live page URL after this action — populates the url field for every step,
+  // not just explicit navigations. Best-effort (null on failure).
+  const liveUrl = await getActiveTabUrl(state.abpBase);
+
+  // Extract screenshots from the MCP response (avoids an extra REST call).
+  // Most tools return a single image; browser_scroll returns one image PER
+  // scroll event (sequential image blocks), so keep them all in order.
+  const imageBlocks = (result?.content ?? []).filter(
     (b) => b.type === "image" && b.data,
   );
+  const imageBlock = imageBlocks[0];
 
-  // For browser_action, create an entry per sub-action
-  if (toolName === "browser_action" && Array.isArray(args.actions)) {
-    for (const action of args.actions) {
+  // browser_scroll accepts a `scrolls` array of 1-3 events and returns one
+  // screenshot PER event. Fan out: each scroll event becomes its own step,
+  // paired with its own captured frame — the user wants each image to be a
+  // distinct step (opposite of browser_action, which returns a single frame).
+  if (
+    toolName === "browser_scroll" &&
+    Array.isArray(args.scrolls) &&
+    args.scrolls.length > 0
+  ) {
+    for (let i = 0; i < args.scrolls.length; i++) {
+      const ev = args.scrolls[i] as Record<string, any>;
       state.stepCounter++;
-      const screenshotPath = imageBlock?.data
-        ? await saveScreenshot(trajectoryDir, state.stepCounter, imageBlock.data)
+      // The i-th image corresponds to the state after the i-th scroll. If the
+      // server returned fewer images than events, carry the last available.
+      const img = imageBlocks[i] ?? imageBlocks[imageBlocks.length - 1];
+      const screenshotPath = img?.data
+        ? await saveScreenshot(trajectoryDir, state.stepCounter, img.data)
         : "";
+
+      const dpx = Number(ev.delta_px ?? 0);
+      const axis = ev.direction === "x" ? "x" : "y";
+      const dx = axis === "x" ? dpx : 0;
+      const dy = axis === "y" ? dpx : 0;
 
       state.entries.push({
         step: state.stepCounter,
-        action_type: action.type || "browser_action",
-        action_description: describeSubAction(action),
+        action_type: "browser_scroll",
+        action_description: `Scroll (delta_x=${dx}, delta_y=${dy})`,
         element_descriptor: null,
         thought: state.currentThought,
         screenshot_path: screenshotPath,
         timestamp: Date.now(),
+        v2_action: `SCROLL page -> scroll (delta_x=${dx}, delta_y=${dy}) | SUCCESS`,
+        v2_status: "SUCCESS",
+        url: liveUrl,
       });
     }
+    return;
+  }
+
+  // A browser_action call can BUNDLE several sub-actions, but ABP returns a
+  // single screenshot (the state after the whole bundle ran). Collapse the
+  // bundle into ONE step so the step's single screenshot truthfully matches
+  // its action — rather than fanning out and duplicating that one frame
+  // across sub-steps that supposedly preceded it. Sub-actions are joined into
+  // a single compound Grammar-A action string with one trailing status.
+  if (toolName === "browser_action" && Array.isArray(args.actions) && args.actions.length > 0) {
+    state.stepCounter++;
+    const screenshotPath = imageBlock?.data
+      ? await saveScreenshot(trajectoryDir, state.stepCounter, imageBlock.data)
+      : "";
+
+    const subs = args.actions.map((a: Record<string, any>) => v2ForSubAction(a));
+    // Bundle status is FAILED if any sub-action failed, else SUCCESS.
+    const status: "SUCCESS" | "FAILED" =
+      subs.some((s) => s.status === "FAILED") ? "FAILED" : "SUCCESS";
+    // Join each sub-action's Grammar-A fragment (minus its own status suffix)
+    // and append one shared status. A single sub-action collapses to exactly
+    // its normal Grammar-A string (the common case), so nothing changes there.
+    const stripStatus = (a: string) =>
+      a.replace(/\s*\|\s*(SUCCESS|FAILED)\s*$/, "");
+    const v2action =
+      subs.map((s) => stripStatus(s.action)).join(" ; ") + ` | ${status}`;
+    // A navigate sub-action (rare inside a bundle) may carry a destination url;
+    // otherwise use the live post-action URL.
+    const url = subs.find((s) => s.url)?.url ?? liveUrl;
+
+    state.entries.push({
+      step: state.stepCounter,
+      action_type:
+        args.actions.length === 1
+          ? args.actions[0].type || "browser_action"
+          : "browser_action",
+      action_description: args.actions
+        .map((a: Record<string, any>) => describeSubAction(a))
+        .join("; "),
+      element_descriptor: null,
+      thought: state.currentThought,
+      screenshot_path: screenshotPath,
+      timestamp: Date.now(),
+      v2_action: v2action,
+      v2_status: status,
+      url,
+    });
     return;
   }
 
@@ -342,6 +439,7 @@ async function recordToolCall(
   const screenshotPath = imageBlock?.data
     ? await saveScreenshot(trajectoryDir, state.stepCounter, imageBlock.data)
     : "";
+  const v2 = v2ForTool(toolName, args);
 
   state.entries.push({
     step: state.stepCounter,
@@ -351,7 +449,82 @@ async function recordToolCall(
     thought: state.currentThought,
     screenshot_path: screenshotPath,
     timestamp: Date.now(),
+    v2_action: v2.action,
+    v2_status: v2.status,
+    url: v2.url ?? liveUrl,
   });
+}
+
+// ---------------------------------------------------------------------------
+// v2 action-grammar builders (Online-Mind2Web schema_v2, Grammar A)
+//   Pointer/selector verbs: "<VERB> <target> -> <desc> | <STATUS>"
+//   Page-level verbs:       "page -> <VERB> -> <desc> | <STATUS>"
+// ---------------------------------------------------------------------------
+
+interface V2Action {
+  action: string;
+  status: "SUCCESS" | "FAILED" | null;
+  url?: string | null;
+}
+
+// ABP browser_action sub-action types — the complete set from the live tool
+// schema (actions.items.oneOf): mouse_click, keyboard_type, keyboard_press,
+// mouse_hover, mouse_drag. There is NO wait/scroll/mouse_move sub-action here
+// (those are separate top-level tools), so the default branch only fires on a
+// genuinely malformed sub-action.
+function v2ForSubAction(a: Record<string, any>): V2Action {
+  switch (a.type) {
+    case "mouse_click": {
+      const n = Number(a.click_count ?? 1);
+      const kind = n === 2 ? "double-click" : n === 3 ? "triple-click" : "click";
+      return { action: `CLICK coords(${a.x}, ${a.y}) -> ${kind} at (${a.x}, ${a.y}) | SUCCESS`, status: "SUCCESS" };
+    }
+    case "keyboard_type": {
+      const text = String(a.text ?? "");
+      return { action: `TYPE page -> type "${text}" | SUCCESS`, status: "SUCCESS" };
+    }
+    case "keyboard_press": {
+      const key = [...(a.modifiers || []), a.key].join("+");
+      return { action: `PRESS_KEY page -> press ${key} | SUCCESS`, status: "SUCCESS" };
+    }
+    case "mouse_hover":
+      return { action: `HOVER coords(${a.x}, ${a.y}) -> hover at (${a.x}, ${a.y}) | SUCCESS`, status: "SUCCESS" };
+    case "mouse_drag":
+      return { action: `CLICK coords(${a.start_x}, ${a.start_y}) -> drag from (${a.start_x}, ${a.start_y}) to (${a.end_x}, ${a.end_y}) | SUCCESS`, status: "SUCCESS" };
+    default:
+      return { action: `page -> WAIT -> unrecognized sub-action '${a.type ?? "unknown"}' | FAILED`, status: "FAILED" };
+  }
+}
+
+function v2ForTool(toolName: string, args: Record<string, any>): V2Action {
+  switch (toolName) {
+    case "browser_navigate":
+      return {
+        action: `page -> NAVIGATE -> navigate to ${args.url ?? args.action ?? "page"} | SUCCESS`,
+        status: "SUCCESS",
+        url: typeof args.url === "string" ? args.url : null,
+      };
+    case "browser_scroll": {
+      // Fallback for a scroll call without the `scrolls` array (the array form
+      // is fanned out before reaching here). Sum events onto each axis.
+      let dx = 0, dy = 0;
+      for (const ev of (args.scrolls ?? []) as Array<Record<string, any>>) {
+        const dpx = Number(ev.delta_px ?? 0);
+        if (ev.direction === "x") dx += dpx; else dy += dpx;
+      }
+      return { action: `SCROLL page -> scroll (delta_x=${dx}, delta_y=${dy}) | SUCCESS`, status: "SUCCESS" };
+    }
+    case "browser_select_picker":
+      if (args.cancel) return { action: `SELECT page -> cancel picker ${args.popup_id} | SUCCESS`, status: "SUCCESS" };
+      return { action: `SELECT page -> select option(s) [${(args.indices || []).join(", ")}] in picker ${args.popup_id} | SUCCESS`, status: "SUCCESS" };
+    case "browser_slider":
+      return { action: `SELECT page -> set ${args.orientation} slider to ${args.target_value} | SUCCESS`, status: "SUCCESS" };
+    case "browser_action":
+      // Reached only when browser_action had no valid `actions` array.
+      return { action: `page -> WAIT -> malformed browser_action (no effect) | FAILED`, status: "FAILED" };
+    default:
+      return { action: `page -> WAIT -> ${toolName} | SUCCESS`, status: "SUCCESS" };
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -384,8 +557,14 @@ function describeToolCall(
       return args.url
         ? `Navigate to ${args.url}`
         : `Navigate ${args.action || "unknown"}`;
-    case "browser_scroll":
-      return `Scroll (delta_x=${args.delta_x ?? 0}, delta_y=${args.delta_y ?? 0})`;
+    case "browser_scroll": {
+      let dx = 0, dy = 0;
+      for (const ev of (args.scrolls ?? []) as Array<Record<string, any>>) {
+        const dpx = Number(ev.delta_px ?? 0);
+        if (ev.direction === "x") dx += dpx; else dy += dpx;
+      }
+      return `Scroll (delta_x=${dx}, delta_y=${dy})`;
+    }
     case "browser_select_picker":
       if (args.cancel) return `Select picker ${args.popup_id} -> CANCEL`;
       return `Select picker ${args.popup_id} -> Select option(s) [${(args.indices || []).join(", ")}]`;
@@ -409,19 +588,25 @@ function readBody(req: http.IncomingMessage): Promise<string> {
   });
 }
 
+/**
+ * Persist a raw per-action screenshot. Files land in `dir` (a scratch dir);
+ * the converter later copies them into trajectory/ under the schema_v2
+ * NNNN.png names once final step indices are known. Returns the ABSOLUTE
+ * path (so the converter can read it), or "" if the frame couldn't be saved
+ * — in which case the converter carries the previous frame forward.
+ */
 async function saveScreenshot(
   dir: string,
   step: number,
   base64Data: string,
 ): Promise<string> {
-  const filename = `${step}_full_screenshot.png`;
-  const filepath = join(dir, filename);
+  const filepath = join(dir, `raw_${step}.png`);
   try {
     const webpBuffer = Buffer.from(base64Data, "base64");
     const pngBuffer = await sharp(webpBuffer).png().toBuffer();
     await writeFile(filepath, pngBuffer);
   } catch {
-    // Non-fatal — return path even if save fails
+    return "";
   }
   return filepath;
 }

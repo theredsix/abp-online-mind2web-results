@@ -33,15 +33,42 @@ export async function startHarnessTools(): Promise<HarnessTools> {
       version: "1.0.0",
     });
 
+    // Accept either `result` (the canonical name) or `answer` as the payload.
+    // Both are optional in the schema and coalesced at runtime so a model that
+    // reaches for the intuitive `answer` key still succeeds — the terminal
+    // tool call decides pass/fail, so it must not fail on a key-name guess.
+    const ANSWER_FIELDS = {
+      result: z
+        .string()
+        .optional()
+        .describe("The answer to the task, or an explanation of why it is impossible. (Alias: 'answer'.)"),
+      answer: z
+        .string()
+        .optional()
+        .describe("Alias for 'result'. Provide exactly one of 'result' or 'answer'."),
+      status: z
+        .enum(["success", "impossible"])
+        .default("success")
+        .describe("Set to 'impossible' if the task cannot be accomplished."),
+    };
+    const missingPayload = {
+      content: [
+        {
+          type: "text" as const,
+          text: "Error: provide the answer in the 'result' field (the 'answer' alias is also accepted).",
+        },
+      ],
+      isError: true,
+    };
+
     mcp.tool(
       "potential_solution",
       "Record a potential answer you've seen so far. Call this whenever you encounter a plausible answer while browsing — it will be used as your final answer if you run out of steps before calling declare_result. Each call overwrites the previous potential solution, so always call it with your best answer so far.",
-      {
-        result: z.string().describe("The potential answer to the task, or an explanation of why the task is impossible"),
-        status: z.enum(["success", "impossible"]).default("success").describe("Set to 'impossible' if you believe the task cannot be accomplished"),
-      },
-      async ({ result, status }) => {
-        state.potentialResult = result;
+      ANSWER_FIELDS,
+      async ({ result, answer, status }) => {
+        const text = result ?? answer;
+        if (text === undefined) return missingPayload;
+        state.potentialResult = text;
         state.potentialStatus = status;
         return { content: [{ type: "text", text: `Potential solution recorded (${status}).` }] };
       },
@@ -50,12 +77,11 @@ export async function startHarnessTools(): Promise<HarnessTools> {
     mcp.tool(
       "declare_result",
       "Declare the final answer and complete the task. Call this when you have found the answer, or when you determine the task is impossible.",
-      {
-        result: z.string().describe("The final answer to the task, or an explanation of why the task is impossible"),
-        status: z.enum(["success", "impossible"]).default("success").describe("Set to 'impossible' if the task cannot be accomplished on the website due to missing/changed functionality or outage"),
-      },
-      async ({ result, status }) => {
-        state.declaredResult = result;
+      ANSWER_FIELDS,
+      async ({ result, answer, status }) => {
+        const text = result ?? answer;
+        if (text === undefined) return missingPayload;
+        state.declaredResult = text;
         state.declaredStatus = status;
         return { content: [{ type: "text", text: `Result declared (${status}).` }] };
       },
@@ -73,10 +99,18 @@ export async function startHarnessTools(): Promise<HarnessTools> {
       if (!transport) {
         transport = new StreamableHTTPServerTransport({
           sessionIdGenerator: () => crypto.randomUUID(),
+          // Register the transport only once the session id has actually been
+          // assigned (during the initialize handshake). Doing it eagerly keyed
+          // the map on `undefined`, so the follow-up request with a real
+          // session-id header missed, spun up a fresh uninitialized transport,
+          // and the server replied "Server not initialized" — making the
+          // potential_solution / declare_result tools permanently unreachable.
+          onsessioninitialized: (id) => {
+            transports.set(id, transport!);
+          },
         });
         const mcp = createMcpServer();
         await mcp.connect(transport);
-        transports.set(transport.sessionId!, transport);
       }
       await transport.handleRequest(req, res);
     } else if (req.method === "GET" && req.url === "/mcp") {

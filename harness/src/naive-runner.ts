@@ -1,6 +1,6 @@
 // mind2web/harness/src/naive-runner.ts
 import { query } from "@anthropic-ai/claude-agent-sdk";
-import { mkdir } from "node:fs/promises";
+import { mkdir, writeFile, rm } from "node:fs/promises";
 import { join } from "node:path";
 import { AbpHelper } from "./abp.js";
 import { convertAndSave } from "./converter.js";
@@ -55,14 +55,72 @@ Call potential_solution early and often to save your progress. Any time you see 
 
 When you are confident in your answer, call declare_result to submit it and stop. Do not simply state the answer in text; you must explicitly call declare_result with the answer string. If the task is impossible — due to missing or changed functionality, a site outage, or a feature that clearly does not exist — call declare_result with status "impossible".`;
 
+/**
+ * Write the raw agent event trace to raw_trace.json beside result.json.
+ * Includes a `summary` that surfaces off-browser tool usage (Bash, WebFetch,
+ * etc.) — the escape hatches that can produce an answer without the browser,
+ * which would make the schema_v2 trajectory unrepresentative of how the task
+ * was actually solved.
+ */
+async function writeRawTrace(
+  taskDir: string,
+  task: Mind2WebTask,
+  config: BenchmarkConfig,
+  events: Array<Record<string, unknown>>,
+  outcome: string,
+  error?: string,
+): Promise<void> {
+  const toolUses = events.filter((e) => e.type === "tool_use");
+  const offBrowser = toolUses.filter((e) => e.off_browser);
+  const byTool: Record<string, number> = {};
+  for (const e of offBrowser) {
+    const name = String(e.tool ?? "unknown");
+    byTool[name] = (byTool[name] ?? 0) + 1;
+  }
+  const doc = {
+    task_id: task.task_id,
+    task: task.confirmed_task,
+    website: task.website,
+    model: config.model,
+    outcome,
+    ...(error ? { error } : {}),
+    summary: {
+      total_events: events.length,
+      tool_calls: toolUses.length,
+      off_browser_tool_calls: offBrowser.length,
+      off_browser_by_tool: byTool,
+    },
+    events,
+  };
+  await writeFile(
+    join(taskDir, "raw_trace.json"),
+    JSON.stringify(doc, null, 2),
+  );
+}
+
 export async function runNaiveTask(
   task: Mind2WebTask,
   config: BenchmarkConfig,
 ): Promise<TaskResult> {
   const startTime = Date.now();
   const taskDir = join(config.outputDir, task.task_id);
-  const trajectoryDir = join(taskDir, "trajectory");
-  await mkdir(trajectoryDir, { recursive: true });
+  // Scratch dir for raw per-action frames; the converter copies these into
+  // trajectory/ under schema_v2 NNNN.png names once step indices are final.
+  const rawDir = join(taskDir, ".shots");
+  await mkdir(rawDir, { recursive: true });
+
+  // Initial page frame (carry-forward fallback for a step-0 with no capture)
+  // and a final frame for the terminal TASK_COMPLETE step. Absolute paths.
+  let initialScreenshot = "";
+  let finalScreenshot = "";
+
+  // Raw, unfiltered audit trail of EVERY agent event — including tools the
+  // trajectory proxy never sees (Bash, WebFetch, ToolSearch, etc.). Written to
+  // raw_trace.json next to result.json so a run can be reconciled against the
+  // schema_v2 trajectory and any out-of-browser tool use can be caught.
+  // Hoisted above try/catch so a failed run still emits whatever was captured.
+  const rawTrace: Array<Record<string, unknown>> = [];
+  let seq = 0;
 
   const abp = new AbpHelper(config.abpPort);
   let proxy: Awaited<ReturnType<typeof startTrajectoryProxy>> | null = null;
@@ -76,7 +134,21 @@ export async function runNaiveTask(
     const tabId = await abp.getActiveTabId();
     await abp.navigateTo(tabId, task.website);
 
-    proxy = await startTrajectoryProxy(config.abpPort, trajectoryDir);
+    // Pre-handoff capture for step 0 (`0000.png`): ALWAYS trigger an ABP WAIT
+    // action before handing the session to the agent, and use the WAIT's own
+    // screenshot. This makes step 0 a truthful product of a real browser action
+    // observing the settled landing page (vs. a bare REST screenshot), and the
+    // WAIT gives the page a final moment to settle after navigateTo.
+    try {
+      const initialPng = await abp.waitAndCapturePng(tabId);
+      const p = join(rawDir, "raw_initial.png");
+      await writeFile(p, initialPng);
+      initialScreenshot = p;
+    } catch {
+      // Non-fatal — converter falls back to the first action's screenshot.
+    }
+
+    proxy = await startTrajectoryProxy(config.abpPort, rawDir);
     harness = await startHarnessTools();
 
     const prompt = `Task: ${task.confirmed_task}\nWebsite: ${task.website}`;
@@ -100,6 +172,13 @@ export async function runNaiveTask(
             url: `http://localhost:${harness.port}/mcp`,
           },
         },
+        // Locked-down tool surface (per the Agent SDK permissions docs):
+        // allowedTools pre-approves ONLY the ABP browser MCP server and the
+        // harness submission MCP server; permissionMode "dontAsk" denies
+        // anything not pre-approved instead of prompting (and skips
+        // canUseTool). This forces the agent to solve the task using ONLY the
+        // real browser — no Bash/curl/WebFetch escape hatches that would make
+        // the schema_v2 trajectory unrepresentative of how the answer was got.
         allowedTools: ["mcp__abp__*", "mcp__harness__*"],
         permissionMode: "dontAsk",
       },
@@ -121,8 +200,20 @@ export async function runNaiveTask(
           if (block.type === "text") {
             thoughts.push(block.text);
             process.stdout.write(JSON.stringify({ type: "thought", text: block.text, ...timing }) + "\n");
+            rawTrace.push({ seq: seq++, t: now - startTime, type: "thought", text: block.text });
           } else if (block.type === "tool_use") {
             process.stdout.write(JSON.stringify({ type: "action", tool: block.name, input: block.input, ...timing }) + "\n");
+            // Flag any tool outside the intended ABP/harness allowlist — these
+            // are the out-of-browser escape hatches (Bash, WebFetch, …).
+            const offBrowser = !/^mcp__(abp|harness)__/.test(block.name);
+            rawTrace.push({
+              seq: seq++,
+              t: now - startTime,
+              type: "tool_use",
+              tool: block.name,
+              input: block.input,
+              off_browser: offBrowser,
+            });
           }
         }
         if (thoughts.length > 0) {
@@ -130,9 +221,40 @@ export async function runNaiveTask(
         }
       } else if (message.type === "user") {
         process.stdout.write(JSON.stringify({ type: "browser", elapsed_ms: elapsedMs }) + "\n");
+        // Record tool results (the observation the agent receives back).
+        const content = (message as { message?: { content?: unknown } }).message?.content;
+        for (const block of (Array.isArray(content) ? content : [])) {
+          const b = block as Record<string, any>;
+          if (b?.type === "tool_result") {
+            // Summarize: keep text, note (don't inline) any image payloads.
+            const parts = Array.isArray(b.content) ? b.content : [];
+            const text = parts
+              .filter((p: any) => p?.type === "text")
+              .map((p: any) => String(p.text ?? ""))
+              .join("\n");
+            const images = parts.filter((p: any) => p?.type === "image").length;
+            rawTrace.push({
+              seq: seq++,
+              t: now - startTime,
+              type: "tool_result",
+              tool_use_id: b.tool_use_id,
+              is_error: !!b.is_error,
+              text: text.length > 2000 ? text.slice(0, 2000) + "…[truncated]" : text,
+              image_blocks: images,
+            });
+          }
+        }
       } else if (message.type === "result") {
-        finalResponse = message.result ?? "";
+        // SDK >=0.3: SDKResultMessage is a union — only the "success" subtype
+        // carries `result`; the error variants don't. Narrow before reading.
+        finalResponse = message.subtype === "success" ? message.result : "";
         resultSubtype = message.subtype;
+        rawTrace.push({
+          seq: seq++,
+          t: now - startTime,
+          type: "result",
+          subtype: message.subtype,
+        });
       }
 
       // Stop immediately once the agent declares a result
@@ -154,13 +276,28 @@ export async function runNaiveTask(
       resultSubtype = outcome;
     }
 
+    // Capture a final frame for the terminal TASK_COMPLETE step.
+    try {
+      const finalPng = await abp.takeScreenshotPng(tabId);
+      const p = join(rawDir, "raw_final.png");
+      await writeFile(p, finalPng);
+      finalScreenshot = p;
+    } catch {
+      // Non-fatal — converter carries the last action frame forward.
+    }
+
     const trajectory: TaskTrajectory = {
       task,
       entries: proxy.state.entries,
       final_response: finalResponse,
       result_status: resultSubtype,
+      initial_screenshot: initialScreenshot,
+      final_screenshot: finalScreenshot,
     };
     const resultPath = await convertAndSave(trajectory, config.outputDir);
+
+    // Persist the raw audit trail next to result.json.
+    await writeRawTrace(taskDir, task, config, rawTrace, outcome);
 
     return {
       task_id: task.task_id,
@@ -178,9 +315,12 @@ export async function runNaiveTask(
         entries: proxy?.state.entries ?? [],
         final_response: "",
         result_status: "error",
+        initial_screenshot: initialScreenshot,
+        final_screenshot: finalScreenshot,
         error: errorMsg,
       };
       await convertAndSave(partialTrajectory, config.outputDir);
+      await writeRawTrace(taskDir, task, config, rawTrace, "failure", errorMsg);
     } catch {
       /* ignore save failures */
     }
@@ -195,5 +335,8 @@ export async function runNaiveTask(
   } finally {
     if (proxy) await proxy.close();
     if (harness) await harness.close();
+    // Drop the scratch frame dir; the converter has copied what it needs
+    // into trajectory/ and schema_v2 discourages extra files in the package.
+    await rm(rawDir, { recursive: true, force: true }).catch(() => {});
   }
 }

@@ -2,7 +2,7 @@
 import { type BenchmarkConfig } from "./types.js";
 
 const DEFAULT_CONFIG: BenchmarkConfig = {
-  model: "claude-opus-4-6",
+  model: "claude-opus-4-8",
   maxTurns: 40,
   abpPort: 8222,
   outputDir: new URL("../../results", import.meta.url).pathname,

@@ -20,3 +20,9 @@ eval_results/
 .memory/
 
 results*
+
+# ABP session dirs (generated per run)
+.abp-session*/
+
+# Local verify script (contains an auth token; do not commit)
+harness/verify-initial-shot.sh
