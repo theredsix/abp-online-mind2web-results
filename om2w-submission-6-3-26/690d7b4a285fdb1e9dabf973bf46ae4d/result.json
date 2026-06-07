@@ -1,0 +1,81 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Browse iPhone X for sale that is in good condition, has a max price of 400, and searches in titles only.",
+  "task_id": "690d7b4a285fdb1e9dabf973bf46ae4d",
+  "agent_final_answer": "Successfully browsed iPhone X for sale on Craigslist (SF bay area) with all three required filters applied: \"search titles only\" checked, max price $400, and condition set to \"good\". The filtered search (query \"iphone x\") returned 6 matching listings. Visible results include: \"iPhone X good condition unlocked 64 gb\" - $90 (los altos); \"iPhone X (256GB) Bundle\" - $200 (danville/san ramon); \"Apple iPhone X\" - $170 (san jose downtown); a $100 listing; and a $130 listing.",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://craigslist.org/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(250, 127) -> click at (250, 127) ; TYPE page -> type \"iPhone X\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://sfbay.craigslist.org/search/sss?query=iphone%20x#search=2~gallery~0",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: This is the Craigslist homepage. I'll search for \"iPhone X\" using the search box."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(15, 315) -> click at (15, 315) ; CLICK coords(128, 533) -> click at (128, 533) ; TYPE page -> type \"400\" | SUCCESS",
+      "url": "https://sfbay.craigslist.org/search/sss?query=iphone%20x&srchType=T#search=2~gallery~0",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The search results loaded. Now I need to apply three filters: search titles only, max price 400, and good condition. Let me start by checking \"search titles only\" and setting the max price."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(128, 506) -> click at (128, 506) ; TYPE page -> type \"400\" | SUCCESS",
+      "url": "https://sfbay.craigslist.org/search/sss?query=iphone%20x&srchType=T#search=2~gallery~0",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: \"Search titles only\" is now checked. The sidebar reflowed, so my price entry didn't land correctly. Let me click the max price field and type 400."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(48, 588) -> click at (48, 588) | SUCCESS",
+      "url": "https://sfbay.craigslist.org/search/sss?query=iphone%20x&srchType=T#search=2~gallery~0",
+      "action_status": "SUCCESS",
+      "thought": "Max price 400 is set. Now let me expand the \"condition\" filter to select \"good\"."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(25, 677) -> click at (25, 677) | SUCCESS",
+      "url": "https://sfbay.craigslist.org/search/sss?query=iphone%20x&srchType=T#search=2~gallery~0",
+      "action_status": "SUCCESS",
+      "thought": "The condition options are now visible. Let me check the \"good\" checkbox."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=300) | SUCCESS",
+      "url": "https://sfbay.craigslist.org/search/sss?query=iphone%20x&srchType=T#search=2~gallery~0",
+      "action_status": "SUCCESS",
+      "thought": "The \"good\" condition is now checked. The result count still shows 42, so I need to apply the price/condition filters. Let me scroll down the sidebar to find the apply button."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(137, 619) -> click at (137, 619) | SUCCESS",
+      "url": "https://sfbay.craigslist.org/search/sss?condition=40&max_price=400&query=iphone%20x&srchType=T#search=2~gallery~0",
+      "action_status": "SUCCESS",
+      "thought": "All filters are set: good condition checked, max price 400, search titles only. Now let me click the highlighted \"apply\" button."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "TASK_COMPLETE -> ANSWER: Successfully browsed iPhone X for sale on Craigslist (SF bay area) with all three required filters applied: \"search titles only\" checked, max price $400, and condition set to \"good\". The filtered search (query \"iphone x\") returned 6 matching listings. Visible results include: \"iPhone X good condition unlocked 64 gb\" - $90 (los altos); \"iPhone X (256GB) Bundle\" - $200 (danville/san ramon); \"Apple iPhone X\" - $170 (san jose downtown); a $100 listing; and a $130 listing.",
+      "url": "https://sfbay.craigslist.org/search/sss?condition=40&max_price=400&query=iphone%20x&srchType=T#search=2~gallery~0",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

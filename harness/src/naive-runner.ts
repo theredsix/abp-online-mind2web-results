@@ -90,6 +90,7 @@ async function writeRawTrace(
     task: task.confirmed_task,
     website: task.website,
     model: config.model,
+    effort: config.effort,
     outcome,
     ...(error ? { error } : {}),
     summary: {
@@ -97,6 +98,9 @@ async function writeRawTrace(
       tool_calls: toolUses.length,
       off_browser_tool_calls: offBrowser.length,
       off_browser_by_tool: byTool,
+      thinking_blocks: events.filter(
+        (e) => e.type === "thinking" || e.type === "redacted_thinking",
+      ).length,
     },
     events,
   };
@@ -104,6 +108,79 @@ async function writeRawTrace(
     join(taskDir, "raw_trace.json"),
     JSON.stringify(doc, null, 2),
   );
+}
+
+/**
+ * Render one agent tool call as a short, human-readable one-liner for the live
+ * "follow along" console stream. Mirrors the v2 action grammar at a glance
+ * (see trajectory-proxy.ts for the authoritative schema_v2 strings) but stays
+ * deliberately terse — the full structured record lives in raw_trace.json.
+ */
+function summarizeToolUse(name: string, input: any): string {
+  const base = name.replace(/^mcp__(abp|harness)__/, "");
+  const clip = (s: string, n = 200) => (s.length > n ? s.slice(0, n) + "…" : s);
+  try {
+    switch (base) {
+      case "browser_action":
+        if (Array.isArray(input?.actions)) {
+          return (
+            base +
+            " -> " +
+            input.actions
+              .map((a: any) => {
+                switch (a?.type) {
+                  case "mouse_click": {
+                    const c = Number(a.click_count ?? 1);
+                    const k =
+                      c === 2 ? "double-click" : c === 3 ? "triple-click" : "click";
+                    return `${k}(${a.x}, ${a.y})`;
+                  }
+                  case "keyboard_type":
+                    return `type ${JSON.stringify(String(a.text ?? ""))}`;
+                  case "keyboard_press":
+                    return `press ${[...(a.modifiers ?? []), a.key].join("+")}`;
+                  case "mouse_hover":
+                    return `hover(${a.x}, ${a.y})`;
+                  case "mouse_drag":
+                    return `drag(${a.start_x}, ${a.start_y})->(${a.end_x}, ${a.end_y})`;
+                  default:
+                    return String(a?.type ?? "?");
+                }
+              })
+              .join(", ")
+          );
+        }
+        break;
+      case "browser_scroll":
+        if (Array.isArray(input?.scrolls)) {
+          return (
+            base +
+            " -> " +
+            input.scrolls
+              .map((s: any) => `${s.direction === "x" ? "x" : "y"} ${s.delta_px ?? 0}px`)
+              .join(", ")
+          );
+        }
+        break;
+      case "browser_navigate":
+        return `${base} -> ${input?.url ?? input?.action ?? ""}`;
+      case "browser_select_picker":
+        return input?.cancel
+          ? `${base} -> cancel ${input?.popup_id}`
+          : `${base} -> select [${(input?.indices ?? []).join(", ")}] in ${input?.popup_id}`;
+      case "browser_slider":
+        return `${base} -> ${input?.orientation} = ${input?.target_value}`;
+      case "potential_solution":
+      case "declare_result": {
+        const status = input?.status ? `[${input.status}] ` : "";
+        const ans = String(input?.result ?? input?.answer ?? "");
+        return `${base} -> ${status}${clip(ans, 240)}`;
+      }
+    }
+  } catch {
+    /* fall through to the generic JSON rendering */
+  }
+  return `${base} -> ${clip(JSON.stringify(input ?? {}))}`;
 }
 
 export async function runNaiveTask(
@@ -170,6 +247,11 @@ export async function runNaiveTask(
         systemPrompt: SYSTEM_PROMPT,
         model: config.model,
         maxTurns: config.maxTurns,
+        // Reasoning effort (SDK Options.effort, serialized to `--effort`).
+        // Configurable via the harness --effort flag; defaults to "max".
+        // Complements the default adaptive thinking; maxThinkingTokens is
+        // intentionally left unset.
+        effort: config.effort,
         mcpServers: {
           abp: {
             type: "http",
@@ -193,6 +275,10 @@ export async function runNaiveTask(
     });
 
     let lastTimestamp = Date.now();
+    // Human-readable step counter for the live console stream. Increments on
+    // each browser action (mcp__abp__*); the reasoning printed just above an
+    // action is that step's reasoning (the schema_v2 `thought`).
+    let stepNum = 0;
 
     for await (const message of q) {
       const now = Date.now();
@@ -201,19 +287,28 @@ export async function runNaiveTask(
 
       if (message.type === "assistant") {
         const thoughts: string[] = [];
-        let firstBlock = true;
         for (const block of message.message.content) {
-          const timing = firstBlock ? { elapsed_ms: elapsedMs } : {};
-          firstBlock = false;
           if (block.type === "text") {
             thoughts.push(block.text);
-            process.stdout.write(JSON.stringify({ type: "thought", text: block.text, ...timing }) + "\n");
+            const reasoning = block.text.trim();
+            if (reasoning) {
+              // Stream the agent's reasoning verbatim so a human can follow
+              // along step by step. This is the same text the converter records
+              // as each step's schema_v2 `thought`.
+              process.stdout.write(`\nreasoning: ${reasoning}\n`);
+            }
             rawTrace.push({ seq: seq++, t: now - startTime, type: "thought", text: block.text });
           } else if (block.type === "tool_use") {
-            process.stdout.write(JSON.stringify({ type: "action", tool: block.name, input: block.input, ...timing }) + "\n");
             // Flag any tool outside the intended ABP/harness allowlist — these
             // are the out-of-browser escape hatches (Bash, WebFetch, …).
             const offBrowser = !/^mcp__(abp|harness)__/.test(block.name);
+            const isBrowserAction = /^mcp__abp__/.test(block.name);
+            if (isBrowserAction) stepNum++;
+            const tag = isBrowserAction ? `step ${stepNum}` : "submit";
+            const dt = (elapsedMs / 1000).toFixed(1);
+            process.stdout.write(
+              `  -> [${tag}] (+${dt}s) ${summarizeToolUse(block.name, block.input)}\n`,
+            );
             rawTrace.push({
               seq: seq++,
               t: now - startTime,
@@ -222,13 +317,25 @@ export async function runNaiveTask(
               input: block.input,
               off_browser: offBrowser,
             });
+          } else if (block.type === "thinking" || block.type === "redacted_thinking") {
+            // Extended-thinking reasoning. Persist to the raw audit trail so a
+            // run's FULL reasoning — not just the model's visible `text` — is
+            // recoverable. Redacted blocks carry encrypted `data`, not text;
+            // record them so a gap in the reasoning is visible rather than silent.
+            const b = block as { type: string; thinking?: string; data?: string };
+            rawTrace.push({
+              seq: seq++,
+              t: now - startTime,
+              type: b.type,
+              text: b.type === "thinking" ? String(b.thinking ?? "") : "",
+              ...(b.type === "redacted_thinking" ? { redacted: true } : {}),
+            });
           }
         }
         if (thoughts.length > 0) {
           proxy.state.currentThought = thoughts.join("\n");
         }
       } else if (message.type === "user") {
-        process.stdout.write(JSON.stringify({ type: "browser", elapsed_ms: elapsedMs }) + "\n");
         // Record tool results (the observation the agent receives back).
         const content = (message as { message?: { content?: unknown } }).message?.content;
         for (const block of (Array.isArray(content) ? content : [])) {
@@ -316,6 +423,55 @@ export async function runNaiveTask(
     };
   } catch (err: unknown) {
     const errorMsg = err instanceof Error ? err.message : String(err);
+
+    // The Agent SDK THROWS on maxTurns. Honor the SYSTEM_PROMPT promise: if the
+    // agent already recorded an answer (declare_result, or a potential_solution
+    // for the "ran out of steps" case), submit THAT instead of recording a
+    // failure. Only an error with no recorded answer is a genuine failure.
+    const recovered =
+      harness?.state.declaredResult ?? harness?.state.potentialResult ?? null;
+    if (proxy && harness && recovered !== null) {
+      const recoveredOutcome =
+        harness.state.declaredResult !== null
+          ? harness.state.declaredStatus
+          : harness.state.potentialStatus;
+      try {
+        // Best-effort final frame — ABP is usually still alive after a maxTurns throw.
+        try {
+          const finalPng = await abp.takeScreenshotPng(await abp.getActiveTabId());
+          const fp = join(rawDir, "raw_final.png");
+          await writeFile(fp, finalPng);
+          finalScreenshot = fp;
+        } catch {
+          /* non-fatal */
+        }
+        rawTrace.push({
+          seq: seq++,
+          t: Date.now() - startTime,
+          type: "recovered_after_error",
+          error: errorMsg,
+        });
+        const trajectory: TaskTrajectory = {
+          task,
+          entries: proxy.state.entries,
+          final_response: recovered,
+          result_status: recoveredOutcome,
+          initial_screenshot: initialScreenshot,
+          final_screenshot: finalScreenshot,
+        };
+        const resultPath = await convertAndSave(trajectory, config.outputDir);
+        await writeRawTrace(taskDir, task, config, rawTrace, recoveredOutcome);
+        return {
+          task_id: task.task_id,
+          outcome: recoveredOutcome,
+          steps: proxy.state.entries.length,
+          resultPath,
+          durationMs: Date.now() - startTime,
+        };
+      } catch {
+        /* recovery failed to save — fall through to the failure path below */
+      }
+    }
 
     try {
       const partialTrajectory: TaskTrajectory = {

@@ -1,0 +1,137 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Identify the ongoing competition that offers the highest prize and find the code that received the most votes in that competition.",
+  "task_id": "1c3b747ae12ccee895745f82e3f2ef8a",
+  "agent_final_answer": "The ongoing competition offering the highest prize is \"ARC Prize 2026 - ARC-AGI-3\" with a $850,000 prize (a Featured Code Competition, ~5 months remaining). Within that competition, the code/notebook that received the most votes is \"ARC3 Sample Submission - Stochastic Goose\" with 460 votes (Gold medal). \n\nFor context, other top competitions by prize were ARC Prize 2026 - ARC-AGI-2 ($700,000) and ARC Prize 2026 - Paper Track ($450,000). The next most-voted notebooks in ARC-AGI-3 after Stochastic Goose (460) were \"ARC3 Sample Submission - Random Agent\" (283 votes) and \"[ARC26-3] Agent v15\" (221 votes).",
+  "reference_length": 11,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.kaggle.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1226, 776) -> click at (1226, 776) | SUCCESS",
+      "url": "https://www.kaggle.com/",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Kaggle homepage. There's a cookie banner at the bottom. Let me handle that first by clicking \"OK, Got it.\""
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(209, 33) -> click at (209, 33) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions",
+      "action_status": "SUCCESS",
+      "thought": "Cookie banner is dismissed. Now let me navigate to the Competitions section by clicking \"Competitions\" in the navigation."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(393, 439) -> click at (393, 439) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Competitions page. I need to find ongoing competitions sorted by prize. Let me click \"All Competitions\" to see everything, then apply filters."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(1167, 204) -> click at (1167, 204) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the All Competitions page. I need to filter for ongoing competitions and sort by prize. Let me click on \"Filters\" to see the available filter options."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(818, 288) -> click at (818, 288) ; CLICK coords(829, 372) -> click at (829, 372) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions?prestigeFilter=money",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The Filters panel is open. I can see STATUS options (Active, Entered, Completed, Spotlight) and PRIZES AND AWARDS (Monetary, Medals, Other). Let me select \"Active\" for ongoing competitions and \"Monetary\" for prizes."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(818, 288) -> click at (818, 288) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions?listOption=active&prestigeFilter=money",
+      "action_status": "SUCCESS",
+      "thought": "Monetary is selected (shown in the chip), but Active doesn't appear to be selected. Let me click \"Active\" to filter for ongoing competitions."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(1128, 769) -> click at (1128, 769) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions?listOption=active&prestigeFilter=money",
+      "action_status": "SUCCESS",
+      "thought": "Both \"Active\" and \"Monetary\" filters are now applied (shown as chips). Let me click \"Done\" to apply and view results."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(1067, 316) -> click at (1067, 316) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions?listOption=active&prestigeFilter=money",
+      "action_status": "SUCCESS",
+      "thought": "Now I have Active + Monetary competitions filtered. The list is sorted by \"Recently Launched\". I can already see ARC Prize 2026 - ARC-AGI-3 at $850,000. Let me sort by prize to be certain. Let me click the \"Recently Launched\" dropdown."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(1024, 552) -> click at (1024, 552) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions?listOption=active&sortOption=reward&prestigeFilter=money",
+      "action_status": "SUCCESS",
+      "thought": "The sort dropdown shows a \"Reward\" option. Let me click it to sort by prize amount."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(511, 368) -> click at (511, 368) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
+      "action_status": "SUCCESS",
+      "thought": "Results are now sorted by Reward (highest first). The top ongoing competition is **ARC Prize 2026 - ARC-AGI-3** at **$850,000** (5 months to go, so it's ongoing). Let me record this and then navigate into the competition to find the code with the most votes."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(490, 336) -> click at (490, 336) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/code",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the ARC Prize 2026 - ARC-AGI-3 competition page, confirming it's a Featured Code Competition with $850,000 prize, 5 months to go. Now let me click the \"Code\" tab to find the code with the most votes."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "CLICK coords(1173, 561) -> click at (1173, 561) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/code",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Code tab showing Notebooks, currently sorted by \"Hotness\". There are pinned notebooks at the top. To find the code with the most votes, let me change the sort to \"Most Votes\". Let me click the \"Hotness\" dropdown."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(1157, 511) -> click at (1157, 511) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/code?competitionId=133468&sortBy=voteCount&excludeNonAccessedDatasources=true",
+      "action_status": "SUCCESS",
+      "thought": "The dropdown shows sort options. Let me click \"Most Votes\" to find the code with the most votes."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/code?competitionId=133468&sortBy=voteCount&excludeNonAccessedDatasources=true",
+      "action_status": "SUCCESS",
+      "thought": "The sort is now \"Most Votes\". The pinned notebooks show at top (283 and 460 votes). I need to scroll down to see the full list sorted by votes, since pinned notebooks appear separately. Let me scroll down."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "TASK_COMPLETE -> ANSWER: The ongoing competition offering the highest prize is \"ARC Prize 2026 - ARC-AGI-3\" with a $850,000 prize (a Featured Code Competition, ~5 months remaining). Within that competition, the code/notebook that received the most votes is \"ARC3 Sample Submission - Stochastic Goose\" with 460 votes (Gold medal). \n\nFor context, other top competitions by prize were ARC Prize 2026 - ARC-AGI-2 ($700,000) and ARC Prize 2026 - Paper Track ($450,000). The next most-voted notebooks in ARC-AGI-3 after Stochastic Goose (460) were \"ARC3 Sample Submission - Random Agent\" (283 votes) and \"[ARC26-3] Agent v15\" (221 votes).",
+      "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/code?competitionId=133468&sortBy=voteCount&excludeNonAccessedDatasources=true",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

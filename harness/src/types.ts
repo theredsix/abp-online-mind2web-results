@@ -88,7 +88,15 @@ export interface TaskResult {
 export interface BenchmarkConfig {
   model: string;
   maxTurns: number;
+  /** Reasoning effort for the Agent SDK (serialized to --effort). */
+  effort: "low" | "medium" | "high" | "xhigh" | "max";
   abpPort: number;
+  /** Spawn/kill a fresh ABP process per task from TS (vs. external ABP). */
+  manageAbp: boolean;
+  /** Path to the ABP chrome binary (used when manageAbp). */
+  abpBinPath: string;
+  /** Seconds to wait for a freshly-launched ABP to become ready. */
+  readyTimeoutSec: number;
   outputDir: string;
   resultDirs: string[];
   resume: boolean;

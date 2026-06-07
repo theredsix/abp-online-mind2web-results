@@ -3,8 +3,40 @@ import { readFile, writeFile, access, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 import { parseConfig } from "./config.js";
 import { runNaiveTask } from "./naive-runner.js";
+import { launchAbp, killStraySync, type AbpProcess } from "./abp-process.js";
 import type { TaskResult } from "./types.js";
 import type { Mind2WebTask } from "./types.js";
+
+/**
+ * Resume decision matching the original per-task driver: a task is "done" only
+ * if its raw_trace in the output dir recorded a terminal-good outcome (success
+ * or impossible). Failures and never-run tasks are (re)run. A task already
+ * present as a completed result in an external resultDir is also treated done.
+ */
+async function taskIsDone(
+  outputDir: string,
+  resultDirs: string[],
+  taskId: string,
+): Promise<boolean> {
+  try {
+    const rt = JSON.parse(
+      await readFile(join(outputDir, taskId, "raw_trace.json"), "utf-8"),
+    ) as { outcome?: string };
+    if (rt.outcome === "success" || rt.outcome === "impossible") return true;
+    // A "failure" raw_trace falls through so the task is retried.
+  } catch {
+    /* no/invalid raw_trace in the output dir */
+  }
+  for (const dir of resultDirs) {
+    try {
+      await access(join(dir, taskId, "result.json"));
+      return true;
+    } catch {
+      /* not present in this external set */
+    }
+  }
+  return false;
+}
 
 async function main() {
   const config = parseConfig(process.argv.slice(2));
@@ -33,10 +65,23 @@ async function main() {
   }
 
   console.log(
-    `Running ${tasks.length} tasks (model: ${config.model}, max turns: ${config.maxTurns})`,
+    `Running ${tasks.length} tasks (model: ${config.model}, effort: ${config.effort}, max turns: ${config.maxTurns})`,
+  );
+  console.log(
+    `ABP: ${config.manageAbp ? `managed per task (port=${config.abpPort})` : "external (not managed)"}`,
   );
   console.log(`Output: ${config.outputDir}`);
   console.log("");
+
+  // A Ctrl-C must not leave a managed ABP (and its Chrome children) running.
+  // Sync kill so it completes inside the signal handler before exiting.
+  if (config.manageAbp) {
+    process.on("SIGINT", () => {
+      console.log("\nInterrupted — killing ABP.");
+      killStraySync();
+      process.exit(130);
+    });
+  }
 
   const results: TaskResult[] = [];
   const failures: Array<{ task_id: string; error: string }> = [];
@@ -45,32 +90,46 @@ async function main() {
     const task = tasks[i];
     const progress = `[${i + 1}/${tasks.length}]`;
 
-    // Resume: skip if result.json already exists in any result directory
-    if (config.resume) {
-      const dirsToCheck = [config.outputDir, ...config.resultDirs];
-      let found = false;
-      for (const dir of dirsToCheck) {
-        try {
-          await access(join(dir, task.task_id, "result.json"));
-          found = true;
-          break;
-        } catch {
-          /* doesn't exist in this dir */
-        }
-      }
-      if (found) {
-        console.log(
-          `${progress} SKIP ${task.task_id} (${task.level}) — already has results`,
-        );
-        continue;
-      }
+    // Resume: skip tasks already finished success/impossible (failures rerun).
+    if (
+      config.resume &&
+      (await taskIsDone(config.outputDir, config.resultDirs, task.task_id))
+    ) {
+      console.log(
+        `${progress} SKIP ${task.task_id} (${task.level}) — already success/impossible`,
+      );
+      continue;
     }
 
     console.log(
       `${progress} RUN  ${task.task_id} (${task.level}): ${task.confirmed_task.slice(0, 80)}...`,
     );
 
-    const result = await runNaiveTask(task, config);
+    // Per-task ABP lifecycle: a fresh process so browser/GPU state never
+    // accumulates across tasks. A launch failure is non-fatal — leave the task
+    // un-run so it's retried on the next pass (matching the old bash driver).
+    let abp: AbpProcess | null = null;
+    if (config.manageAbp) {
+      try {
+        abp = await launchAbp({
+          binPath: config.abpBinPath,
+          port: config.abpPort,
+          readyTimeoutMs: config.readyTimeoutSec * 1000,
+        });
+      } catch (e) {
+        console.log(
+          `${progress} ABP-FAIL ${task.task_id} — ${(e as Error).message} (will retry next run)`,
+        );
+        continue;
+      }
+    }
+
+    let result: TaskResult;
+    try {
+      result = await runNaiveTask(task, config);
+    } finally {
+      if (abp) await abp.kill();
+    }
     results.push(result);
 
     if (result.outcome === "success") {
@@ -102,6 +161,7 @@ async function main() {
     failed,
     skipped,
     model: config.model,
+    effort: config.effort,
     maxTurns: config.maxTurns,
     failures,
     avgDurationMs: ran

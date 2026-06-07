@@ -1,0 +1,249 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find the cheapest hotel + flight + car package from New York to San Francisco, departing tomorrow and returning on the fourth day from departure, for two adults and a six-year-old child. The package should be one room with free breakfast and spa access.",
+  "task_id": "b2f4fde2fce122a93c7b578086cb0585",
+  "agent_final_answer": "The cheapest Hotel + Flight + Car package from New York (NYC - All Airports) to San Francisco, CA, departing Wed Jun 3 2026 (tomorrow) and returning Sat Jun 6 2026 (the fourth day from departure), for 2 adults and a 6-year-old child in 1 room, with free breakfast and spa access, is:\n\nBEST WESTERN INN & SUITES SAN MATEO - SAN FRANCISCO AIRPORT\n- Total package price: $1915 (reduced from $2029, a $114 package savings), about $639 per person\n- Price includes hotel + flight + car, taxes and fees\n- Located in San Mateo; 2.5-Star Hotel; guest rating 8.4 (1045 ratings)\n- Amenities include Spa and Breakfast Included (free breakfast)\n\nThis was the lowest-priced result after filtering the 5 qualifying hotels by both \"Free Breakfast\" and \"Spa\" amenities and sorting by Lowest Price. The next cheapest options were La Quinta Inn & Suites by Wyndham SF Airport West ($1981), Extended Stay America Suites - SF - San Mateo - SFO ($2022), Holiday Inn Express SF Airport North ($2132), and Holiday Inn Express Hotel & Suites Fisherman's Wharf ($2382).",
+  "reference_length": 19,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.booking.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(902, 280) -> click at (902, 280) | SUCCESS",
+      "url": "https://www.booking.com/?chal_t=1780420972952&force_referer=",
+      "action_status": "SUCCESS",
+      "thought": "The page has a sign-in popup. Let me close it first. I'll also check for any cookie banner."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(894, 281) -> click at (894, 281) | SUCCESS",
+      "url": "https://www.booking.com/?chal_t=1780420972952&force_referer=",
+      "action_status": "SUCCESS",
+      "thought": "The popup is still showing. Let me click the X button more precisely."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(359, 90) -> click at (359, 90) | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "The sign-in popup is closed and there's no cookie banner. Now I see the Booking.com homepage with tabs including \"Flight + Hotel\". The task asks for a \"hotel + flight + car package\". Let me explore the \"Flight + Hotel\" tab to see what package options are available."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(192, 368) -> click at (192, 368) | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "This is the vacation packages page. I can see radio button options: \"Hotel + Flight\", \"Hotel + Flight + Car\", \"Flight + Car\", \"Hotel + Car\". The task wants \"hotel + flight + car\", so I'll select \"Hotel + Flight + Car\"."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(210, 423) -> click at (210, 423) ; TYPE page -> type \"New York\" | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: \"Hotel + Flight + Car\" is now selected. Now let me fill in the \"Where from?\" field with New York."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(235, 477) -> click at (235, 477) | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "The autocomplete shows options. \"New York City, NY - All Airports (NYC)\" is the best match for departing from New York. Let me select it."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(470, 423) -> click at (470, 423) ; TYPE page -> type \"San Francisco\" | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: \"Where from?\" is set to New York City - All Airports. Now let me fill in \"Where to?\" with San Francisco."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(437, 477) -> click at (437, 477) | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "The dropdown shows San Francisco options. I'll select \"San Francisco, CA\"."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(710, 423) -> click at (710, 423) | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "Both locations are set. Now I need to set the dates. Let me click on the date field to open the calendar."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(687, 561) -> click at (687, 561) | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "The calendar is open showing June 2026. I'll select the departure date (June 3, tomorrow). Let me click on June 3."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(800, 561) -> click at (800, 561) | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "June 3 is selected as departure (shows \"Wed, Jun 3 — Return\"). Now I need to select the return date. Based on departure being day 1, the fourth day is June 6. Let me click June 6."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "CLICK coords(970, 423) -> click at (970, 423) | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "Dates are set: \"Wed, Jun 3 — Sat, Jun 6\" (a 3-night stay, where June 6 is the fourth day counting departure as day 1). Now let me set the guests. I'll click the guests field to add the child."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(1142, 546) -> click at (1142, 546) | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "The guests selector is open. Adults is 2 and Rooms is 1 (both correct). I need to add 1 child. Let me click the \"+\" next to Children."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "CLICK coords(960, 596) -> click at (960, 596) | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "Children is now 1, and an \"Age needed\" dropdown appeared. I need to set the child's age to 6. Let me click the age dropdown."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "SELECT page -> select option(s) [7] in picker sp_1 | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "The age dropdown opened as a native select. I'll select \"6 years old\" (index 7)."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "CLICK coords(1035, 767) -> click at (1035, 767) | SUCCESS",
+      "url": "https://www.booking.com/packages.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaIkCiAEBmAEzuAEZyAEM2AED6AEB-AEBiAIBqAIBuALvovzQBsACAdICJGIyNDQ5M2VjLTVmMDYtNDRmZS04MTFlLTA4YmQ0ZjljY2IyONgCAeACAQ&sid=934d55cd3e37c5499b5c0588d600c209&selected_currency=USD",
+      "action_status": "SUCCESS",
+      "thought": "The child's age is set to \"6 years old\". Summary shows \"2 adults · 1 child · 1 room\". Now let me click \"Done\"."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "CLICK coords(1156, 423) -> click at (1156, 423) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&index=1&component-key=STAY-609148&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38&pkg-rguid=02868578a08949a297b47831afaff493",
+      "action_status": "SUCCESS",
+      "thought": "All criteria are set. Now let me click \"Search\" to find the packages."
+    },
+    {
+      "step": 18,
+      "screenshot": "0018.png",
+      "action": "CLICK coords(1132, 744) -> click at (1132, 744) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&index=1&component-key=STAY-609148&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38&pkg-rguid=02868578a08949a297b47831afaff493",
+      "action_status": "SUCCESS",
+      "thought": "The packages page is loading (provided by Priceline). There's a cookie banner. Let me accept cookies first per best practice."
+    },
+    {
+      "step": 19,
+      "screenshot": "0019.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&index=1&component-key=STAY-609148&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38&pkg-rguid=02868578a08949a297b47831afaff493",
+      "action_status": "SUCCESS",
+      "thought": "The results loaded. I can see 179 hotels, and the package price includes Hotel + Flight + Car. There are filter chips including \"Free Breakfast\", and an \"Amenities\" section in the sidebar. I need to filter for free breakfast and spa access. Let me scroll down the left sidebar to see the Amenities filter options."
+    },
+    {
+      "step": 20,
+      "screenshot": "0020.png",
+      "action": "CLICK coords(76, 575) -> click at (76, 575) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&index=1&component-key=STAY-609148&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38&pkg-rguid=02868578a08949a297b47831afaff493",
+      "action_status": "SUCCESS",
+      "thought": "I can see the Amenities section with \"Free Breakfast (37)\" and a \"Show 12 more\" link. I need to find \"Spa\" too. Let me click \"Show 12 more\" to see all amenity options."
+    },
+    {
+      "step": 21,
+      "screenshot": "0021.png",
+      "action": "CLICK coords(39, 436) -> click at (39, 436) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?amenities=FBRKFST&cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&component-key=STAY-609148&index=1&pkg-rguid=02868578a08949a297b47831afaff493&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38",
+      "action_status": "SUCCESS",
+      "thought": "Now I can see both \"Free Breakfast (37)\" and \"Spa (14)\" in the Amenities filter. Let me select \"Free Breakfast\" first."
+    },
+    {
+      "step": 22,
+      "screenshot": "0022.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?amenities=FBRKFST&cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&component-key=STAY-609148&index=1&pkg-rguid=02868578a08949a297b47831afaff493&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38",
+      "action_status": "SUCCESS",
+      "thought": "Now showing 37 hotels with Free Breakfast applied. I need to add the Spa filter. Let me scroll down to the Amenities section."
+    },
+    {
+      "step": 23,
+      "screenshot": "0023.png",
+      "action": "CLICK coords(39, 597) -> click at (39, 597) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?amenities=FBRKFST%2CSPA&cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&component-key=STAY-609148&index=1&pkg-rguid=02868578a08949a297b47831afaff493&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38",
+      "action_status": "SUCCESS",
+      "thought": "The Amenities section is still expanded. I can see \"Spa (5)\". With Free Breakfast checked, there are 5 hotels that also have Spa. Let me click the \"Spa\" checkbox."
+    },
+    {
+      "step": 24,
+      "screenshot": "0024.png",
+      "action": "CLICK coords(173, 362) -> click at (173, 362) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?amenities=FBRKFST%2CSPA&cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&component-key=STAY-609148&index=1&pkg-rguid=02868578a08949a297b47831afaff493&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38",
+      "action_status": "SUCCESS",
+      "thought": "Now showing 5 hotels with both Free Breakfast and Spa. Let me change the sort order to price (lowest first) to easily find the cheapest. Let me click the \"Sort by\" dropdown."
+    },
+    {
+      "step": 25,
+      "screenshot": "0025.png",
+      "action": "CLICK coords(83, 470) -> click at (83, 470) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?amenities=FBRKFST%2CSPA&cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&component-key=STAY-609148&index=1&pkg-rguid=02868578a08949a297b47831afaff493&sortby=PRICE&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38",
+      "action_status": "SUCCESS",
+      "thought": "The sort dropdown is open. Let me select \"Lowest Price\"."
+    },
+    {
+      "step": 26,
+      "screenshot": "0026.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?amenities=FBRKFST%2CSPA&cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&component-key=STAY-609148&index=1&pkg-rguid=02868578a08949a297b47831afaff493&sortby=PRICE&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38",
+      "action_status": "SUCCESS",
+      "thought": "Now let me scroll down through the results to confirm all 5 hotels and verify the cheapest."
+    },
+    {
+      "step": 27,
+      "screenshot": "0027.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?amenities=FBRKFST%2CSPA&cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&component-key=STAY-609148&index=1&pkg-rguid=02868578a08949a297b47831afaff493&sortby=PRICE&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38",
+      "action_status": "SUCCESS",
+      "thought": "The ordering confirms the prices ascending: Best Western ($1915), La Quinta ($1981), Extended Stay America ($2022), Holiday Inn Express Airport North ($2132). Let me scroll to see the 5th hotel."
+    },
+    {
+      "step": 28,
+      "screenshot": "0028.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-1200) | SUCCESS",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?amenities=FBRKFST%2CSPA&cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&component-key=STAY-609148&index=1&pkg-rguid=02868578a08949a297b47831afaff493&sortby=PRICE&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38",
+      "action_status": "SUCCESS",
+      "thought": "I've now seen all 5 hotels that match the criteria (free breakfast + spa), sorted by lowest price:\n\n1. **Best Western Inn & Suites San Mateo - San Francisco Airport** - $1915 total (2.5-star, 8.4)\n2. La Quinta Inn & Suites by Wyndham SF Airport West - $1981 total\n3. Extended Stay America Suites - SF - San Mateo - SFO - $2022 total\n4. Holiday Inn Express SF Airport North - $2132 total\n5. Holiday Inn Express Hotel & Suites Fisherman's Wharf - $2382 total\n\nAll include Spa and breakfast. None are \"Promoted\" so the sort order is clean. The Best Western at $1915 total is confirmed as the cheapest. Let me update my solution and confirm the Best Western's amenities by scrolling back up."
+    },
+    {
+      "step": 29,
+      "screenshot": "0029.png",
+      "action": "TASK_COMPLETE -> ANSWER: The cheapest Hotel + Flight + Car package from New York (NYC - All Airports) to San Francisco, CA, departing Wed Jun 3 2026 (tomorrow) and returning Sat Jun 6 2026 (the fourth day from departure), for 2 adults and a 6-year-old child in 1 room, with free breakfast and spa access, is:\n\nBEST WESTERN INN & SUITES SAN MATEO - SAN FRANCISCO AIRPORT\n- Total package price: $1915 (reduced from $2029, a $114 package savings), about $639 per person\n- Price includes hotel + flight + car, taxes and fees\n- Located in San Mateo; 2.5-Star Hotel; guest rating 8.4 (1045 ratings)\n- Amenities include Spa and Breakfast Included (free breakfast)\n\nThis was the lowest-priced result after filtering the 5 qualifying hotels by both \"Free Breakfast\" and \"Spa\" amenities and sorting by Lowest Price. The next cheapest options were La Quinta Inn & Suites by Wyndham SF Airport West ($1981), Extended Stay America Suites - SF - San Mateo - SFO ($2022), Holiday Inn Express SF Airport North ($2132), and Holiday Inn Express Hotel & Suites Fisherman's Wharf ($2382).",
+      "url": "https://packages.booking.com/relax/in/San%20Francisco,%20CA/from/20260603/to/20260606/rooms/1/adults/2/children/6?amenities=FBRKFST%2CSPA&cart-key=e680af40-070a-42e1-9d0e-76ce017942b5&component-key=STAY-609148&index=1&pkg-rguid=02868578a08949a297b47831afaff493&sortby=PRICE&uspCacheKey=8290ed8c-7869-4ff1-be1c-12e7a1e77b38",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

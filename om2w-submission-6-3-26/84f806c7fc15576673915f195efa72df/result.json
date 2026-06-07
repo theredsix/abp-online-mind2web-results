@@ -1,0 +1,105 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find a nationwide nearest animal shelter for birds around zip 10012.",
+  "task_id": "84f806c7fc15576673915f195efa72df",
+  "agent_final_answer": "The nearest nationwide animal shelter for birds around zip 10012 is \"Tails of Love Animal Rescue, Inc.\" located in New York, NY 10012, 0.7 miles away. It is listed as a Rescue with Pet Types: Cats, Birds, Dogs, Small Animals.",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.adoptapet.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1232, 763) -> click at (1232, 763) | SUCCESS",
+      "url": "https://www.adoptapet.com/",
+      "action_status": "SUCCESS",
+      "thought": "There's a cookie banner. Let me dismiss it first by clicking the X."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(458, 135) -> click at (458, 135) | SUCCESS",
+      "url": "https://www.adoptapet.com/",
+      "action_status": "SUCCESS",
+      "thought": "Cookie banner dismissed. Now let me click on \"Find a shelter\" in the navigation."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(487, 206) -> click at (487, 206) | SUCCESS",
+      "url": "https://www.adoptapet.com/animal-shelters-near-me",
+      "action_status": "SUCCESS",
+      "thought": "A dropdown appeared. Let me click on \"Search shelters & rescues\"."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "TYPE page -> type \"10012\" | SUCCESS",
+      "url": "https://www.adoptapet.com/animal-shelters-near-me",
+      "action_status": "SUCCESS",
+      "thought": "The location field is cleared and focused. Now let me type the zip code."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(565, 531) -> click at (565, 531) | SUCCESS",
+      "url": "https://www.adoptapet.com/animal-shelters-near-me",
+      "action_status": "SUCCESS",
+      "thought": "The field shows \"10012\". The dropdown only shows a stale \"Fairfield, CA\" suggestion. Let me set the other filters. First, let me check the Distance dropdown for a \"Nationwide\" option."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=150) | SUCCESS",
+      "url": "https://www.adoptapet.com/animal-shelters-near-me",
+      "action_status": "SUCCESS",
+      "thought": "The dropdown is open with distance options. Let me scroll within it to find \"Nationwide\"."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(521, 712) -> click at (521, 712) | SUCCESS",
+      "url": "https://www.adoptapet.com/animal-shelters-near-me",
+      "action_status": "SUCCESS",
+      "thought": "There's a \"Nationwide\" option. Let me click it."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(775, 381) -> click at (775, 381) | SUCCESS",
+      "url": "https://www.adoptapet.com/animal-shelters-near-me",
+      "action_status": "SUCCESS",
+      "thought": "Distance is now \"Nationwide\". Now let me set the \"Shelters/rescues with\" dropdown to Birds."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(710, 624) -> click at (710, 624) | SUCCESS",
+      "url": "https://www.adoptapet.com/animal-shelters-near-me",
+      "action_status": "SUCCESS",
+      "thought": "The dropdown shows \"Birds\" option. Let me click it."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(968, 381) -> click at (968, 381) | SUCCESS",
+      "url": "https://www.adoptapet.com/shelter-search?postalCode=10012&radius=3500&adoptsOut%5B0%5D=birds",
+      "action_status": "SUCCESS",
+      "thought": "All filters set: Location 10012, Distance Nationwide, Birds. Now let me click \"Search now\"."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "TASK_COMPLETE -> ANSWER: The nearest nationwide animal shelter for birds around zip 10012 is \"Tails of Love Animal Rescue, Inc.\" located in New York, NY 10012, 0.7 miles away. It is listed as a Rescue with Pet Types: Cats, Birds, Dogs, Small Animals.",
+      "url": "https://www.adoptapet.com/shelter-search?postalCode=10012&radius=3500&adoptsOut%5B0%5D=birds",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

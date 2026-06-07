@@ -1,0 +1,57 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find the stock price for WWE over the last month.",
+  "task_id": "e24662008c3be5d56f986f232fcec447",
+  "agent_final_answer": "WWE no longer trades under its own ticker - it became TKO Group Holdings Inc (NYSE: TKO) after the WWE-UFC merger, and Google Finance maps a \"WWE\" search to TKO.\n\nTKO (formerly WWE) stock over the last month (1M view, as of close Jun 2, 4:00 PM UTC-4):\n- Current price: $204.59 USD\n- 1-month change: +9.99% (+$18.59), trending up\n- Price ~1 month ago (early May): about $186.00\n- The month's range ran roughly from the low $180s up to about $208, peaking near $208 around Jun 1 before settling at $204.59.\n\nToday's session figures: Open $206.64, High $208.19, Low $203.07, previous close $208.42.",
+  "reference_length": 4,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.google.com/finance/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(667, 40) -> click at (667, 40) ; TYPE page -> type \"WWE\" | SUCCESS",
+      "url": "https://www.google.com/finance/beta",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I'm on Google Finance. Let me search for WWE stock."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(667, 44) -> click at (667, 44) ; TYPE page -> type \"WWE\" | SUCCESS",
+      "url": "https://www.google.com/finance/beta",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The text didn't register properly. Let me click the field and type again."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(456, 154) -> click at (456, 154) | SUCCESS",
+      "url": "https://www.google.com/finance/beta/quote/TKO:NYSE",
+      "action_status": "SUCCESS",
+      "thought": "WWE is now TKO Group Holdings (after the WWE-UFC merger). Google Finance maps WWE to TKO. Let me click the NYSE (US) listing."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(218, 517) -> click at (218, 517) | SUCCESS",
+      "url": "https://www.google.com/finance/beta/quote/TKO:NYSE?window=1M",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the TKO (formerly WWE) page. Let me click \"1M\" to view the last month."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "TASK_COMPLETE -> ANSWER: WWE no longer trades under its own ticker - it became TKO Group Holdings Inc (NYSE: TKO) after the WWE-UFC merger, and Google Finance maps a \"WWE\" search to TKO.\n\nTKO (formerly WWE) stock over the last month (1M view, as of close Jun 2, 4:00 PM UTC-4):\n- Current price: $204.59 USD\n- 1-month change: +9.99% (+$18.59), trending up\n- Price ~1 month ago (early May): about $186.00\n- The month's range ran roughly from the low $180s up to about $208, peaking near $208 around Jun 1 before settling at $204.59.\n\nToday's session figures: Open $206.64, High $208.19, Low $203.07, previous close $208.42.",
+      "url": "https://www.google.com/finance/beta/quote/TKO:NYSE?window=1M",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

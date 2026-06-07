@@ -1,0 +1,137 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Check the most recent full-time medical health and safety jobs, requiring 1-3 years of industry experience available in the US.",
+  "task_id": "c00437fd76a7a83b57f3dc4e5dbc41f8",
+  "agent_final_answer": "On amazon.jobs I filtered by Job Type = Full Time, Job Category = Medical, Health, & Safety, Industry Experience = 1-3 years, and Country/Region = United States, then sorted by \"Most recent\". This returns 381 matching jobs.\n\nThe most recent full-time Medical/Health/Safety jobs requiring 1-3 years of industry experience in the US (top of the \"Most recent\" sorted list):\n1. Safety and Compliance Officer, Prime Air - Stone Mountain, GA, USA - Job ID 10438033 - Posted June 2, 2026\n2. EHS Specialist - Budd Lake, NJ, USA - Job ID 10437673 - Posted June 2, 2026\n3. Staff Pharmacist - Austin, TX, Amazon Pharmacy - Austin, TX, USA - Job ID 10436159 - Posted June 1, 2026\n4. Staff Pharmacist - Austin, TX, Amazon Pharmacy - Austin, TX, USA - Job ID 10436155 - Posted June 1, 2026\n5. Onsite Medical Representative - Republic, MO, USA - Job ID 10437234 - Posted June 2, 2026\n6. EHS Specialist - Lancaster, NY, USA - Job ID 10438734 - Posted June 3, 2026\n7. Onsite Medical Representative - Fort Worth, TX, USA - Job ID 10437659 - Posted June 2, 2026\n8. EHS Specialist - Tukwila, WA, USA - Job ID 10438405 - Posted June 3, 2026\n9. Pharmacy Manager - Nampa, ID, USA - Job ID 10434391 - Posted May 29, 2026\n10. EHS Specialist - Hebron, KY, USA - Job ID 10436098 - Posted June 1, 2026\n\nThe single most recent matching job is \"Safety and Compliance Officer, Prime Air\" in Stone Mountain, GA, USA (Job ID 10438033).</answer>\n",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.amazon.jobs/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1120, 551) -> click at (1120, 551) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/",
+      "action_status": "SUCCESS",
+      "thought": "I'll handle the cookie banner first by accepting all."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(420, 130) -> click at (420, 130) ; TYPE page -> type \"medical health and safety\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?base_query=medical+health+and+safety&loc_query=",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Cookie banner accepted. Now let me search for jobs. Let me click the search box and search."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(1131, 32) -> click at (1131, 32) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?base_query=&loc_query=&latitude=&longitude=&loc_group_id=&invalid_location=false&country=&city=&region=&county=",
+      "action_status": "SUCCESS",
+      "thought": "Search box cleared. Let me submit the empty search to see all jobs, then apply filters."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(118, 358) -> click at (118, 358) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": "SUCCESS",
+      "thought": "The search results loaded with filters. Let me apply filters. First, the Industry Experience \"1-3 years\" filter."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(406, 468) -> click at (406, 468) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&job_type%5B%5D=Full-Time&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": "SUCCESS",
+      "thought": "\"1-3 years\" filter applied. Now let me apply the \"Full Time\" job type filter."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&job_type%5B%5D=Full-Time&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": "SUCCESS",
+      "thought": "Full Time checked. Now let me scroll down to find the \"Medical, Health, and Safety\" job category in the filter list."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(105, 511) -> click at (105, 511) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&job_type%5B%5D=Full-Time&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": "SUCCESS",
+      "thought": "I see the JOB CATEGORY has a \"more\" link. Let me click it to see all categories including Medical, Health, and Safety."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(406, 556) -> click at (406, 556) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&category%5B%5D=medical-health-safety&job_type%5B%5D=Full-Time&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": "SUCCESS",
+      "thought": "I can see \"Medical, Health, & Safety (480)\" category. Let me click its checkbox."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=300) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&category%5B%5D=medical-health-safety&job_type%5B%5D=Full-Time&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": "SUCCESS",
+      "thought": "Medical, Health, & Safety category selected. Now let me apply the United States country filter. Let me scroll down to COUNTRY/REGION."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(391, 563) -> click at (391, 563) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&category%5B%5D=medical-health-safety&job_type%5B%5D=Full-Time&country%5B%5D=USA&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": "SUCCESS",
+      "thought": "I can see \"United States (381)\". Let me click its checkbox."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-800) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&category%5B%5D=medical-health-safety&job_type%5B%5D=Full-Time&country%5B%5D=USA&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": "SUCCESS",
+      "thought": "All filters applied: 1-3 years, Full Time, Medical Health & Safety, United States. Now let me scroll up to change the sort order to \"Most recent\"."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "CLICK coords(1083, 224) -> click at (1083, 224) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&category%5B%5D=medical-health-safety&job_type%5B%5D=Full-Time&country%5B%5D=USA&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": "SUCCESS",
+      "thought": "All filters confirmed (381 results). Now let me change the sort order. Let me click the \"Sort by\" dropdown."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(1036, 315) -> click at (1036, 315) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=recent&category%5B%5D=medical-health-safety&job_type%5B%5D=Full-Time&country%5B%5D=USA&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": "SUCCESS",
+      "thought": "The dropdown shows \"Most relevant\" and \"Most recent\". Let me click \"Most recent\"."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "CLICK coords(700, 217) -> click at (700, 217) | SUCCESS",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=recent&category%5B%5D=medical-health-safety&job_type%5B%5D=Full-Time&country%5B%5D=USA&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": "SUCCESS",
+      "thought": "Now sorted by \"Most recent\". Let me close the dropdown to see the full results."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "TASK_COMPLETE -> ANSWER: On amazon.jobs I filtered by Job Type = Full Time, Job Category = Medical, Health, & Safety, Industry Experience = 1-3 years, and Country/Region = United States, then sorted by \"Most recent\". This returns 381 matching jobs.\n\nThe most recent full-time Medical/Health/Safety jobs requiring 1-3 years of industry experience in the US (top of the \"Most recent\" sorted list):\n1. Safety and Compliance Officer, Prime Air - Stone Mountain, GA, USA - Job ID 10438033 - Posted June 2, 2026\n2. EHS Specialist - Budd Lake, NJ, USA - Job ID 10437673 - Posted June 2, 2026\n3. Staff Pharmacist - Austin, TX, Amazon Pharmacy - Austin, TX, USA - Job ID 10436159 - Posted June 1, 2026\n4. Staff Pharmacist - Austin, TX, Amazon Pharmacy - Austin, TX, USA - Job ID 10436155 - Posted June 1, 2026\n5. Onsite Medical Representative - Republic, MO, USA - Job ID 10437234 - Posted June 2, 2026\n6. EHS Specialist - Lancaster, NY, USA - Job ID 10438734 - Posted June 3, 2026\n7. Onsite Medical Representative - Fort Worth, TX, USA - Job ID 10437659 - Posted June 2, 2026\n8. EHS Specialist - Tukwila, WA, USA - Job ID 10438405 - Posted June 3, 2026\n9. Pharmacy Manager - Nampa, ID, USA - Job ID 10434391 - Posted May 29, 2026\n10. EHS Specialist - Hebron, KY, USA - Job ID 10436098 - Posted June 1, 2026\n\nThe single most recent matching job is \"Safety and Compliance Officer, Prime Air\" in Stone Mountain, GA, USA (Job ID 10438033).</answer>\n",
+      "url": "https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=recent&category%5B%5D=medical-health-safety&job_type%5B%5D=Full-Time&country%5B%5D=USA&distanceType=Mi&radius=24km&industry_experience=one_to_three_years&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

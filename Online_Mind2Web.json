@@ -427,11 +427,11 @@
         "level": "easy"
     },
     {
-        "task_id": "8ae510355d978424f490798f900bfa2c",
-        "confirmed_task": "Show me the shared rooms in any university in Melbourne that has a private bathroom wifi, and gas included in the bills.",
+        "task_id": "8ae510355d978424f490798f900bfa2c_051526",
+        "confirmed_task": "Show me the private rooms in New York that has a private bathroom, wifi, and gas included in the bills.",
         "website": "https://www.student.com/",
-        "reference_length": 9,
-        "level": "medium"
+        "reference_length": 12,
+        "level": "hard"
     },
     {
         "task_id": "4c186c6ed888d0c8d4cf4adb39443080",
@@ -511,8 +511,8 @@
         "level": "easy"
     },
     {
-        "task_id": "85b284c18d7e78c9b5a9e074e7aa3b98",
-        "confirmed_task": "View the cheapest apartment available for students at the University of Leeds with bills that include WIFI and cleaning services.",
+        "task_id": "85b284c18d7e78c9b5a9e074e7aa3b98_051526",
+        "confirmed_task": "View the cheapest apartment available for students at New York University with bills that include WIFI and cleaning services.",
         "website": "https://www.student.com/",
         "reference_length": 10,
         "level": "medium"
@@ -1582,11 +1582,11 @@
         "level": "medium"
     },
     {
-        "task_id": "78baf9dbe7c3532f7d7ef4cc22a7f065_121125",
-        "confirmed_task": "Find the newest digital trends report in the Finance & Insurance industry within the region of China.",
+        "task_id": "78baf9dbe7c3532f7d7ef4cc22a7f065_051526",
+        "confirmed_task": "Find the latest available digital trends to market insights in China (2026 focus).",
         "website": "https://www.statista.com/",
-        "reference_length": 8,
-        "level": "medium"
+        "reference_length": 16,
+        "level": "hard"
     },
     {
         "task_id": "c7c07ec10c668625a21ba64165d719bb",
@@ -1869,10 +1869,10 @@
         "level": "medium"
     },
     {
-        "task_id": "199be0b54a436daee74247971fc684ee_110325",
-        "confirmed_task": "My name is Mike. I want to send my friend Christene (christenson@gmail.com) a Dillard's “Merry Christmas” eGift Card worth $100 for next Christmas, with the message “Merry Christmas, wish you many more years to come.” Add it to my cart.",
+        "task_id": "199be0b54a436daee74247971fc684ee_051526",
+        "confirmed_task": "My name is Mike. I would like to send Christene (christenson@gmail.com) a Dillard’s $100 eGift Card for her birthday. The delivery date should be set for next Monday. Please include the message: Happy Birthday, wishing you many more years to come.”",
         "website": "https://www.dillards.com/",
-        "reference_length": 15,
+        "reference_length": 20,
         "level": "hard"
     },
     {
@@ -1883,10 +1883,10 @@
         "level": "medium"
     },
     {
-        "task_id": "fc53ddd3421411a41c1020a3fdc84ec4",
+        "task_id": "fc53ddd3421411a41c1020a3fdc84ec4_051526",
         "confirmed_task": "I want to purchase an open-box Samsung Galaxy S25 Plus in excellent condition and trade in a gray Galaxy S20 5G (Verizon), with a perfect screen, in good condition. How much would it cost?",
         "website": "https://www.bestbuy.com/",
-        "reference_length": 17,
+        "reference_length": 36,
         "level": "hard"
     },
     {
@@ -1960,10 +1960,10 @@
         "level": "medium"
     },
     {
-        "task_id": "1bc154377120ec15b18dbabdba49c741_112325",
-        "confirmed_task": "I want to go to a Lady Gaga concert in New York sometime in the next five months. Please find four tickets as close to the stage as possible and show me the total price.",
+        "task_id": "1bc154377120ec15b18dbabdba49c741_051526",
+        "confirmed_task": "Book 4 tickets in the upper for any BTS show near New York in the next six months and view ticket prices with estimated fees.",
         "website": "https://www.stubhub.com/",
-        "reference_length": 12,
+        "reference_length": 24,
         "level": "hard"
     },
     {

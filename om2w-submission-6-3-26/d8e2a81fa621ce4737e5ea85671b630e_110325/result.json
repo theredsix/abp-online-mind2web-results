@@ -1,0 +1,65 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Search for in-person, full-time jobs within 10 miles of ZIP code 14810 that allow Quick Apply.",
+  "task_id": "d8e2a81fa621ce4737e5ea85671b630e_110325",
+  "agent_final_answer": "Unable to complete due to a sustained, unrecoverable outage of the browser automation environment. Progress before the outage: navigated to ziprecruiter.com, set the search location to ZIP code 14810, and submitted the job search. The results page loaded and exposed the needed filter controls (Distance, Date Posted, Pay, Job Type, Company Rating, Employment Type, Easy Apply, 1-Click Apply). The browser tooling then became completely unresponsive (every tool call returned an empty result and did not recover despite hundreds of retries, page reloads, and re-navigation), so I could not apply the required filters (Distance = 10 miles, Employment Type = Full-Time, in-person / exclude Remote, and Quick Apply / 1-Click Apply) or read the resulting job listings.",
+  "reference_length": 12,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://ziprecruiter.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(704, 687) -> click at (704, 687) ; TYPE page -> type \"14810\" | SUCCESS",
+      "url": "https://www.ziprecruiter.com/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: This is the ZipRecruiter homepage. I see a search box with a location field showing \"Redwood City, CA\". Let me update the location to ZIP code 14810. First, I'll clear the location field."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(704, 687) -> triple-click at (704, 687) ; TYPE page -> type \"14810\" | SUCCESS",
+      "url": "https://www.ziprecruiter.com/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: This is the ZipRecruiter homepage. I see a search box with a location field showing \"Redwood City, CA\". Let me update the location to ZIP code 14810. First, I'll clear the location field."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(931, 686) -> click at (931, 686) | SUCCESS",
+      "url": "https://www.ziprecruiter.com/jobs-search?form=jobs-landing&search=&location=14810",
+      "action_status": "SUCCESS",
+      "thought": "This is the ZipRecruiter homepage. I see a search box with a location field showing \"Redwood City, CA\". Let me update the location to ZIP code 14810. First, I'll clear the location field."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "page -> NAVIGATE -> navigate to reload | SUCCESS",
+      "url": "https://www.ziprecruiter.com/jobs-search?form=jobs-landing&search=&location=14810&lk=EVSak57Uz1Eg1_PwJlVFLg",
+      "action_status": "SUCCESS",
+      "thought": "This is the ZipRecruiter homepage. I see a search box with a location field showing \"Redwood City, CA\". Let me update the location to ZIP code 14810. First, I'll clear the location field."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "page -> NAVIGATE -> navigate to https://www.ziprecruiter.com/jobs-search?search=&location=14810 | SUCCESS",
+      "url": "https://www.ziprecruiter.com/jobs-search?search=&location=14810",
+      "action_status": "SUCCESS",
+      "thought": "This is the ZipRecruiter homepage. I see a search box with a location field showing \"Redwood City, CA\". Let me update the location to ZIP code 14810. First, I'll clear the location field."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "TASK_COMPLETE -> ANSWER: Unable to complete due to a sustained, unrecoverable outage of the browser automation environment. Progress before the outage: navigated to ziprecruiter.com, set the search location to ZIP code 14810, and submitted the job search. The results page loaded and exposed the needed filter controls (Distance, Date Posted, Pay, Job Type, Company Rating, Employment Type, Easy Apply, 1-Click Apply). The browser tooling then became completely unresponsive (every tool call returned an empty result and did not recover despite hundreds of retries, page reloads, and re-navigation), so I could not apply the required filters (Distance = 10 miles, Employment Type = Full-Time, in-person / exclude Remote, and Quick Apply / 1-Click Apply) or read the resulting job listings.",
+      "url": "https://www.ziprecruiter.com/jobs-search?search=&location=14810",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

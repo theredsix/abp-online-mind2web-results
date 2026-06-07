@@ -1,0 +1,65 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find a shelter or rescue group near zip code 90011.",
+  "task_id": "7b182a5087347d494b48a29dbc0f1d3e",
+  "agent_final_answer": "Near zip code 90011, the nearest shelter/rescue group listed on Adopt a Pet is \"Beezys Rescue\", a rescue group located at 1324 W 53rd Street, Los Angeles, CA 90037, about 1.8 miles away (pet types: Cats, Dogs). The search returned 835 shelters & rescues near 90011; other nearby options include Westside German Shepherd Rescue of Los Angeles (3016 S. Hill St, Los Angeles, CA 90007, about 2 miles).",
+  "reference_length": 4,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.adoptapet.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1232, 763) -> click at (1232, 763) | SUCCESS",
+      "url": "https://www.adoptapet.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(458, 135) -> click at (458, 135) | SUCCESS",
+      "url": "https://www.adoptapet.com/",
+      "action_status": "SUCCESS",
+      "thought": "Cookie banner dismissed. Now let me click \"Find a shelter\" in the navigation."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(486, 206) -> click at (486, 206) | SUCCESS",
+      "url": "https://www.adoptapet.com/animal-shelters-near-me",
+      "action_status": "SUCCESS",
+      "thought": "A dropdown appeared. Let me click \"Search shelters & rescues\"."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "TYPE page -> type \"90011\" | SUCCESS",
+      "url": "https://www.adoptapet.com/animal-shelters-near-me",
+      "action_status": "SUCCESS",
+      "thought": "The location field is cleared. Now let me type 90011."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(967, 531) -> click at (967, 531) | SUCCESS",
+      "url": "https://www.adoptapet.com/shelter-search?postalCode=90011&radius=50",
+      "action_status": "SUCCESS",
+      "thought": "The field now shows \"90011\". Let me click \"Search now\"."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "TASK_COMPLETE -> ANSWER: Near zip code 90011, the nearest shelter/rescue group listed on Adopt a Pet is \"Beezys Rescue\", a rescue group located at 1324 W 53rd Street, Los Angeles, CA 90037, about 1.8 miles away (pet types: Cats, Dogs). The search returned 835 shelters & rescues near 90011; other nearby options include Westside German Shepherd Rescue of Los Angeles (3016 S. Hill St, Los Angeles, CA 90007, about 2 miles).",
+      "url": "https://www.adoptapet.com/shelter-search?postalCode=90011&radius=50",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

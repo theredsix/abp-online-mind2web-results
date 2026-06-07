@@ -1,0 +1,329 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Get a part-time job within 5 miles of Moscow, Idaho in the accommodation and food services industry, as a chef, and show jobs for corporate only.",
+  "task_id": "28e7574e7bd6d14f36d2988a5ef2bd23",
+  "agent_final_answer": "Successfully completed the filtered job search on OhioMeansJobs.com. All requested criteria were applied as filters:\n- Keywords: chef (as a chef)\n- Location: Moscow, ID within a 5 mile radius (within 5 miles of Moscow, Idaho)\n- Job Type: Part-time (part-time job)\n- Industry: Accommodation and Food Services (accommodation and food services industry)\n- Show Corporate Sites Only (corporate jobs only)\n\nThe search returned 1 matching job:\n- Title: Cook (Full Time)\n- Employer: Chartwells Higher Education\n- Location: Moscow, ID (University of Idaho)\n\nAll five filters are confirmed active in the \"Current Filters\" panel and the results show \"1 jobs found\".",
+  "reference_length": 12,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://ohiomeansjobs.ohio.gov/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(300, 562) -> click at (300, 562) ; TYPE page -> type \"chef\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: This is the OhioMeansJobs.com homepage. There's no cookie banner visible. Let me search for \"chef\" using the search box."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(567, 562) -> click at (567, 562) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "The text \"chef\" is in the search box but ENTER didn't trigger navigation. Let me click the \"Search\" button."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(548, 323) -> click at (548, 323) ; TYPE page -> type \"Moscow\" | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I'm on the Job Search page with \"chef\" in keywords and 667 jobs found. Now I need to set up the search parameters. Let me first set the Location to Moscow and explore the filter options. Let me click on the Location field."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(730, 323) -> click at (730, 323) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "\"Moscow\" is now in the Location field. Now I need to change the State to ID (Idaho). Let me click on the State dropdown."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "SELECT page -> select option(s) [17] in picker sp_1 | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "The State dropdown opened. I need to select \"ID\" (Idaho) which is at index 17."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(912, 323) -> click at (912, 323) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "Now let me set the Radius to 5 miles. Let me click on the Radius dropdown."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SELECT page -> select option(s) [2] in picker sp_2 | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "State is now \"ID\". The Radius dropdown is open. Let me select \"5 miles\" at index 2."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(958, 195) -> click at (958, 195) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "I've set Keywords: chef, Location: Moscow, State: ID, Radius: 5 miles. Now I need to find filters for part-time, industry, and corporate. Let me open the Filters panel."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=300) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "A Filters panel opened showing Refine options: Industry, Location, Salary, Career/Education Level, Certificates, Occupation, Job Type, and Other Opportunities. I notice the \"Other Opportunities\" section is expanded. Let me scroll down within this panel to see all options, including what's cut off at the bottom (possibly the \"corporate\" option)."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(757, 311) -> click at (757, 311) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "Now I can see the full filter set. The relevant filters are:\n- **Industry** (for Accommodation and Food Services)\n- **Job Type** (for Part-time)\n- **Other Opportunities → \"Show Corporate Sites Only\"** (for corporate only)\n\nLet me first expand the Industry filter."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(813, 354) -> click at (813, 354) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "The Industry filter expanded. I can see \"Accommodation and Food Services (504)\". Let me click on it."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-200) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "Let me scroll up within the filter panel to verify \"Accommodation and Food Services\" was added to Current Filters."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(813, 443) -> click at (813, 443) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "The \"Current Filters\" section still only shows Keywords and State. The industry selection may not have registered, or it applies only on \"Display Results\". Let me click \"Accommodation and Food Services\" again and observe carefully."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "CLICK coords(757, 452) -> click at (757, 452) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "\"Industry: Accommodation and Food Services\" is now in Current Filters. The counts updated, confirming it applied. Now let me collapse Industry and find the Job Type filter. Let me click \"Industry\" to collapse it."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "CLICK coords(758, 641) -> click at (758, 641) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "Industry is collapsed. Now let me expand \"Job Type\" to find the Part-time option."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=280) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "Job Type expanded showing Agriculture, H-2A, etc. Let me scroll down within the panel to find \"Part Time\" option."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "CLICK coords(770, 590) -> click at (770, 590) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "I found \"Part-Time (214)\". Let me click on it to apply the part-time filter."
+    },
+    {
+      "step": 18,
+      "screenshot": "0018.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-300) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "Part-Time is now underlined and counts updated. Let me scroll up to verify it was added to Current Filters."
+    },
+    {
+      "step": 19,
+      "screenshot": "0019.png",
+      "action": "CLICK coords(758, 661) -> click at (758, 661) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "Now Current Filters shows: Keywords: chef, State: OH, Job Type: Part-time, Industry: Accommodation and Food Services. Now I need the \"Corporate only\" filter. Let me collapse Job Type and find \"Other Opportunities\". Let me click \"Job Type\" to collapse."
+    },
+    {
+      "step": 20,
+      "screenshot": "0020.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=250) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "Job Type collapsed. \"Other Opportunities\" is expanded. Let me scroll down to find \"Show Corporate Sites Only\"."
+    },
+    {
+      "step": 21,
+      "screenshot": "0021.png",
+      "action": "CLICK coords(812, 704) -> click at (812, 704) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "I can see \"Show Corporate Sites Only\". This matches \"show jobs for corporate only\". Let me click it."
+    },
+    {
+      "step": 22,
+      "screenshot": "0022.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-300) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "\"Show Corporate Sites Only\" was added to Current Filters. Now I have all the refine filters set. I still need to apply the location (Moscow, ID, 5 miles) which I set in the search bar. Let me scroll up to verify all current filters first."
+    },
+    {
+      "step": 23,
+      "screenshot": "0023.png",
+      "action": "CLICK coords(973, 224) -> click at (973, 224) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?pg=1&sid=68&rad=20&rad_units=miles&q=chef",
+      "action_status": "SUCCESS",
+      "thought": "All five refine filters are confirmed in Current Filters:\n- Keywords: chef\n- State: OH (needs to update to ID)\n- Job Type: Part-time\n- Industry: Accommodation and Food Services\n- Show Corporate Sites Only\n\nNow I need to apply the location. Let me close this panel and verify the search bar values before searching. Let me click the X to close the filter panel."
+    },
+    {
+      "step": 24,
+      "screenshot": "0024.png",
+      "action": "CLICK coords(1088, 320) -> click at (1088, 320) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "The search bar is now fully visible and correct:\n- Keywords: chef\n- Location: Moscow\n- State: ID\n- Radius: 5 miles\n\nNow let me click \"Search\" to apply the location filters (combined with the refine filters already set)."
+    },
+    {
+      "step": 25,
+      "screenshot": "0025.png",
+      "action": "CLICK coords(958, 195) -> click at (958, 195) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "The search applied and now shows \"5 jobs found\" near Moscow, ID (Pullman, WA is adjacent). However, the URL only shows q=chef, cnme=Moscow, sid=29, rad=5 — the refine filters (Industry, Job Type, Corporate) may have been reset by the Search button. Let me open the Filters panel to verify which filters are currently active."
+    },
+    {
+      "step": 26,
+      "screenshot": "0026.png",
+      "action": "CLICK coords(757, 452) -> click at (757, 452) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "As suspected, clicking Search reset the refine filters. Current Filters now only shows: Keywords: chef, Sort by: date, Location: Moscow, ID (Radius: 5 miles). \n\nGood - the location is now applied and preserved. Now I need to re-add the three refine filters (which apply via AJAX without resetting location). Let me expand Industry first."
+    },
+    {
+      "step": 27,
+      "screenshot": "0027.png",
+      "action": "CLICK coords(813, 484) -> click at (813, 484) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "Industry expanded showing \"Accommodation and Food Services (5)\". Let me click it."
+    },
+    {
+      "step": 28,
+      "screenshot": "0028.png",
+      "action": "CLICK coords(757, 494) -> click at (757, 494) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "\"Industry: Accommodation and Food Services\" added. Now let me collapse Industry and add Job Type. Let me click \"Industry\" to collapse it."
+    },
+    {
+      "step": 29,
+      "screenshot": "0029.png",
+      "action": "CLICK coords(758, 683) -> click at (758, 683) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "Industry collapsed. Now let me expand \"Job Type\"."
+    },
+    {
+      "step": 30,
+      "screenshot": "0030.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=280) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "Job Type expanded. Let me scroll down to find \"Part-Time\"."
+    },
+    {
+      "step": 31,
+      "screenshot": "0031.png",
+      "action": "CLICK coords(762, 632) -> click at (762, 632) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "I can see \"Part-Time (1)\". Let me click it."
+    },
+    {
+      "step": 32,
+      "screenshot": "0032.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-300) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "Part-Time is now underlined and counts updated. Let me scroll up to verify it was added to Current Filters."
+    },
+    {
+      "step": 33,
+      "screenshot": "0033.png",
+      "action": "CLICK coords(758, 703) -> click at (758, 703) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "Current Filters now shows Keywords: chef, Location: Moscow, ID (5 miles), Job Type: Part-time, Industry: Accommodation and Food Services. Now I need the last filter - \"Show Corporate Sites Only\". Let me collapse Job Type and scroll to Other Opportunities."
+    },
+    {
+      "step": 34,
+      "screenshot": "0034.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=250) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "Job Type collapsed. \"Other Opportunities\" is expanded. Let me scroll down to find \"Show Corporate Sites Only\"."
+    },
+    {
+      "step": 35,
+      "screenshot": "0035.png",
+      "action": "CLICK coords(812, 704) -> click at (812, 704) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "I can see \"Show Corporate Sites Only\". Let me click it."
+    },
+    {
+      "step": 36,
+      "screenshot": "0036.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=150) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "\"Show Corporate Sites Only\" was added to Current Filters. All filters are now set. Let me scroll down to find and click \"Display Results\" to view the final filtered results."
+    },
+    {
+      "step": 37,
+      "screenshot": "0037.png",
+      "action": "CLICK coords(836, 785) -> click at (836, 785) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles",
+      "action_status": "SUCCESS",
+      "thought": "Now I can see the \"Display Results\" button. Let me click it to apply all filters and view the final results."
+    },
+    {
+      "step": 38,
+      "screenshot": "0038.png",
+      "action": "CLICK coords(958, 195) -> click at (958, 195) | SUCCESS",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles&omjindustry=72&jt=5&cjfcso=1",
+      "action_status": "SUCCESS",
+      "thought": "Let me verify all filters are still active by opening the Filters panel."
+    },
+    {
+      "step": 39,
+      "screenshot": "0039.png",
+      "action": "TASK_COMPLETE -> ANSWER: Successfully completed the filtered job search on OhioMeansJobs.com. All requested criteria were applied as filters:\n- Keywords: chef (as a chef)\n- Location: Moscow, ID within a 5 mile radius (within 5 miles of Moscow, Idaho)\n- Job Type: Part-time (part-time job)\n- Industry: Accommodation and Food Services (accommodation and food services industry)\n- Show Corporate Sites Only (corporate jobs only)\n\nThe search returned 1 matching job:\n- Title: Cook (Full Time)\n- Employer: Chartwells Higher Education\n- Location: Moscow, ID (University of Idaho)\n\nAll five filters are confirmed active in the \"Current Filters\" panel and the results show \"1 jobs found\".",
+      "url": "https://jobs.ohiomeansjobs.monster.com/Search.aspx?sort=date&pg=1&q=chef&cnme=Moscow&sid=29&rad=5&rad_units=miles&omjindustry=72&jt=5&cjfcso=1",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

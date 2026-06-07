@@ -1,0 +1,81 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Within 25 Miles of 96817, find a nursing home that accepts medicare.",
+  "task_id": "3adeea7627f4343069f38adae40f73d0_110325",
+  "agent_final_answer": "Within 25 miles of ZIP 96817 (Honolulu, HI), Medicare.gov's Care Compare tool (Find nursing homes, Distance filter set to 25 mi) returned 26 Medicare-certified nursing homes - all of which accept Medicare. One such nursing home that accepts Medicare is: Kuakini Geriatric Care, Inc, 347 North Kuakini Street, Honolulu, HI 96817, phone (808) 547-9357, located 0.7 miles from the ZIP code.",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://medicare.gov",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(888, 100) -> click at (888, 100) | SUCCESS",
+      "url": "https://www.medicare.gov/",
+      "action_status": "SUCCESS",
+      "thought": "There's a popup. Let me close it first."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(977, 59) -> click at (977, 59) | SUCCESS",
+      "url": "https://www.medicare.gov/",
+      "action_status": "SUCCESS",
+      "thought": "The popup is closed. Now let me look at the \"Providers & Services\" menu to find nursing home search."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(448, 183) -> click at (448, 183) | SUCCESS",
+      "url": "https://www.medicare.gov/care-compare/",
+      "action_status": "SUCCESS",
+      "thought": "There's a \"Find care providers\" link. Let me click it."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(275, 780) -> click at (275, 780) | SUCCESS",
+      "url": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+      "action_status": "SUCCESS",
+      "thought": "This is the Care Compare tool. I can see \"Nursing homes including rehab services\" in the list. Let me click on it."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(609, 281) -> click at (609, 281) ; TYPE page -> type \"96817\" | SUCCESS",
+      "url": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The nursing homes search form is shown. Note the description says these are \"Medicare-certified nursing homes.\" Let me enter the ZIP code."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(537, 328) -> click at (537, 328) | SUCCESS",
+      "url": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+      "action_status": "SUCCESS",
+      "thought": "An autocomplete suggestion \"Honolulu, HI 96817\" appeared. Let me click it to select it."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(500, 367) -> click at (500, 367) | SUCCESS",
+      "url": "https://www.medicare.gov/care-compare/results?searchType=NursingHome&page=1&city=Honolulu&state=HI&zipcode=96817&radius=25&sort=closest&tealiumEventAction=Landing%20Page%20-%20Search&tealiumSearchLocation=search%20bar",
+      "action_status": "SUCCESS",
+      "thought": "The location is set to \"Honolulu, HI 96817\" and the Search button is now active. Let me click Search."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "TASK_COMPLETE -> ANSWER: Within 25 miles of ZIP 96817 (Honolulu, HI), Medicare.gov's Care Compare tool (Find nursing homes, Distance filter set to 25 mi) returned 26 Medicare-certified nursing homes - all of which accept Medicare. One such nursing home that accepts Medicare is: Kuakini Geriatric Care, Inc, 347 North Kuakini Street, Honolulu, HI 96817, phone (808) 547-9357, located 0.7 miles from the ZIP code.",
+      "url": "https://www.medicare.gov/care-compare/results?searchType=NursingHome&page=1&city=Honolulu&state=HI&zipcode=96817&radius=25&sort=closest&tealiumEventAction=Landing%20Page%20-%20Search&tealiumSearchLocation=search%20bar",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

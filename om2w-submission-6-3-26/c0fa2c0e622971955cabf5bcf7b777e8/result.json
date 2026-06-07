@@ -1,0 +1,65 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Search for rentals in Corning, CA with a maximum price of $1500.",
+  "task_id": "c0fa2c0e622971955cabf5bcf7b777e8",
+  "agent_final_answer": "Successfully searched apartments.com for rentals in Corning, CA with a maximum price of $1,500. Set the location to \"Corning, CA\" and applied the Price filter with a max of $1,500 (filter chip shows \"< $1.5k\"). The results page header reads \"Apartments for Rent under $1,500 in Corning CA - 4 Rentals Available\". The 4 matching rentals are: 1) 1515 Highway 99 W, Corning CA - Studio $900 / 1 Bed $1,100; 2) 211 McLane Cir Unit 211, Corning CA 96021 - Apartment for Rent, $1,000 (2 Beds, 1 Bath, 900 sq ft); 3) 249 N Marguerite Ave, Corning CA 96021 - House for Rent, $1,400 (2 Beds, 1 Bath, 1,000 sq ft); 4) 1310 East St, Corning CA 96021 - House for Rent, $1,300 (2 Beds, 1 Bath, 750 sq ft).",
+  "reference_length": 6,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.apartments.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(600, 367) -> click at (600, 367) ; TYPE page -> type \"Corning, CA\" | SUCCESS",
+      "url": "https://www.apartments.com/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: This is the apartments.com homepage. There's a search box. Let me click it and search for Corning, CA."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.apartments.com/corning-ca/",
+      "action_status": "SUCCESS",
+      "thought": "The text \"Corning, CA\" is in the search box. Now let me press Enter to search."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(444, 76) -> click at (444, 76) | SUCCESS",
+      "url": "https://www.apartments.com/corning-ca/",
+      "action_status": "SUCCESS",
+      "thought": "The search results for Corning, CA are showing. Now I need to set the maximum price filter to $1500. Let me click the \"Price\" filter."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(694, 152) -> click at (694, 152) ; TYPE page -> type \"1500\" | SUCCESS",
+      "url": "https://www.apartments.com/corning-ca/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The price dropdown is open. I'll click in the \"Max Price\" field and type 1500."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(765, 572) -> click at (765, 572) | SUCCESS",
+      "url": "https://www.apartments.com/corning-ca/under-1500/",
+      "action_status": "SUCCESS",
+      "thought": "The Max Price field now shows \"1500\". Now let me click \"Done\" to apply the filter."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "TASK_COMPLETE -> ANSWER: Successfully searched apartments.com for rentals in Corning, CA with a maximum price of $1,500. Set the location to \"Corning, CA\" and applied the Price filter with a max of $1,500 (filter chip shows \"< $1.5k\"). The results page header reads \"Apartments for Rent under $1,500 in Corning CA - 4 Rentals Available\". The 4 matching rentals are: 1) 1515 Highway 99 W, Corning CA - Studio $900 / 1 Bed $1,100; 2) 211 McLane Cir Unit 211, Corning CA 96021 - Apartment for Rent, $1,000 (2 Beds, 1 Bath, 900 sq ft); 3) 249 N Marguerite Ave, Corning CA 96021 - House for Rent, $1,400 (2 Beds, 1 Bath, 1,000 sq ft); 4) 1310 East St, Corning CA 96021 - House for Rent, $1,300 (2 Beds, 1 Bath, 750 sq ft).",
+      "url": "https://www.apartments.com/corning-ca/under-1500/",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

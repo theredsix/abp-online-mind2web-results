@@ -1,0 +1,65 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Calculate the price to ship a large flat-rate box from 77449 to 77084 at the first available date and time.",
+  "task_id": "ce616721ce9aeda69890fbccb29677a6",
+  "agent_final_answer": "The price to ship a Priority Mail Large Flat Rate Box from ZIP 77449 (Katy, TX) to ZIP 77084 (Houston, TX), mailed on June 3, 2026 between 8:00-8:30 a.m. (the first available date and time), is $34.00 Retail (or $31.00 via Click-N-Ship). Expected delivery: Friday, June 5. The Large Flat Rate Box is a USPS-Produced Box measuring 12-1/4\"(L) x 12\"(W) x 6\"(H).</result>\n<parameter name=\"status\">success",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.usps.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(342, 57) -> click at (342, 57) | SUCCESS",
+      "url": "https://www.usps.com/#",
+      "action_status": "SUCCESS",
+      "thought": "I see the USPS homepage. I need to find the price calculator tool. Let me click on \"Quick Tools\" to see the menu options."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(463, 345) -> click at (463, 345) | SUCCESS",
+      "url": "https://postcalc.usps.com/",
+      "action_status": "SUCCESS",
+      "thought": "The Quick Tools menu is open. I can see \"Calculate a Price\" option. Let me click it."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(237, 230) -> click at (237, 230) ; TYPE page -> type \"77449\" | SUCCESS",
+      "url": "https://postcalc.usps.com/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: This is the Retail Postage Price Calculator. I'll fill in the ZIP codes. Let me click the \"mailing from\" field and enter 77449."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(617, 230) -> click at (617, 230) ; TYPE page -> type \"77084\" | SUCCESS",
+      "url": "https://postcalc.usps.com/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: \"From\" ZIP is filled with 77449. Now let me enter the \"to\" ZIP code 77084."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(502, 695) -> click at (502, 695) | SUCCESS",
+      "url": "https://postcalc.usps.com/Calculator/MailServices?country=0&ccode=US&oz=77449&omil=False&dz=77084&dmil=False&retail=False&mdt=6%2F3%2F2026&mdz=8%3A29&m=12&hscode=False",
+      "action_status": "SUCCESS",
+      "thought": "Both ZIP codes are entered, and the date (6/3/2026) and time (between 8:00 a.m. - 8:30 a.m.) defaults represent the first available date and time. Now let me click \"View Flat Rate Boxes\" to find the large flat-rate box."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "TASK_COMPLETE -> ANSWER: The price to ship a Priority Mail Large Flat Rate Box from ZIP 77449 (Katy, TX) to ZIP 77084 (Houston, TX), mailed on June 3, 2026 between 8:00-8:30 a.m. (the first available date and time), is $34.00 Retail (or $31.00 via Click-N-Ship). Expected delivery: Friday, June 5. The Large Flat Rate Box is a USPS-Produced Box measuring 12-1/4\"(L) x 12\"(W) x 6\"(H).</result>\n<parameter name=\"status\">success",
+      "url": "https://postcalc.usps.com/Calculator/MailServices?country=0&ccode=US&oz=77449&omil=False&dz=77084&dmil=False&retail=False&mdt=6%2F3%2F2026&mdz=8%3A29&m=12&hscode=False",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

@@ -4,7 +4,11 @@ import { type BenchmarkConfig } from "./types.js";
 const DEFAULT_CONFIG: BenchmarkConfig = {
   model: "claude-opus-4-8",
   maxTurns: 40,
+  effort: "max",
   abpPort: 8222,
+  manageAbp: true,
+  abpBinPath: "/home/paladin/src/abp-bin/v0.1.10/abp-chrome/abp",
+  readyTimeoutSec: 45,
   outputDir: new URL("../../results", import.meta.url).pathname,
   resultDirs: [],
   resume: false,
@@ -19,6 +23,24 @@ export function parseConfig(argv: string[]): BenchmarkConfig {
     switch (arg) {
       case "--model":
         config.model = next;
+        i++;
+        break;
+      case "--effort":
+        config.effort = next as BenchmarkConfig["effort"];
+        i++;
+        break;
+      case "--manage-abp":
+        config.manageAbp = true;
+        break;
+      case "--no-manage-abp":
+        config.manageAbp = false;
+        break;
+      case "--abp-bin":
+        config.abpBinPath = next;
+        i++;
+        break;
+      case "--ready-timeout":
+        config.readyTimeoutSec = parseInt(next, 10);
         i++;
         break;
       case "--max-turns":

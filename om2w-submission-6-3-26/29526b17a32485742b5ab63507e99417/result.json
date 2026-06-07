@@ -1,0 +1,49 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Browse Humira dosage information.",
+  "task_id": "29526b17a32485742b5ab63507e99417",
+  "agent_final_answer": "Browsed Humira dosage information at drugs.com (Dosage page: /dosage/humira.html). Key details:\n\nDrug: Humira - Generic name adalimumab (40mg in 0.8mL injection). Dosage form: injection. Drug classes: Antirheumatics, TNF alfa inhibitors. Prescription only. Last updated Dec 23, 2025.\n\nRecommended dosages by condition:\n- Rheumatoid Arthritis (RA), Psoriatic Arthritis (PsA), Ankylosing Spondylitis (AS), adults: 40 mg subcutaneously every other week. Some RA patients not on methotrexate may benefit from 40 mg every week or 80 mg every other week.\n- Juvenile Idiopathic Arthritis / Pediatric Uveitis (age 2+), by weight: 10-15 kg = 10 mg every other week; 15-30 kg = 20 mg every other week; 30 kg and greater = 40 mg every other week.\n- Crohn's Disease, adults: 160 mg on Day 1 (single day or split over two days), 80 mg on Day 15, then 40 mg every other week starting Day 29.\n- Crohn's Disease, pediatric (age 6+): 17 to <40 kg = 80 mg Day 1, 40 mg Day 15, then 20 mg every other week; 40 kg+ = 160 mg Day 1, 80 mg Day 15, then 40 mg every other week.\n- Ulcerative Colitis, adults: 160 mg Day 1, 80 mg Day 15, then 40 mg every other week from Day 29; discontinue if no remission by week 8 (Day 57).\n- Plaque Psoriasis / adult Uveitis: initial 80 mg, then 40 mg every other week starting one week after the initial dose.\n- Hidradenitis Suppurativa, adults: 160 mg Day 1, 80 mg Day 15, then 40 mg weekly or 80 mg every other week from Day 29.\n\nAdministration: subcutaneous via HUMIRA Pen or prefilled syringe; inject in thigh or abdomen, rotating sites; may be self-injected after training. Tuberculosis evaluation recommended prior to initiation. If a dose is missed, administer as soon as possible then resume regular schedule.",
+  "reference_length": 3,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.drugs.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(610, 248) -> click at (610, 248) ; TYPE page -> type \"Humira\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.drugs.com/search.php?searchterm=Humira",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The drugs.com homepage is loaded. Let me search for \"Humira\" using the search box."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(496, 517) -> click at (496, 517) | SUCCESS",
+      "url": "https://www.drugs.com/search.php?searchterm=Humira",
+      "action_status": "SUCCESS",
+      "thought": "The search results show the Humira entry with a \"Dosage\" link. Let me click on it to browse the dosage information."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(488, 348) -> click at (488, 348) | SUCCESS",
+      "url": "https://www.drugs.com/dosage/humira.html",
+      "action_status": "SUCCESS",
+      "thought": "A \"Select Dosage\" modal appeared. Let me click on the \"Humira (adalimumab) injection\" link for the Humira-specific dosage information."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "TASK_COMPLETE -> ANSWER: Browsed Humira dosage information at drugs.com (Dosage page: /dosage/humira.html). Key details:\n\nDrug: Humira - Generic name adalimumab (40mg in 0.8mL injection). Dosage form: injection. Drug classes: Antirheumatics, TNF alfa inhibitors. Prescription only. Last updated Dec 23, 2025.\n\nRecommended dosages by condition:\n- Rheumatoid Arthritis (RA), Psoriatic Arthritis (PsA), Ankylosing Spondylitis (AS), adults: 40 mg subcutaneously every other week. Some RA patients not on methotrexate may benefit from 40 mg every week or 80 mg every other week.\n- Juvenile Idiopathic Arthritis / Pediatric Uveitis (age 2+), by weight: 10-15 kg = 10 mg every other week; 15-30 kg = 20 mg every other week; 30 kg and greater = 40 mg every other week.\n- Crohn's Disease, adults: 160 mg on Day 1 (single day or split over two days), 80 mg on Day 15, then 40 mg every other week starting Day 29.\n- Crohn's Disease, pediatric (age 6+): 17 to <40 kg = 80 mg Day 1, 40 mg Day 15, then 20 mg every other week; 40 kg+ = 160 mg Day 1, 80 mg Day 15, then 40 mg every other week.\n- Ulcerative Colitis, adults: 160 mg Day 1, 80 mg Day 15, then 40 mg every other week from Day 29; discontinue if no remission by week 8 (Day 57).\n- Plaque Psoriasis / adult Uveitis: initial 80 mg, then 40 mg every other week starting one week after the initial dose.\n- Hidradenitis Suppurativa, adults: 160 mg Day 1, 80 mg Day 15, then 40 mg weekly or 80 mg every other week from Day 29.\n\nAdministration: subcutaneous via HUMIRA Pen or prefilled syringe; inject in thigh or abdomen, rotating sites; may be self-injected after training. Tuberculosis evaluation recommended prior to initiation. If a dose is missed, administer as soon as possible then resume regular schedule.",
+      "url": "https://www.drugs.com/dosage/humira.html",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

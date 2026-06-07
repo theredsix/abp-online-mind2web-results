@@ -1,0 +1,49 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Show me Diagnoses & Treatment for Female infertility.",
+  "task_id": "47b93b9e649eadeb8d96a6e3df715c2d",
+  "agent_final_answer": "Showed the Mayo Clinic \"Female infertility - Diagnosis & treatment\" page (mayoclinic.org/diseases-conditions/female-infertility/diagnosis-treatment/drc-20354313).\n\nDIAGNOSIS - Doctor takes a detailed medical history and physical exam; both partners are evaluated. Fertility tests may include:\n- Ovulation testing (at-home LH ovulation prediction kit; blood test for progesterone; checking prolactin)\n- Hysterosalpingography (X-ray contrast injected into uterus to check the uterus and fallopian tubes)\n- Ovarian reserve testing (blood/imaging tests for egg quality and quantity, especially women older than 35)\n- Other hormone testing (ovulatory, thyroid, pituitary hormones)\n- Imaging tests (pelvic ultrasound; sonohysterogram/saline infusion sonogram; hysteroscopy)\n- Rarely: Laparoscopy and Genetic testing\n\nTREATMENT - Depends on cause, age, how long you've been infertile, and personal preferences:\n- Medications to restore fertility (fertility drugs): Clomiphene citrate, Gonadotropins (hMG/FSH and hCG), Metformin, Letrozole (Femara), Bromocriptine. Risks: pregnancy with multiples, ovarian hyperstimulation syndrome (OHSS), and possible long-term ovarian tumor risk.\n- Surgery to restore fertility: Laparoscopic or hysteroscopic surgery; Tubal surgeries (now rare due to IVF success).\n- Reproductive assistance: Intrauterine insemination (IUI); Assisted reproductive technology, the most effective being in vitro fertilization (IVF).\n\nThe page also includes sections on Coping and support and Preparing for your appointment.",
+  "reference_length": 4,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.mayoclinic.org/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(930, 739) -> click at (930, 739) ; TYPE page -> type \"Female infertility\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.mayoclinic.org/diseases-conditions/search-results?q=Female+infertility",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The page is loaded with a \"Search diseases & conditions\" box. Let me search for \"Female infertility\"."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(102, 632) -> click at (102, 632) | SUCCESS",
+      "url": "https://www.mayoclinic.org/diseases-conditions/female-infertility/symptoms-causes/syc-20354308",
+      "action_status": "SUCCESS",
+      "thought": "The search returned 2 results. \"Female infertility\" is the first result. Let me click on it."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(218, 362) -> click at (218, 362) | SUCCESS",
+      "url": "https://www.mayoclinic.org/diseases-conditions/female-infertility/diagnosis-treatment/drc-20354313",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Female infertility page. There's a \"Diagnosis & treatment\" tab. Let me click on it."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "TASK_COMPLETE -> ANSWER: Showed the Mayo Clinic \"Female infertility - Diagnosis & treatment\" page (mayoclinic.org/diseases-conditions/female-infertility/diagnosis-treatment/drc-20354313).\n\nDIAGNOSIS - Doctor takes a detailed medical history and physical exam; both partners are evaluated. Fertility tests may include:\n- Ovulation testing (at-home LH ovulation prediction kit; blood test for progesterone; checking prolactin)\n- Hysterosalpingography (X-ray contrast injected into uterus to check the uterus and fallopian tubes)\n- Ovarian reserve testing (blood/imaging tests for egg quality and quantity, especially women older than 35)\n- Other hormone testing (ovulatory, thyroid, pituitary hormones)\n- Imaging tests (pelvic ultrasound; sonohysterogram/saline infusion sonogram; hysteroscopy)\n- Rarely: Laparoscopy and Genetic testing\n\nTREATMENT - Depends on cause, age, how long you've been infertile, and personal preferences:\n- Medications to restore fertility (fertility drugs): Clomiphene citrate, Gonadotropins (hMG/FSH and hCG), Metformin, Letrozole (Femara), Bromocriptine. Risks: pregnancy with multiples, ovarian hyperstimulation syndrome (OHSS), and possible long-term ovarian tumor risk.\n- Surgery to restore fertility: Laparoscopic or hysteroscopic surgery; Tubal surgeries (now rare due to IVF success).\n- Reproductive assistance: Intrauterine insemination (IUI); Assisted reproductive technology, the most effective being in vitro fertilization (IVF).\n\nThe page also includes sections on Coping and support and Preparing for your appointment.",
+      "url": "https://www.mayoclinic.org/diseases-conditions/female-infertility/diagnosis-treatment/drc-20354313",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

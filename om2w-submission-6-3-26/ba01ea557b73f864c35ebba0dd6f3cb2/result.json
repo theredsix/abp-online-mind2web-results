@@ -1,0 +1,385 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find the top-rated hotel in Manhattan, NY, suitable for 4 guests, and identify the fastest public transportation option from the hotel to LGA airport.",
+  "task_id": "ba01ea557b73f864c35ebba0dd6f3cb2",
+  "agent_final_answer": "Top-rated hotel in Manhattan, NY suitable for 4 guests: PESTANA PARK AVENUE - 4.8 stars (1,167 reviews), 23 E 39th St, Murray Hill/Midtown. (Found via Google Maps Hotels with guests set to 4 and results sorted by rating; it ranks #1 at 4.8, ahead of The Wall Street Hotel and Pendry Manhattan West, which are also 4.8.)\n\nFastest public transportation option from the hotel to LaGuardia Airport (LGA): about 47 minutes, which Google Maps explicitly labels the \"Fastest trip.\" Route: walk to Grand Central-42 St, ride the 7 subway to Vernon Blvd-Jackson Av, then take the Q70 Select Bus (LaGuardia Link) to LaGuardia Airport. Departs ~7:22 PM, arrives ~8:09 PM; fare about $3.00. (Other transit itineraries run ~46-55 min, e.g. subway plus the M60+ bus.)",
+  "reference_length": 14,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.google.com/maps/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(230, 36) -> click at (230, 36) ; TYPE page -> type \"Hotels in Manhattan, NY\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.google.com/maps/search/Hotels+in+Manhattan,+NY/@37.5448975,-122.322944,14z?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Google Maps is loaded. Let me search for hotels in Manhattan, NY. I'll click the search box and type my query."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(215, 140) -> click at (215, 140) | SUCCESS",
+      "url": "https://www.google.com/maps/search/Hotels+in+Manhattan,+NY/@40.7433889,-74.0340576,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Google Maps is loaded. Let me search for hotels in Manhattan, NY. I'll click the search box and type my query."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(380, 88) -> click at (380, 88) | SUCCESS",
+      "url": "https://www.google.com/maps/search/Hotels+in+Manhattan,+NY/@40.7433889,-74.0340576,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Google Maps is loaded. Let me search for hotels in Manhattan, NY. I'll click the search box and type my query."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(150, 250) -> click at (150, 250) | SUCCESS",
+      "url": "https://www.google.com/maps/search/Hotels+in+Manhattan,+NY/@40.7433889,-74.0340576,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Google Maps is loaded. Let me search for hotels in Manhattan, NY. I'll click the search box and type my query."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "page -> NAVIGATE -> navigate to back | SUCCESS",
+      "url": "https://www.google.com/maps/@40.7433889,-74.0340576,13z?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Google Maps is loaded. Let me search for hotels in Manhattan, NY. I'll click the search box and type my query."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "SCROLL page -> scroll (delta_x=500, delta_y=0) | SUCCESS",
+      "url": "https://www.google.com/maps/@40.7433889,-74.0340576,13z?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Google Maps is loaded. Let me search for hotels in Manhattan, NY. I'll click the search box and type my query."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(370, 90) -> click at (370, 90) | SUCCESS",
+      "url": "https://www.google.com/maps/search/Hotels+in+Manhattan,+NY/@40.7433889,-74.0340576,13z/data=!4m2!2m1!6e3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Google Maps is loaded. Let me search for hotels in Manhattan, NY. I'll click the search box and type my query."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(437, 100) -> click at (437, 100) | SUCCESS",
+      "url": "https://www.google.com/maps/search/Hotels+in+Manhattan,+NY/@40.7433889,-74.0340576,13z/data=!3m1!4b1!4m2!2m1!6e3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(460, 155) -> click at (460, 155) | SUCCESS",
+      "url": "https://www.google.com/maps/search/Hotels+in+Manhattan,+NY/@40.7433889,-74.0340576,13z/data=!3m1!4b1!4m6!2m5!5m3!5m2!4m1!1i3!6e3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(460, 155) -> click at (460, 155) | SUCCESS",
+      "url": "https://www.google.com/maps/search/Hotels+in+Manhattan,+NY/@40.7433889,-74.0340576,13z/data=!4m6!2m5!5m3!5m2!4m1!1i3!6e3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "PRESS_KEY page -> press ESCAPE | SUCCESS",
+      "url": "https://www.google.com/maps/search/Hotels+in+Manhattan,+NY/@40.7433889,-74.0340576,13z/data=!4m6!2m5!5m3!5m2!4m1!1i3!6e3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "CLICK coords(322, 236) -> click at (322, 236) | SUCCESS",
+      "url": "https://www.google.com/maps/search/Hotels+in+Manhattan,+NY/@40.7433742,-74.0340577,13z/data=!3m1!4b1!4m6!2m5!5m3!5m2!4m1!1i3!6e3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(340, 350) -> click at (340, 350) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Andaz+5th+Avenue,+by+Hyatt/@40.7433742,-74.0340577,13z/data=!4m17!1m7!2m6!1sHotels+in+Manhattan,+NY!5m3!5m2!4m1!1i3!6e3!3m8!1s0x89c259005e3ce6f3:0x150a268ca8f541b0!5m2!4m1!1i3!8m2!3d40.7528628!4d-73.9810276!16s%2Fg%2F1tg4xrx3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "CLICK coords(322, 236) -> click at (322, 236) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Andaz+5th+Avenue,+by+Hyatt/@40.7433742,-74.0340577,13z/data=!4m17!1m7!2m6!1sHotels+in+Manhattan,+NY!5m3!5m2!4m1!1i3!6e3!3m8!1s0x89c259005e3ce6f3:0x150a268ca8f541b0!5m2!4m1!1i3!8m2!3d40.7528628!4d-73.9810276!16s%2Fg%2F1tg4xrx3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "CLICK coords(340, 352) -> click at (340, 352) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Andaz+5th+Avenue,+by+Hyatt/@40.7433742,-74.0340577,13z/data=!4m17!1m7!2m6!1sHotels+in+Manhattan,+NY!5m3!5m2!4m1!1i3!6e3!3m8!1s0x89c259005e3ce6f3:0x150a268ca8f541b0!5m2!4m1!1i3!8m2!3d40.7528628!4d-73.9810276!16s%2Fg%2F1tg4xrx3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "CLICK coords(322, 236) -> click at (322, 236) ; PRESS_KEY page -> press ARROWUP ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.google.com/maps/place/Andaz+5th+Avenue,+by+Hyatt/@40.7433742,-74.0340577,13z/data=!4m18!1m8!2m7!1sHotels+in+Manhattan,+NY!5m4!5m2!4m1!1i3!10e4!6e3!3m8!1s0x89c259005e3ce6f3:0x150a268ca8f541b0!5m2!4m1!1i3!8m2!3d40.7528628!4d-73.9810276!16s%2Fg%2F1tg4xrx3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Andaz+5th+Avenue,+by+Hyatt/@40.7433742,-74.0340577,13z/data=!4m18!1m8!2m7!1sHotels+in+Manhattan,+NY!5m4!5m2!4m1!1i3!10e4!6e3!3m8!1s0x89c259005e3ce6f3:0x150a268ca8f541b0!5m2!4m1!1i3!8m2!3d40.7528628!4d-73.9810276!16s%2Fg%2F1tg4xrx3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 18,
+      "screenshot": "0018.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Andaz+5th+Avenue,+by+Hyatt/@40.7433742,-74.0340577,13z/data=!4m18!1m8!2m7!1sHotels+in+Manhattan,+NY!5m4!5m2!4m1!1i3!10e4!6e3!3m8!1s0x89c259005e3ce6f3:0x150a268ca8f541b0!5m2!4m1!1i3!8m2!3d40.7528628!4d-73.9810276!16s%2Fg%2F1tg4xrx3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 19,
+      "screenshot": "0019.png",
+      "action": "CLICK coords(322, 236) -> click at (322, 236) ; CLICK coords(338, 348) -> click at (338, 348) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Casablanca+Hotel/@40.7433742,-74.0340577,13z/data=!4m19!1m8!2m7!1sHotels+in+Manhattan,+NY!5m4!5m2!4m1!1i3!10e4!6e3!3m9!1s0x89c25855240cac67:0x6d5a2da71588847e!5m2!4m1!1i3!8m2!3d40.7564251!4d-73.9855534!15sChdIb3RlbHMgaW4gTWFuaGF0dGFuLCBOWZIBBWhvdGVsqgFKEAEqCiIGaG90ZWxzKAAyHhABIhq4plZ85eGQrJYrXuGbO-sem3dBiKp22fjW2zIaEAIiFmhvdGVscyBpbiBtYW5oYXR0YW4gbnngAQA!16s%2Fg%2F1tzvxgs_?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 20,
+      "screenshot": "0020.png",
+      "action": "CLICK coords(322, 236) -> click at (322, 236) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Casablanca+Hotel/@40.7433742,-74.0340577,13z/data=!4m19!1m8!2m7!1sHotels+in+Manhattan,+NY!5m4!5m2!4m1!1i3!10e4!6e3!3m9!1s0x89c25855240cac67:0x6d5a2da71588847e!5m2!4m1!1i3!8m2!3d40.7564251!4d-73.9855534!15sChdIb3RlbHMgaW4gTWFuaGF0dGFuLCBOWZIBBWhvdGVsqgFKEAEqCiIGaG90ZWxzKAAyHhABIhq4plZ85eGQrJYrXuGbO-sem3dBiKp22fjW2zIaEAIiFmhvdGVscyBpbiBtYW5oYXR0YW4gbnngAQA!16s%2Fg%2F1tzvxgs_?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 21,
+      "screenshot": "0021.png",
+      "action": "CLICK coords(322, 236) -> click at (322, 236) ; CLICK coords(330, 308) -> click at (330, 308) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Casablanca+Hotel/@40.7433742,-74.0340577,13z/data=!4m19!1m8!2m7!1sHotels+in+Manhattan,+NY!5m4!5m2!4m1!1i3!10e4!6e3!3m9!1s0x89c25855240cac67:0x6d5a2da71588847e!5m2!4m1!1i3!8m2!3d40.7564251!4d-73.9855534!15sChdIb3RlbHMgaW4gTWFuaGF0dGFuLCBOWZIBBWhvdGVsqgFKEAEqCiIGaG90ZWxzKAAyHhABIhq4plZ85eGQrJYrXuGbO-sem3dBiKp22fjW2zIaEAIiFmhvdGVscyBpbiBtYW5oYXR0YW4gbnngAQA!16s%2Fg%2F1tzvxgs_?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 22,
+      "screenshot": "0022.png",
+      "action": "CLICK coords(818, 37) -> click at (818, 37) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Casablanca+Hotel/@40.7433742,-74.0340577,13z/data=!4m19!1m8!2m7!1sHotels+in+Manhattan,+NY!5m4!5m2!4m1!1i3!10e4!6e3!3m9!1s0x89c25855240cac67:0x6d5a2da71588847e!5m2!4m1!1i3!8m2!3d40.7564251!4d-73.9855534!15sChdIb3RlbHMgaW4gTWFuaGF0dGFuLCBOWZIBBWhvdGVsqgFKEAEqCiIGaG90ZWxzKAAyHhABIhq4plZ85eGQrJYrXuGbO-sem3dBiKp22fjW2zIaEAIiFmhvdGVscyBpbiBtYW5oYXR0YW4gbnngAQA!16s%2Fg%2F1tzvxgs_?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 23,
+      "screenshot": "0023.png",
+      "action": "CLICK coords(830, 184) -> click at (830, 184) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Casablanca+Hotel/@40.7433742,-74.0340577,13z/data=!4m20!1m9!2m8!1sHotels+in+Manhattan,+NY!5m5!4e2!5m2!4m1!1i3!10e4!6e3!3m9!1s0x89c25855240cac67:0x6d5a2da71588847e!5m2!4m1!1i3!8m2!3d40.7564251!4d-73.9855534!15sChdIb3RlbHMgaW4gTWFuaGF0dGFuLCBOWZIBBWhvdGVsqgFKEAEqCiIGaG90ZWxzKAAyHhABIhq4plZ85eGQrJYrXuGbO-sem3dBiKp22fjW2zIaEAIiFmhvdGVscyBpbiBtYW5oYXR0YW4gbnngAQA!16s%2Fg%2F1tzvxgs_?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 24,
+      "screenshot": "0024.png",
+      "action": "CLICK coords(818, 37) -> click at (818, 37) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Casablanca+Hotel/@40.7433742,-74.0340577,13z/data=!4m20!1m9!2m8!1sHotels+in+Manhattan,+NY!5m5!4e2!5m2!4m1!1i3!10e4!6e3!3m9!1s0x89c25855240cac67:0x6d5a2da71588847e!5m2!4m1!1i3!8m2!3d40.7564251!4d-73.9855534!15sChdIb3RlbHMgaW4gTWFuaGF0dGFuLCBOWZIBBWhvdGVsqgFKEAEqCiIGaG90ZWxzKAAyHhABIhq4plZ85eGQrJYrXuGbO-sem3dBiKp22fjW2zIaEAIiFmhvdGVscyBpbiBtYW5oYXR0YW4gbnngAQA!16s%2Fg%2F1tzvxgs_?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Now the screenshots are rendering. I can see the proper UI. My \"back\" navigation reset things. Let me take a fresh screenshot to see the current state."
+    },
+    {
+      "step": 25,
+      "screenshot": "0025.png",
+      "action": "PRESS_KEY page -> press ESCAPE ; CLICK coords(437, 100) -> click at (437, 100) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Casablanca+Hotel/@40.7433742,-74.0340577,13z/data=!4m20!1m9!2m8!1sHotels+in+Manhattan,+NY!5m5!4e2!5m2!4m1!1i3!10e4!6e3!3m9!1s0x89c25855240cac67:0x6d5a2da71588847e!5m2!4m1!1i3!8m2!3d40.7564251!4d-73.9855534!15sChdIb3RlbHMgaW4gTWFuaGF0dGFuLCBOWZIBBWhvdGVsqgFKEAEqCiIGaG90ZWxzKAAyHhABIhq4plZ85eGQrJYrXuGbO-sem3dBiKp22fjW2zIaEAIiFmhvdGVscyBpbiBtYW5oYXR0YW4gbnngAQA!16s%2Fg%2F1tzvxgs_?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 26,
+      "screenshot": "0026.png",
+      "action": "CLICK coords(450, 195) -> click at (450, 195) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Casablanca+Hotel/@40.7433742,-74.0340577,13z/data=!4m21!1m9!2m8!1sHotels+in+Manhattan,+NY!5m5!4e2!5m2!4m1!1i3!10e4!6e3!3m10!1s0x89c25855240cac67:0x6d5a2da71588847e!5m3!1s2026-06-04!4m1!1i4!8m2!3d40.7564251!4d-73.9855534!15sChdIb3RlbHMgaW4gTWFuaGF0dGFuLCBOWZIBBWhvdGVsqgFKEAEqCiIGaG90ZWxzKAAyHhABIhq4plZ85eGQrJYrXuGbO-sem3dBiKp22fjW2zIaEAIiFmhvdGVscyBpbiBtYW5oYXR0YW4gbnngAQA!16s%2Fg%2F1tzvxgs_?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 27,
+      "screenshot": "0027.png",
+      "action": "CLICK coords(174, 285) -> click at (174, 285) | SUCCESS",
+      "url": "https://www.google.com/maps/place/Pestana+Park+Avenue/@40.7433742,-74.0340577,13z/data=!4m21!1m9!2m8!1sHotels+in+Manhattan,+NY!5m5!4e2!5m2!4m1!1i4!10e4!6e3!3m10!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!5m3!1s2026-06-04!4m1!1i4!8m2!3d40.7509197!4d-73.9800468!15sChdIb3RlbHMgaW4gTWFuaGF0dGFuLCBOWZIBBWhvdGVsqgFKEAEqCiIGaG90ZWxzKAAyHhABIhq4plZ85eGQrJYrXuGbO-sem3dBiKp22fjW2zIaEAIiFmhvdGVscyBpbiBtYW5oYXR0YW4gbnngAQA!16s%2Fg%2F11h71nf7vq?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 28,
+      "screenshot": "0028.png",
+      "action": "CLICK coords(566, 460) -> click at (566, 460) | SUCCESS",
+      "url": "https://www.google.com/maps/dir//Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/@40.7433742,-74.0340577,13z/data=!4m21!1m12!3m11!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2sPestana+Park+Avenue!5m3!1s2026-06-04!4m1!1i4!8m2!3d40.7509197!4d-73.9800468!15sChdIb3RlbHMgaW4gTWFuaGF0dGFuLCBOWZIBBWhvdGVsqgFKEAEqCiIGaG90ZWxzKAAyHhABIhq4plZ85eGQrJYrXuGbO-sem3dBiKp22fjW2zIaEAIiFmhvdGVscyBpbiBtYW5oYXR0YW4gbnngAQA!16s%2Fg%2F11h71nf7vq!4m7!1m0!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 29,
+      "screenshot": "0029.png",
+      "action": "TYPE page -> type \"Pestana Park Avenue\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/@40.7433742,-74.0340577,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 30,
+      "screenshot": "0030.png",
+      "action": "TYPE page -> type \"LaGuardia Airport\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport/@40.7433742,-74.0340577,13z/data=!4m8!4m7!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m0?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 31,
+      "screenshot": "0031.png",
+      "action": "CLICK coords(175, 63) -> click at (175, 63) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 32,
+      "screenshot": "0032.png",
+      "action": "CLICK coords(180, 185) -> click at (180, 185) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 33,
+      "screenshot": "0033.png",
+      "action": "CLICK coords(132, 185) -> click at (132, 185) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 34,
+      "screenshot": "0034.png",
+      "action": "CLICK coords(132, 63) -> click at (132, 63) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 35,
+      "screenshot": "0035.png",
+      "action": "CLICK coords(115, 63) -> click at (115, 63) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 36,
+      "screenshot": "0036.png",
+      "action": "CLICK coords(122, 75) -> click at (122, 75) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 37,
+      "screenshot": "0037.png",
+      "action": "CLICK coords(250, 64) -> click at (250, 64) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 38,
+      "screenshot": "0038.png",
+      "action": "CLICK coords(250, 185) -> click at (250, 185) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 39,
+      "screenshot": "0039.png",
+      "action": "CLICK coords(250, 215) -> click at (250, 215) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 40,
+      "screenshot": "0040.png",
+      "action": "CLICK coords(250, 97) -> click at (250, 97) ; PRESS_KEY page -> press SHIFT+TAB ; PRESS_KEY page -> press ARROWRIGHT | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 41,
+      "screenshot": "0041.png",
+      "action": "CLICK coords(250, 113) -> click at (250, 113) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 42,
+      "screenshot": "0042.png",
+      "action": "CLICK coords(250, 100) -> click at (250, 100) ; PRESS_KEY page -> press SHIFT+TAB ; PRESS_KEY page -> press SHIFT+TAB | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m13!4m12!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 43,
+      "screenshot": "0043.png",
+      "action": "PRESS_KEY page -> press SHIFT+TAB ; PRESS_KEY page -> press SHIFT+TAB ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7547805,-73.9711527,13z/data=!4m14!4m13!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392!3e3?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The screenshots are rendering now and the list is sorted by rating. The top-rated hotels are Pestana Park Avenue (4.8) and The Wall Street Hotel (4.8). I notice guests is set to 3, but the task needs 4. Let me close this rating menu and set guests to 4."
+    },
+    {
+      "step": 44,
+      "screenshot": "0044.png",
+      "action": "CLICK coords(250, 569) -> click at (250, 569) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7731051,-73.9689308,13z/data=!4m15!4m14!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392!3e3!5i2?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Transit mode is now active. I can see the public transit options from Pestana Park Avenue to LaGuardia Airport. The fastest is 46 minutes. Let me click on that option to get its route details."
+    },
+    {
+      "step": 45,
+      "screenshot": "0045.png",
+      "action": "CLICK coords(24, 30) -> click at (24, 30) | SUCCESS",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7731051,-73.9689308,13z/data=!4m15!4m14!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392!3e3!5i2?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": "SUCCESS",
+      "thought": "Transit mode is now active. I can see the public transit options from Pestana Park Avenue to LaGuardia Airport. The fastest is 46 minutes. Let me click on that option to get its route details."
+    },
+    {
+      "step": 46,
+      "screenshot": "0046.png",
+      "action": "TASK_COMPLETE -> ANSWER: Top-rated hotel in Manhattan, NY suitable for 4 guests: PESTANA PARK AVENUE - 4.8 stars (1,167 reviews), 23 E 39th St, Murray Hill/Midtown. (Found via Google Maps Hotels with guests set to 4 and results sorted by rating; it ranks #1 at 4.8, ahead of The Wall Street Hotel and Pendry Manhattan West, which are also 4.8.)\n\nFastest public transportation option from the hotel to LaGuardia Airport (LGA): about 47 minutes, which Google Maps explicitly labels the \"Fastest trip.\" Route: walk to Grand Central-42 St, ride the 7 subway to Vernon Blvd-Jackson Av, then take the Q70 Select Bus (LaGuardia Link) to LaGuardia Airport. Departs ~7:22 PM, arrives ~8:09 PM; fare about $3.00. (Other transit itineraries run ~46-55 min, e.g. subway plus the M60+ bus.)",
+      "url": "https://www.google.com/maps/dir/Pestana+Park+Avenue,+Class+B,+23+E+39th+St,+New+York,+NY+10016/LaGuardia+Airport,+East+Elmhurst,+NY+11371/@40.7731051,-73.9689308,13z/data=!4m15!4m14!1m5!1m1!1s0x89c259b2bbef0b13:0x67e133ad21e58bfd!2m2!1d-73.9800468!2d40.7509197!1m5!1m1!1s0x89c25f8983424db5:0x772fc4660e9666b3!2m2!1d-73.87425!2d40.7766392!3e3!5i2?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

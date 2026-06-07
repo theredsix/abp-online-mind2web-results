@@ -1,0 +1,41 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Look up tracking information for shipment #3023858502.",
+  "task_id": "6db4a0e346976f2729ba9afcd3208941",
+  "agent_final_answer": "Tracking lookup for shipment #3023858502 on fedex.com returned no tracking details. The FedEx Tracking page displayed an error: \"The tracking number you entered can't be found right now. Please check the number with the shipper or try again later.\" No shipment status, location history, or delivery date is available for this tracking number.",
+  "reference_length": 2,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.fedex.com/en-us/home.html",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1024, 765) -> click at (1024, 765) | SUCCESS",
+      "url": "https://www.fedex.com/en-us/home.html",
+      "action_status": "SUCCESS",
+      "thought": "There's a cookie banner. I'll accept cookies first, then enter the tracking number."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(845, 420) -> click at (845, 420) ; TYPE page -> type \"3023858502\" ; CLICK coords(1017, 420) -> click at (1017, 420) | SUCCESS",
+      "url": "https://www.fedex.com/wtrk/track/?trknbr=3023858502",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Cookies accepted. Now I'll enter the tracking number in the tracking field and click TRACK."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "TASK_COMPLETE -> ANSWER: Tracking lookup for shipment #3023858502 on fedex.com returned no tracking details. The FedEx Tracking page displayed an error: \"The tracking number you entered can't be found right now. Please check the number with the shipper or try again later.\" No shipment status, location history, or delivery date is available for this tracking number.",
+      "url": "https://www.fedex.com/wtrk/track/?trknbr=3023858502",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

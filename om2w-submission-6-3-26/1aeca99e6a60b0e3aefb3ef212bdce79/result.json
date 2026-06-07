@@ -1,0 +1,281 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find full-time legal occupation jobs in San Diego County with a minimum salary of $4,000+ per month.",
+  "task_id": "1aeca99e6a60b0e3aefb3ef212bdce79",
+  "agent_final_answer": "Found 4 full-time Legal Occupation jobs in San Diego County with minimum salary $4,000+/month. Searched via ca.gov -> \"Find a CA State Job\" -> CalCareers Advanced Job Search with filters: Job Category = Legal Occupations, Location = San Diego County, Schedule = Fulltime, Min. Salary = $4,000+ Month. Results (4 jobs found), all Permanent Fulltime, San Diego County:\n\n1. Administrative Law Judge (Working Title: Workers' Compensation Judge) - Dept. of Industrial Relations - Salary $10,588 - $15,263/mo - Job Control 519367 - Telework: Hybrid - Filing Deadline 6/13/2026\n\n2. Attorney (Working Title: Staff Attorney) - Dept. of Industrial Relations - Salary $7,969 - $12,026/mo - Job Control 519148 - Telework: Hybrid - Filing Deadline 6/12/2026\n\n3. Attorney (Working Title: Attorney) - State Compensation Insurance Fund - Salary $7,969 - $12,026/mo - Job Control 520248 - Telework: Telework - Filing Deadline 6/23/2026\n\n4. Attorney III (Working Title: Staff Attorney) - Dept. of Industrial Relations - Salary $10,852 - $15,325/mo - Job Control 520213 - Telework: Hybrid - Filing Deadline 6/17/2026\n\nAll listings meet the criteria (full-time/Fulltime, Legal Occupations, San Diego County, monthly minimum salary at or above $4,000).",
+  "reference_length": 10,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.ca.gov/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(320, 485) -> click at (320, 485) ; TYPE page -> type \"jobs\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.ca.gov/search/?q=jobs#gsc.tab=0&gsc.ref=this_site_first&gsc.q=jobs&gsc.page=1",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: This is the CA.gov homepage. I need to find legal jobs in San Diego County. State jobs are typically on CalCareers (linked from ca.gov). Let me search for jobs."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.ca.gov/search/?q=jobs#gsc.tab=0&gsc.ref=this_site_first&gsc.q=jobs&gsc.page=1",
+      "action_status": "SUCCESS",
+      "thought": "The search page loaded. Let me scroll to see results."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-200) | SUCCESS",
+      "url": "https://www.ca.gov/search/?q=jobs#gsc.tab=0&gsc.ref=this_site_first&gsc.q=jobs&gsc.page=1",
+      "action_status": "SUCCESS",
+      "thought": "I see job-related results. Let me scroll up to see the top results."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(182, 361) -> click at (182, 361) | SUCCESS",
+      "url": "https://www.ca.gov/departments/89/services/39/",
+      "action_status": "SUCCESS",
+      "thought": "I see \"Find a CA State Job - CA.gov\". Let me click it."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(149, 585) -> click at (149, 585) | SUCCESS",
+      "url": "https://calcareers.ca.gov/",
+      "action_status": "SUCCESS",
+      "thought": "This is the CalCareers service page. Let me click \"Launch service\" to go to the job search."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(384, 387) -> click at (384, 387) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "I'm on CalCareers. Let me click \"Advanced Job Search\" to access filters."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "The Advanced Job Search page has filters. Let me scroll down to see all available filters first."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(740, 214) -> click at (740, 214) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "Now I can see all filters: Job Categories, Location, Work Type, and Min. Salary. Let me set Job Categories first. I'll click that dropdown."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "TYPE page -> type \"Legal\" | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "The Job Categories dropdown is open. Let me type \"Legal\" to filter to the Legal occupation category."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(304, 232) -> click at (304, 232) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "\"Legal Occupations\" appears. Let me click it to select."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(740, 317) -> click at (740, 317) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "Legal Occupations is selected. Now let me set Location. I'll click the Location dropdown."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "TYPE page -> type \"San Diego\" | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "The Location dropdown shows counties. Let me type \"San Diego\" to filter."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(303, 334) -> click at (303, 334) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "\"San Diego County\" appears. Let me click it."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "CLICK coords(740, 468) -> click at (740, 468) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "San Diego County is selected. Now let me set Work Type. I'll click the Work Type dropdown."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "TYPE page -> type \"Full\" | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "The Work Type field is active. Let me type \"Full\" to filter options."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "CLICK coords(1211, 468) -> click at (1211, 468) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "The dropdown is showing options now. Let me click the dropdown arrow to see all Work Type options clearly."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "CLICK coords(700, 468) -> click at (700, 468) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "The dropdown closed. Let me click in the field to reopen the options."
+    },
+    {
+      "step": 18,
+      "screenshot": "0018.png",
+      "action": "PRESS_KEY page -> press ARROWDOWN | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "Let me press the down arrow to navigate the dropdown options."
+    },
+    {
+      "step": 19,
+      "screenshot": "0019.png",
+      "action": "CLICK coords(740, 520) -> click at (740, 520) ; PRESS_KEY page -> press ARROWDOWN | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Work Type is cleared. Now let me click the Work Schedule dropdown to see its options."
+    },
+    {
+      "step": 20,
+      "screenshot": "0020.png",
+      "action": "PRESS_KEY page -> press ESCAPE ; CLICK coords(740, 475) -> click at (740, 475) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: This is the Work Type dropdown (Permanent, Limited Term, etc.) — not what I need. Let me close it and click the Work Schedule field directly."
+    },
+    {
+      "step": 21,
+      "screenshot": "0021.png",
+      "action": "PRESS_KEY page -> press ARROWDOWN | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "Work Type accidentally got set to \"Permanent\" — I'll clear that later. Now the Work Schedule field is focused. Let me see its options."
+    },
+    {
+      "step": 22,
+      "screenshot": "0022.png",
+      "action": "PRESS_KEY page -> press ESCAPE | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "Work Type is cleared and the dropdown reopened. Let me press Escape to leave it empty."
+    },
+    {
+      "step": 23,
+      "screenshot": "0023.png",
+      "action": "CLICK coords(1211, 428) -> click at (1211, 428) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "Escape reverted Work Type to \"Permanent\". Work Schedule correctly shows \"Fulltime\". The dropdown has an empty option at the top — let me open Work Type and select the blank option to clear it."
+    },
+    {
+      "step": 24,
+      "screenshot": "0024.png",
+      "action": "CLICK coords(1211, 428) -> click at (1211, 428) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "Let me click the Work Type dropdown arrow again to open the option list."
+    },
+    {
+      "step": 25,
+      "screenshot": "0025.png",
+      "action": "PRESS_KEY page -> press BACKSPACE | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "The \"Permanent\" text is selected. Let me delete it with Backspace."
+    },
+    {
+      "step": 26,
+      "screenshot": "0026.png",
+      "action": "CLICK coords(348, 531) -> click at (348, 531) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "Work Type is now empty and Work Schedule shows \"Fulltime\". Now let me set Min. Salary. I'll click the Min. Salary dropdown."
+    },
+    {
+      "step": 27,
+      "screenshot": "0027.png",
+      "action": "CLICK coords(400, 447) -> click at (400, 447) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "The Work Type dropdown reopened with an empty top option highlighted. Let me click the blank top option to keep it empty."
+    },
+    {
+      "step": 28,
+      "screenshot": "0028.png",
+      "action": "CLICK coords(425, 531) -> click at (425, 531) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "Work Type is now empty. Work Schedule = Fulltime. Now let me click the Min. Salary dropdown."
+    },
+    {
+      "step": 29,
+      "screenshot": "0029.png",
+      "action": "CLICK coords(272, 569) -> click at (272, 569) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/AdvancedJobSearch.aspx",
+      "action_status": "SUCCESS",
+      "thought": "The Min. Salary dropdown shows options. I need $4,000. Let me click it."
+    },
+    {
+      "step": 30,
+      "screenshot": "0030.png",
+      "action": "CLICK coords(1196, 683) -> click at (1196, 683) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/JobSearchResults.aspx#locid=481&timid=1&minsal=4000&socmajorcode=23-0000",
+      "action_status": "SUCCESS",
+      "thought": "All filters are set: Legal Occupations, San Diego County, Fulltime, Min Salary $4,000. Now let me click \"Search Jobs\"."
+    },
+    {
+      "step": 31,
+      "screenshot": "0031.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/JobSearchResults.aspx#locid=481&timid=1&minsal=4000&socmajorcode=23-0000",
+      "action_status": "SUCCESS",
+      "thought": "The results loaded — \"4 job(s) found\" with all my filters (Legal Occupations, San Diego County, $4,000+ Month, Fulltime). Let me scroll down to see the listings."
+    },
+    {
+      "step": 32,
+      "screenshot": "0032.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/JobSearchResults.aspx#locid=481&timid=1&minsal=4000&socmajorcode=23-0000",
+      "action_status": "SUCCESS",
+      "thought": "I can see job listings. Let me record progress and scroll to see the remaining jobs."
+    },
+    {
+      "step": 33,
+      "screenshot": "0033.png",
+      "action": "TASK_COMPLETE -> ANSWER: Found 4 full-time Legal Occupation jobs in San Diego County with minimum salary $4,000+/month. Searched via ca.gov -> \"Find a CA State Job\" -> CalCareers Advanced Job Search with filters: Job Category = Legal Occupations, Location = San Diego County, Schedule = Fulltime, Min. Salary = $4,000+ Month. Results (4 jobs found), all Permanent Fulltime, San Diego County:\n\n1. Administrative Law Judge (Working Title: Workers' Compensation Judge) - Dept. of Industrial Relations - Salary $10,588 - $15,263/mo - Job Control 519367 - Telework: Hybrid - Filing Deadline 6/13/2026\n\n2. Attorney (Working Title: Staff Attorney) - Dept. of Industrial Relations - Salary $7,969 - $12,026/mo - Job Control 519148 - Telework: Hybrid - Filing Deadline 6/12/2026\n\n3. Attorney (Working Title: Attorney) - State Compensation Insurance Fund - Salary $7,969 - $12,026/mo - Job Control 520248 - Telework: Telework - Filing Deadline 6/23/2026\n\n4. Attorney III (Working Title: Staff Attorney) - Dept. of Industrial Relations - Salary $10,852 - $15,325/mo - Job Control 520213 - Telework: Hybrid - Filing Deadline 6/17/2026\n\nAll listings meet the criteria (full-time/Fulltime, Legal Occupations, San Diego County, monthly minimum salary at or above $4,000).",
+      "url": "https://calcareers.ca.gov/CalHRPublic/Search/JobSearchResults.aspx#locid=481&timid=1&minsal=4000&socmajorcode=23-0000",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

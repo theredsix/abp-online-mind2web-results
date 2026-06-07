@@ -1,0 +1,89 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find me a gluten-free diet to lose weight for a pregnant woman.",
+  "task_id": "239a29bde438fe44fe17fe1390ef1634",
+  "agent_final_answer": "Based on Healthline, here is a gluten-free eating plan combined with Healthline's guidance on managing weight during pregnancy. Two source articles: \"The Gluten-Free Diet: A Beginner's Guide with Meal Plan\" (healthline.com/nutrition/gluten-free-diet) and \"How to Safely Lose Weight During Pregnancy\" (healthline.com/health/pregnancy/how-to-lose-weight-safely).\n\nIMPORTANT MEDICAL CAVEAT (per Healthline):\n- A gluten-free diet \"should not be considered a weight loss diet\"; gluten-free is only medically necessary for people with celiac disease or other gluten-related disorders.\n- \"Most doctors don't recommend weight loss during pregnancy unless you have significant extra weight.\" Weight MAINTENANCE is usually safest; actively losing weight is linked to low birth weight. Only attempt managed weight control under a doctor's/dietitian's supervision, and never if your weight is within the healthy CDC range.\n\nCDC pregnancy weight-gain targets by pre-pregnancy BMI:\n- Underweight (<18.5): 28-40 lb | Typical (18.5-24.9): 25-35 lb | Overweight (25-29.9): 15-25 lb | Obesity (>=30): 11-20 lb\nCalories: ~2,200-2,900/day. Trimester 1: no extra; T2: +340/day; T3: +450/day. Take a daily prenatal vitamin (folate is essential). Exercise 30-60 min/day, 3-5 days/week (walking, swimming, prenatal yoga, jogging).\n\nHealthier-eating tips to control weight gain: eat smaller portions; snack on fruit; more vegetables and fewer starchy sides; swap butter for olive oil; skip condiments; drink water and cut out soda; avoid highly processed snacks (chips, candy).\n\nGLUTEN-FREE 7-DAY SAMPLE MEAL PLAN (naturally gluten-free; use gluten-free-labeled oats/bread/tamari):\n- Mon: B-overnight chia pudding w/ Greek yogurt & fruit; L-chicken, lentil & veggie soup; D-steak tacos in gluten-free corn tortillas\n- Tue: B-veggie omelet; L-quinoa salad (tomato, cucumber, spinach, avocado); D-shrimp skewers w/ garden salad\n- Wed: B-gluten-free oatmeal w/ berries & walnuts; L-tuna salad w/ hard-boiled eggs; D-chicken & broccoli stir-fry w/ gluten-free tamari\n- Thu: B-gluten-free toast w/ avocado & egg; L-burrito bowl (black beans, rice, guacamole, fajita veggies); D-garlic butter shrimp w/ side salad\n- Fri: B-banana-berry smoothie; L-chicken salad in a gluten-free wrap; D-baked salmon w/ potatoes, broccoli, carrots, green beans\n- Sat: B-mushroom & zucchini frittata; L-stuffed bell pepper (ground beef, brown rice, tomato, cheese); D-roasted chicken & quinoa salad\n- Sun: B-poached eggs w/ gluten-free bread; L-chicken salad w/ olive oil; D-grilled lamb w/ roasted vegetables\n\nNaturally gluten-free foods to build meals from: meat/fish/poultry, eggs, plain dairy, fruits, vegetables, gluten-free grains (rice, quinoa, buckwheat, corn, millet, gluten-free oats), nuts/seeds, olive/coconut oil. Avoid wheat, barley, rye, spelt and products made from them (bread, pasta, most cereals, baked goods, beer). Always confirm a plan with your doctor or a registered dietitian.",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.healthline.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1029, 37) -> click at (1029, 37) | SUCCESS",
+      "url": "https://www.healthline.com/",
+      "action_status": "SUCCESS",
+      "thought": "This is the Healthline homepage. No cookie banner is visible. The task asks me to find a \"gluten-free diet to lose weight for a pregnant woman.\" Let me use the site's search. I'll click the search icon."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(875, 37) -> click at (875, 37) ; TYPE page -> type \"gluten free diet weight loss pregnancy\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.healthline.com/search?q1=gluten%20free%20diet%20weight%20loss%20pregnancy",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The search box is active. Let me type a relevant query."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(593, 267) -> click at (593, 267) | SUCCESS",
+      "url": "https://www.healthline.com/search?q1=gluten%20free%20diet%20weight%20loss%20pregnancy",
+      "action_status": "SUCCESS",
+      "thought": "I can see relevant search results. The most useful ones are the gluten-free diet meal plan guide and the \"How to Safely Lose Weight During Pregnancy\" article. Let me open the gluten-free diet beginner's guide with meal plan first."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(400, 252) -> click at (400, 252) | SUCCESS",
+      "url": "https://www.healthline.com/nutrition/gluten-free-diet",
+      "action_status": "SUCCESS",
+      "thought": "The click didn't navigate. Let me click directly on the title link text."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(1029, 37) -> click at (1029, 37) ; TYPE page -> type \"lose weight during pregnancy\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.healthline.com/nutrition/gluten-free-diet",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Now let me check the \"How to Safely Lose Weight During Pregnancy\" article for proper pregnancy guidance. I'll use the site's search again."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(1007, 135) -> click at (1007, 135) | SUCCESS",
+      "url": "https://www.healthline.com/nutrition/gluten-free-diet",
+      "action_status": "SUCCESS",
+      "thought": "A newsletter popup appeared and intercepted my input. Let me close it first."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(1029, 37) -> click at (1029, 37) ; TYPE page -> type \"lose weight during pregnancy\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.healthline.com/search?q1=lose%20wlose%20weight%20during%20pregnancy",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The popup is closed. Now let me click the search icon and search for the pregnancy weight loss article."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(530, 345) -> click at (530, 345) | SUCCESS",
+      "url": "https://www.healthline.com/health/pregnancy/how-to-lose-weight-safely",
+      "action_status": "SUCCESS",
+      "thought": "The search worked despite a typo. Let me open \"How to Safely Lose Weight During Pregnancy\"."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "TASK_COMPLETE -> ANSWER: Based on Healthline, here is a gluten-free eating plan combined with Healthline's guidance on managing weight during pregnancy. Two source articles: \"The Gluten-Free Diet: A Beginner's Guide with Meal Plan\" (healthline.com/nutrition/gluten-free-diet) and \"How to Safely Lose Weight During Pregnancy\" (healthline.com/health/pregnancy/how-to-lose-weight-safely).\n\nIMPORTANT MEDICAL CAVEAT (per Healthline):\n- A gluten-free diet \"should not be considered a weight loss diet\"; gluten-free is only medically necessary for people with celiac disease or other gluten-related disorders.\n- \"Most doctors don't recommend weight loss during pregnancy unless you have significant extra weight.\" Weight MAINTENANCE is usually safest; actively losing weight is linked to low birth weight. Only attempt managed weight control under a doctor's/dietitian's supervision, and never if your weight is within the healthy CDC range.\n\nCDC pregnancy weight-gain targets by pre-pregnancy BMI:\n- Underweight (<18.5): 28-40 lb | Typical (18.5-24.9): 25-35 lb | Overweight (25-29.9): 15-25 lb | Obesity (>=30): 11-20 lb\nCalories: ~2,200-2,900/day. Trimester 1: no extra; T2: +340/day; T3: +450/day. Take a daily prenatal vitamin (folate is essential). Exercise 30-60 min/day, 3-5 days/week (walking, swimming, prenatal yoga, jogging).\n\nHealthier-eating tips to control weight gain: eat smaller portions; snack on fruit; more vegetables and fewer starchy sides; swap butter for olive oil; skip condiments; drink water and cut out soda; avoid highly processed snacks (chips, candy).\n\nGLUTEN-FREE 7-DAY SAMPLE MEAL PLAN (naturally gluten-free; use gluten-free-labeled oats/bread/tamari):\n- Mon: B-overnight chia pudding w/ Greek yogurt & fruit; L-chicken, lentil & veggie soup; D-steak tacos in gluten-free corn tortillas\n- Tue: B-veggie omelet; L-quinoa salad (tomato, cucumber, spinach, avocado); D-shrimp skewers w/ garden salad\n- Wed: B-gluten-free oatmeal w/ berries & walnuts; L-tuna salad w/ hard-boiled eggs; D-chicken & broccoli stir-fry w/ gluten-free tamari\n- Thu: B-gluten-free toast w/ avocado & egg; L-burrito bowl (black beans, rice, guacamole, fajita veggies); D-garlic butter shrimp w/ side salad\n- Fri: B-banana-berry smoothie; L-chicken salad in a gluten-free wrap; D-baked salmon w/ potatoes, broccoli, carrots, green beans\n- Sat: B-mushroom & zucchini frittata; L-stuffed bell pepper (ground beef, brown rice, tomato, cheese); D-roasted chicken & quinoa salad\n- Sun: B-poached eggs w/ gluten-free bread; L-chicken salad w/ olive oil; D-grilled lamb w/ roasted vegetables\n\nNaturally gluten-free foods to build meals from: meat/fish/poultry, eggs, plain dairy, fruits, vegetables, gluten-free grains (rice, quinoa, buckwheat, corn, millet, gluten-free oats), nuts/seeds, olive/coconut oil. Avoid wheat, barley, rye, spelt and products made from them (bread, pasta, most cereals, baked goods, beer). Always confirm a plan with your doctor or a registered dietitian.",
+      "url": "https://www.healthline.com/health/pregnancy/how-to-lose-weight-safely",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

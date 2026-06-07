@@ -1,0 +1,257 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Check the specifications of the best-selling HP FHD laptop with 16 GB RAM and core i7 running on Windows 11.",
+  "task_id": "4464a8421f8bc8786524a499258dfad3",
+  "agent_final_answer": "The best-selling HP FHD laptop with 16 GB RAM, Core i7, running Windows 11 on Best Buy is:\n\nPRODUCT: HP - 17.3\" Full HD Laptop - Intel Core i7 1355U 2023 - 16GB Memory - 1TB SSD - Natural Silver\n- Model: 17-cn3327dx | SKU: 6636605\n- Price: $679.99 (regularly $999.99, save $320)\n- Rating: 4.7 out of 5 (531 reviews); Sold by Best Buy (\"Best Buy Value\")\n(Found by filtering \"HP laptop\" results to Brand=HP, Intel Core i7, 16 GB RAM, 1920x1080 Full HD, and Windows 11, then sorting by Best Selling. The #1 organic result was this laptop; a near-identical sponsored ad listing above it was skipped.)\n\nFULL SPECIFICATIONS:\nGeneral:\n- Brand: HP; Model Number: 17-cn3327dx; Color: Natural Silver; Year of Release: 2025\n\nDisplay:\n- Screen Size: 17.3 inches\n- Screen Type: IPS; Display Type: LED\n- Screen Resolution: 1920 x 1080 (Full HD)\n- Touch Screen: No; Display Surface: Anti-glare\n- Brightness: 250 nits; Color Gamut (NTSC): 45 percent\n\nProcessor:\n- Intel 13th Generation Core i7, Model Number 1355U\n- 10-core; CPU Boost Clock: 5 GHz; L3 Cache: 12 MB\n- Neural Processing Unit (NPU): No\n\nMemory:\n- System Memory (RAM): 16 GB; Type: DDR4; Speed: 3200 MHz\n\nStorage:\n- 1 TB (1024 GB) SSD; Interface: PCIe\n\nGraphics:\n- Intel Iris Xe Graphics (Integrated; GPU Brand: Intel)\n\nOperating System / Compatibility:\n- Windows 11 Home (Windows AI: Copilot)\n\nConnectivity:\n- Display: 1 x HDMI 1.4 (0 DisplayPort, 0 Thunderbolt)\n- USB: 3 total (1 x USB-A 3.0, 2 x USB-C 3.0)\n- Headphone Jack: Yes; Microphone Input: Yes\n- Wireless: Wi-Fi 6, Bluetooth; Ethernet Ports: 0\n\nPower / Battery:\n- Battery Life: up to 10 hours; 3-cell Lithium-ion polymer\n- Power Supply Max Wattage: 45 watts\n\nCamera:\n- Front-Facing Camera: Yes (720p); Built-In Microphone: Yes\n\nFeatures:\n- Backlit Keyboard: No; Numeric Keypad: Yes\n- Media Card Reader: No; Audio: HD Audio, Stereo speakers\n- Security: Privacy camera\n\nDimensions:\n- 15.78 in (W) x 10.15 in (D) x 0.78 in (H); Weight: 4.6 pounds\n\nCertifications:\n- ENERGY STAR Certified: Yes; EPEAT Qualified: Yes (Level: Gold)\n\nIncluded Software:\n- myHP, HP Support Assistant, HP BIOS Protection, HP Connection Optimizer, Microsoft Copilot, AI Noise Reduction, OMEN Gaming Hub\n- Optical Drive: None\n\nWarranty:\n- Parts: 1 year; Labor: 1 year",
+  "reference_length": 12,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.bestbuy.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1134, 92) -> click at (1134, 92) | SUCCESS",
+      "url": "https://www.bestbuy.com/",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Best Buy homepage. There's a sign-in popup I should close first. Let me close it."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(500, 35) -> click at (500, 35) ; TYPE page -> type \"HP laptop\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&st=HP%20laptop",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The popup is closed. Now let me search for HP laptops. I'll click the search box and type my query."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&st=HP%20laptop",
+      "action_status": "SUCCESS",
+      "thought": "The search results loaded. There are 2750 results for \"HP laptop\". I need to apply filters for FHD, 16GB RAM, Core i7, and Windows 11, then sort by best-selling. Let me first explore the filter sidebar by scrolling through it."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(52, 535) -> click at (52, 535) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "I can see the Processor Model filter with \"Intel Core i7\". There's also a geolocation permission request pending which I'll deny to avoid interference. Let me first apply the Intel Core i7 filter."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "The \"Intel Core i7\" filter is now applied (shown as a chip at top). Let me wait for results to load, then continue adding filters. Let me scroll down to find the RAM filter."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(52, 484) -> click at (52, 484) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "The count dropped to 356 with the i7 filter. Now I see the \"System Memory (RAM)\" filter. Let me click \"16 gigabytes\"."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "\"16 gigabytes\" is now applied. Let me continue scrolling down the filter sidebar to find the Operating System (Windows 11) and Resolution (FHD) filters."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "\"16 gigabytes\" is now applied. Let me continue scrolling down the filter sidebar to find the Operating System (Windows 11) and Resolution (FHD) filters."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=450) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "The count is now 127 with i7 + 16GB filters. I can see Brand section starting. Let me continue scrolling to find Brand (HP), Operating System (Windows 11), and Resolution (FHD) filters."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(52, 369) -> click at (52, 369) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "I found the Brand filter. Let me select \"HP\" to ensure only HP brand products."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "HP brand filter applied. Let me continue scrolling to find the Operating System (Windows 11) and Resolution (FHD) filters."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "HP brand filter applied. Let me continue scrolling to find the Operating System (Windows 11) and Resolution (FHD) filters."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "The count is now 125. I see an \"Operating System\" filter with a \"Windows\" expandable option. Let me continue scrolling to see all remaining filters (including any Display Resolution filter) before applying more."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "The count is now 125. I see an \"Operating System\" filter with a \"Windows\" expandable option. Let me continue scrolling to see all remaining filters (including any Display Resolution filter) before applying more."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "CLICK coords(52, 512) -> click at (52, 512) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "I found the \"Screen Resolution\" filter. FHD = Full HD = 1920 x 1080. Let me select \"1920 x 1080 (Full HD)\"."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-400) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "The click missed - the Screen Resolution section had scrolled out of view. Let me scroll back up to find it."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "CLICK coords(52, 412) -> click at (52, 412) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP%5Escreenresolutionsv_facet%3DScreen+Resolution%7E1920+x+1080+%28Full+HD%29&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "Now I can see the Screen Resolution filter clearly. Let me click \"1920 x 1080 (Full HD)\" at (52, 412)."
+    },
+    {
+      "step": 18,
+      "screenshot": "0018.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-550) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP%5Escreenresolutionsv_facet%3DScreen+Resolution%7E1920+x+1080+%28Full+HD%29&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "\"1920 x 1080 (Full HD)\" filter applied (chip shown at top). Now I need to apply the Operating System = Windows 11 filter, which is above. Let me scroll up to find it."
+    },
+    {
+      "step": 19,
+      "screenshot": "0019.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-550) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP%5Escreenresolutionsv_facet%3DScreen+Resolution%7E1920+x+1080+%28Full+HD%29&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "\"1920 x 1080 (Full HD)\" filter applied (chip shown at top). Now I need to apply the Operating System = Windows 11 filter, which is above. Let me scroll up to find it."
+    },
+    {
+      "step": 20,
+      "screenshot": "0020.png",
+      "action": "CLICK coords(266, 588) -> click at (266, 588) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP%5Escreenresolutionsv_facet%3DScreen+Resolution%7E1920+x+1080+%28Full+HD%29&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "The count is now 112. I can see the Operating System filter with \"Windows\" and a dropdown arrow. Let me expand it to find Windows 11."
+    },
+    {
+      "step": 21,
+      "screenshot": "0021.png",
+      "action": "CLICK coords(52, 588) -> click at (52, 588) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP%5Escreenresolutionsv_facet%3DScreen+Resolution%7E1920+x+1080+%28Full+HD%29%5Eparent_operatingsystem_facet%3DOperating+System%7EWindows&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "The Operating System filter expanded showing Windows 11 Pro, Windows 11 Home, and Windows 11 Home in S Mode - all are Windows 11 variants. Since the task asks for \"Windows 11\" generically and all options here are Windows 11, I'll select the parent \"Windows\" checkbox to cover all Windows 11 variants."
+    },
+    {
+      "step": 22,
+      "screenshot": "0022.png",
+      "action": "CLICK coords(1140, 448) -> click at (1140, 448) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP%5Escreenresolutionsv_facet%3DScreen+Resolution%7E1920+x+1080+%28Full+HD%29%5Eparent_operatingsystem_facet%3DOperating+System%7EWindows&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "All filters applied, 110 results. Now I need to sort by Best-Selling. Let me click the \"Sort by\" dropdown."
+    },
+    {
+      "step": 23,
+      "screenshot": "0023.png",
+      "action": "CLICK coords(1111, 544) -> click at (1111, 544) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP%5Escreenresolutionsv_facet%3DScreen+Resolution%7E1920+x+1080+%28Full+HD%29%5Eparent_operatingsystem_facet%3DOperating+System%7EWindows&sp=Best-Selling&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "The sort dropdown is open. Let me click \"Best Selling\"."
+    },
+    {
+      "step": 24,
+      "screenshot": "0024.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-300) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP%5Escreenresolutionsv_facet%3DScreen+Resolution%7E1920+x+1080+%28Full+HD%29%5Eparent_operatingsystem_facet%3DOperating+System%7EWindows&sp=Best-Selling&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "Sort is now \"Best Selling\". The results are loading. Let me wait for them to load and scroll up to see the top result."
+    },
+    {
+      "step": 25,
+      "screenshot": "0025.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=350) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=parent_processormodelsv_facet%3DProcessor+Model%7EIntel+Core+i7%5Esystemmemoryram_facet%3DSystem+Memory+%28RAM%29%7E16+gigabytes%5Ebrand_facet%3DBrand%7EHP%5Escreenresolutionsv_facet%3DScreen+Resolution%7E1920+x+1080+%28Full+HD%29%5Eparent_operatingsystem_facet%3DOperating+System%7EWindows&sp=Best-Selling&st=HP+laptop",
+      "action_status": "SUCCESS",
+      "thought": "Sort is \"Best Selling\" with 110 results. Let me scroll down to read the product titles of the top best-selling results."
+    },
+    {
+      "step": 26,
+      "screenshot": "0026.png",
+      "action": "CLICK coords(738, 409) -> click at (738, 409) | SUCCESS",
+      "url": "https://www.bestbuy.com/product/hp-17-3-full-hd-laptop-intel-core-i7-1355u-2023-16gb-memory-1tb-ssd-natural-silver/JJGH2YK4ZP",
+      "action_status": "SUCCESS",
+      "thought": "Now let me open the product page to check the detailed specifications. I'll click on the second product's title."
+    },
+    {
+      "step": 27,
+      "screenshot": "0027.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.bestbuy.com/product/hp-17-3-full-hd-laptop-intel-core-i7-1355u-2023-16gb-memory-1tb-ssd-natural-silver/JJGH2YK4ZP",
+      "action_status": "SUCCESS",
+      "thought": "The product page loaded. This is the HP - 17.3\" Full HD Laptop - Intel Core i7 1355U 2023 - 16GB Memory - 1TB SSD - Natural Silver (Model: 17-cn3327dx, SKU: 6636605). The breadcrumb confirms it's a Windows Laptop. Let me scroll down to find the Specifications section."
+    },
+    {
+      "step": 28,
+      "screenshot": "0028.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.bestbuy.com/product/hp-17-3-full-hd-laptop-intel-core-i7-1355u-2023-16gb-memory-1tb-ssd-natural-silver/JJGH2YK4ZP",
+      "action_status": "SUCCESS",
+      "thought": "The product page loaded. This is the HP - 17.3\" Full HD Laptop - Intel Core i7 1355U 2023 - 16GB Memory - 1TB SSD - Natural Silver (Model: 17-cn3327dx, SKU: 6636605). The breadcrumb confirms it's a Windows Laptop. Let me scroll down to find the Specifications section."
+    },
+    {
+      "step": 29,
+      "screenshot": "0029.png",
+      "action": "CLICK coords(404, 550) -> click at (404, 550) | SUCCESS",
+      "url": "https://www.bestbuy.com/product/hp-17-3-full-hd-laptop-intel-core-i7-1355u-2023-16gb-memory-1tb-ssd-natural-silver/JJGH2YK4ZP",
+      "action_status": "SUCCESS",
+      "thought": "I can see the Highlights with key specs. There's a \"Specifications\" section I can expand for full details. Let me click it to get the complete specifications."
+    },
+    {
+      "step": 30,
+      "screenshot": "0030.png",
+      "action": "TASK_COMPLETE -> ANSWER: The best-selling HP FHD laptop with 16 GB RAM, Core i7, running Windows 11 on Best Buy is:\n\nPRODUCT: HP - 17.3\" Full HD Laptop - Intel Core i7 1355U 2023 - 16GB Memory - 1TB SSD - Natural Silver\n- Model: 17-cn3327dx | SKU: 6636605\n- Price: $679.99 (regularly $999.99, save $320)\n- Rating: 4.7 out of 5 (531 reviews); Sold by Best Buy (\"Best Buy Value\")\n(Found by filtering \"HP laptop\" results to Brand=HP, Intel Core i7, 16 GB RAM, 1920x1080 Full HD, and Windows 11, then sorting by Best Selling. The #1 organic result was this laptop; a near-identical sponsored ad listing above it was skipped.)\n\nFULL SPECIFICATIONS:\nGeneral:\n- Brand: HP; Model Number: 17-cn3327dx; Color: Natural Silver; Year of Release: 2025\n\nDisplay:\n- Screen Size: 17.3 inches\n- Screen Type: IPS; Display Type: LED\n- Screen Resolution: 1920 x 1080 (Full HD)\n- Touch Screen: No; Display Surface: Anti-glare\n- Brightness: 250 nits; Color Gamut (NTSC): 45 percent\n\nProcessor:\n- Intel 13th Generation Core i7, Model Number 1355U\n- 10-core; CPU Boost Clock: 5 GHz; L3 Cache: 12 MB\n- Neural Processing Unit (NPU): No\n\nMemory:\n- System Memory (RAM): 16 GB; Type: DDR4; Speed: 3200 MHz\n\nStorage:\n- 1 TB (1024 GB) SSD; Interface: PCIe\n\nGraphics:\n- Intel Iris Xe Graphics (Integrated; GPU Brand: Intel)\n\nOperating System / Compatibility:\n- Windows 11 Home (Windows AI: Copilot)\n\nConnectivity:\n- Display: 1 x HDMI 1.4 (0 DisplayPort, 0 Thunderbolt)\n- USB: 3 total (1 x USB-A 3.0, 2 x USB-C 3.0)\n- Headphone Jack: Yes; Microphone Input: Yes\n- Wireless: Wi-Fi 6, Bluetooth; Ethernet Ports: 0\n\nPower / Battery:\n- Battery Life: up to 10 hours; 3-cell Lithium-ion polymer\n- Power Supply Max Wattage: 45 watts\n\nCamera:\n- Front-Facing Camera: Yes (720p); Built-In Microphone: Yes\n\nFeatures:\n- Backlit Keyboard: No; Numeric Keypad: Yes\n- Media Card Reader: No; Audio: HD Audio, Stereo speakers\n- Security: Privacy camera\n\nDimensions:\n- 15.78 in (W) x 10.15 in (D) x 0.78 in (H); Weight: 4.6 pounds\n\nCertifications:\n- ENERGY STAR Certified: Yes; EPEAT Qualified: Yes (Level: Gold)\n\nIncluded Software:\n- myHP, HP Support Assistant, HP BIOS Protection, HP Connection Optimizer, Microsoft Copilot, AI Noise Reduction, OMEN Gaming Hub\n- Optical Drive: None\n\nWarranty:\n- Parts: 1 year; Labor: 1 year",
+      "url": "https://www.bestbuy.com/product/hp-17-3-full-hd-laptop-intel-core-i7-1355u-2023-16gb-memory-1tb-ssd-natural-silver/JJGH2YK4ZP",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

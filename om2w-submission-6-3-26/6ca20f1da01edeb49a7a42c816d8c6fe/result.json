@@ -1,0 +1,73 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find the Eligibility to get the child benefit and How it works and how to claim",
+  "task_id": "6ca20f1da01edeb49a7a42c816d8c6fe",
+  "agent_final_answer": "CHILD BENEFIT (GOV.UK) - Eligibility, How it works, and How to claim\n\n=== HOW IT WORKS ===\n- You get Child Benefit if you're responsible for bringing up a child who is: under 16, or under 20 if they stay in approved education or training.\n- Only one person can get Child Benefit for a child. There is no limit to how many children you can claim for.\n- By claiming Child Benefit you can get:\n  * an allowance paid to you for each child - usually every 4 weeks\n  * National Insurance credits which count towards your State Pension\n  * a National Insurance number for your child without them having to apply (usually shortly before they turn 16)\n- If you choose not to get payments, you should still make a claim to get the other advantages.\n- Child Benefit and protecting your State Pension: You get NI credits automatically if you claim and your child is under 12. These count toward your State Pension so you do not have gaps in your record if you're not working or do not earn enough to pay NI contributions. If you do not need the credits, your husband/wife/partner can apply to transfer them, or another caring family member can apply for Specified Adult Childcare credits.\n- You must report any change of circumstances to the Child Benefit Office.\n\n=== ELIGIBILITY (Who can get Child Benefit) ===\n- Only one person can get Child Benefit for a child.\n- You normally qualify if you're responsible for a child under 16 and you live in the UK.\n- You're usually responsible for a child if either: you live with them, OR you pay at least the same amount as Child Benefit (or equivalent in kind) towards looking after them (e.g. food, clothes, pocket money).\n- Different rules apply if the child goes into hospital or care, or lives with someone else.\n- If your child is 16 or over: you normally still qualify if they're under 20 and stay in approved education or training. You can apply for it to continue for 20 weeks if a 16/17 year old leaves education/training and registers with a government-sponsored careers service or the armed services.\n- Fostering: you get it if you foster a child, as long as the local council is not paying toward their accommodation or maintenance.\n- Adopting: you can claim as soon as the child comes to live with you (no need to wait for the process to complete).\n- Looking after someone else's child: you may get it with an informal arrangement to look after a friend/relative's child (may not qualify if the council pays toward the child's accommodation/maintenance).\n- Two people cannot get Child Benefit for the same child; if you cannot agree who claims, HMRC decides. You may also be entitled to Guardian's Allowance if responsible for a child who has lost one or both parents.\n- Living abroad: you may be able to get it in certain countries or if you're a Crown servant.\n- EU Settlement Scheme: with settled status you can claim. With pre-settled status you can claim if working (earning above the primary threshold for 3 continuous months), looking for work (up to 91 days), have sufficient resources to support yourself, studying (with sufficient resources), or are a family member of an EEA/Swiss national with a right to reside.\n- You'll stop getting it if your child starts paid work of 24+ hours/week and is no longer in approved education/training, starts an apprenticeship in England, or starts getting certain benefits (e.g. ESA or Universal Credit).\n- Contact the Child Benefit Office if unsure about eligibility.\n\n=== HOW TO CLAIM (Make a claim) ===\n- You can claim 48 hours after registering the birth of your child, or once a child comes to live with you.\n- Child Benefit can be backdated for up to 3 months from the date you make the claim.\n- If making a new claim for a child over 16, check they're eligible.\n- Deciding who should claim: only one person can claim for a child; whoever claims gets NI credits toward their State Pension. Partners can claim for different children, but if living together only one can claim at the higher rate (for the eldest child); both claiming at the higher rate may mean paying some back.\n- If you're under 16: you can claim for your own child, or someone responsible for you can claim on your behalf (you usually get more if you claim yourself).\n- Make a claim online: use the online service (\"Start now\") to claim or add another child to an existing claim.\n- Before you start, you'll need: your child's birth or adoption certificate (if you have it); your bank or building society details; your National Insurance number (if you have one); your partner's NI number (if you have a partner).\n- You can still claim without a birth/adoption certificate (takes longer; you may be asked to send it as proof afterwards). If the birth was registered outside the UK, send the child's original certificate plus their passport/travel document used to enter the UK.\n- Other ways to claim if you cannot apply online: claim by post or claim by phone.\n- You may also be able to manage someone else's Child Benefit claim.",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.gov.uk/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(268, 274) -> click at (268, 274) | SUCCESS",
+      "url": "https://www.gov.uk/",
+      "action_status": "SUCCESS",
+      "thought": "I see the GOV.UK homepage with a cookie banner. Let me accept cookies first, then search for child benefit."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(443, 532) -> click at (443, 532) ; TYPE page -> type \"Child Benefit\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.gov.uk/search/all?keywords=Child+Benefit",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Cookies accepted. Now let me search for \"Child Benefit\"."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(758, 532) -> click at (758, 532) | SUCCESS",
+      "url": "https://www.gov.uk/search/all?keywords=Child+Benefit",
+      "action_status": "SUCCESS",
+      "thought": "The autocomplete dropdown appeared. Let me click the search button to submit."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(208, 341) -> click at (208, 341) | SUCCESS",
+      "url": "https://www.gov.uk/child-benefit",
+      "action_status": "SUCCESS",
+      "thought": "The search results show the Child Benefit page. Let me click on the main \"Child Benefit\" link to access the full guide."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(266, 377) -> click at (266, 377) | SUCCESS",
+      "url": "https://www.gov.uk/child-benefit/eligibility",
+      "action_status": "SUCCESS",
+      "thought": "I have the \"How it works\" section. Now let me navigate to the \"Who can get Child Benefit\" (eligibility) section."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(221, 405) -> click at (221, 405) | SUCCESS",
+      "url": "https://www.gov.uk/child-benefit/how-to-claim",
+      "action_status": "SUCCESS",
+      "thought": "Now let me navigate to the \"Make a claim\" section. Let me scroll down to find the \"Next: Make a claim\" link, or click it in the contents."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "TASK_COMPLETE -> ANSWER: CHILD BENEFIT (GOV.UK) - Eligibility, How it works, and How to claim\n\n=== HOW IT WORKS ===\n- You get Child Benefit if you're responsible for bringing up a child who is: under 16, or under 20 if they stay in approved education or training.\n- Only one person can get Child Benefit for a child. There is no limit to how many children you can claim for.\n- By claiming Child Benefit you can get:\n  * an allowance paid to you for each child - usually every 4 weeks\n  * National Insurance credits which count towards your State Pension\n  * a National Insurance number for your child without them having to apply (usually shortly before they turn 16)\n- If you choose not to get payments, you should still make a claim to get the other advantages.\n- Child Benefit and protecting your State Pension: You get NI credits automatically if you claim and your child is under 12. These count toward your State Pension so you do not have gaps in your record if you're not working or do not earn enough to pay NI contributions. If you do not need the credits, your husband/wife/partner can apply to transfer them, or another caring family member can apply for Specified Adult Childcare credits.\n- You must report any change of circumstances to the Child Benefit Office.\n\n=== ELIGIBILITY (Who can get Child Benefit) ===\n- Only one person can get Child Benefit for a child.\n- You normally qualify if you're responsible for a child under 16 and you live in the UK.\n- You're usually responsible for a child if either: you live with them, OR you pay at least the same amount as Child Benefit (or equivalent in kind) towards looking after them (e.g. food, clothes, pocket money).\n- Different rules apply if the child goes into hospital or care, or lives with someone else.\n- If your child is 16 or over: you normally still qualify if they're under 20 and stay in approved education or training. You can apply for it to continue for 20 weeks if a 16/17 year old leaves education/training and registers with a government-sponsored careers service or the armed services.\n- Fostering: you get it if you foster a child, as long as the local council is not paying toward their accommodation or maintenance.\n- Adopting: you can claim as soon as the child comes to live with you (no need to wait for the process to complete).\n- Looking after someone else's child: you may get it with an informal arrangement to look after a friend/relative's child (may not qualify if the council pays toward the child's accommodation/maintenance).\n- Two people cannot get Child Benefit for the same child; if you cannot agree who claims, HMRC decides. You may also be entitled to Guardian's Allowance if responsible for a child who has lost one or both parents.\n- Living abroad: you may be able to get it in certain countries or if you're a Crown servant.\n- EU Settlement Scheme: with settled status you can claim. With pre-settled status you can claim if working (earning above the primary threshold for 3 continuous months), looking for work (up to 91 days), have sufficient resources to support yourself, studying (with sufficient resources), or are a family member of an EEA/Swiss national with a right to reside.\n- You'll stop getting it if your child starts paid work of 24+ hours/week and is no longer in approved education/training, starts an apprenticeship in England, or starts getting certain benefits (e.g. ESA or Universal Credit).\n- Contact the Child Benefit Office if unsure about eligibility.\n\n=== HOW TO CLAIM (Make a claim) ===\n- You can claim 48 hours after registering the birth of your child, or once a child comes to live with you.\n- Child Benefit can be backdated for up to 3 months from the date you make the claim.\n- If making a new claim for a child over 16, check they're eligible.\n- Deciding who should claim: only one person can claim for a child; whoever claims gets NI credits toward their State Pension. Partners can claim for different children, but if living together only one can claim at the higher rate (for the eldest child); both claiming at the higher rate may mean paying some back.\n- If you're under 16: you can claim for your own child, or someone responsible for you can claim on your behalf (you usually get more if you claim yourself).\n- Make a claim online: use the online service (\"Start now\") to claim or add another child to an existing claim.\n- Before you start, you'll need: your child's birth or adoption certificate (if you have it); your bank or building society details; your National Insurance number (if you have one); your partner's NI number (if you have a partner).\n- You can still claim without a birth/adoption certificate (takes longer; you may be asked to send it as proof afterwards). If the birth was registered outside the UK, send the child's original certificate plus their passport/travel document used to enter the UK.\n- Other ways to claim if you cannot apply online: claim by post or claim by phone.\n- You may also be able to manage someone else's Child Benefit claim.",
+      "url": "https://www.gov.uk/child-benefit/how-to-claim",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

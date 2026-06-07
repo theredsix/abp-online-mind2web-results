@@ -1,0 +1,121 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Show houses for sale in Maryland with a maximum price of $60,000.",
+  "task_id": "2dd41b1d0e8f389d0683f4a4627abfe6",
+  "agent_final_answer": "Showed houses for sale in Maryland with a maximum price of $60,000 on LandWatch by applying three filters: Location = Maryland, Property Type = House, and Custom Price Max = $60,000. The results page displays \"Maryland Houses for Sale up to $60K - 1-3 of 3 Listings\". The 3 matching houses are:\n1. $45,900 - 1.67 Acres, 2 beds, 1 bath, 1,449 sqft - 13037 Savage River Road, Swanton, MD 21561, Garrett County\n2. $49,000 (Pending) - 1 Acre, 2 beds, 1 bath, 768 sqft - 2603 Toddville Rd, Toddville, MD 21672, Dorchester County\n3. $45,000 (Pending) - 1 Acre, 2 beds, 1 bath, 768 sqft - 2603 Toddville Road, Toddville, MD 21672, Dorchester County",
+  "reference_length": 7,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.landwatch.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(563, 285) -> click at (563, 285) ; TYPE page -> type \"Maryland\" | SUCCESS",
+      "url": "https://www.landwatch.com/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I see the LandWatch homepage with no cookie banner. Let me search for Maryland using the search box."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "TYPE page -> type \"Maryland\" | SUCCESS",
+      "url": "https://www.landwatch.com/",
+      "action_status": "SUCCESS",
+      "thought": "The field is cleared. Now let me type \"Maryland\" carefully."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(388, 342) -> click at (388, 342) | SUCCESS",
+      "url": "https://www.landwatch.com/maryland-land-for-sale",
+      "action_status": "SUCCESS",
+      "thought": "The autocomplete shows suggestions. The first one \"Maryland\" is the state. Let me click on it."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(523, 552) -> click at (523, 552) | SUCCESS",
+      "url": "https://www.landwatch.com/maryland-land-for-sale",
+      "action_status": "SUCCESS",
+      "thought": "The search loaded with a \"Map Search\" popup. Let me dismiss it by continuing to list view."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(846, 91) -> click at (846, 91) | SUCCESS",
+      "url": "https://www.landwatch.com/maryland-land-for-sale",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Maryland Land for Sale page. Now I need to filter for houses with a max price of $60,000. Let me click the Filter button."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.landwatch.com/maryland-land-for-sale",
+      "action_status": "SUCCESS",
+      "thought": "The filter panel is open. I need to scroll down to find property type and price filters. Let me scroll within the panel."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=350) | SUCCESS",
+      "url": "https://www.landwatch.com/maryland-land-for-sale",
+      "action_status": "SUCCESS",
+      "thought": "I can see \"Price\" at the bottom. Let me continue scrolling to find the Price and Property Type filters."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(703, 547) -> click at (703, 547) ; TYPE page -> type \"60000\" | SUCCESS",
+      "url": "https://www.landwatch.com/maryland-land-for-sale",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I found the Price filter with Custom Price option. Let me set the Max price to $60,000."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(821, 547) -> click at (821, 547) | SUCCESS",
+      "url": "https://www.landwatch.com/maryland-land-for-sale/price-under-60000",
+      "action_status": "SUCCESS",
+      "thought": "The Max field shows \"$60,000\". Let me click \"Add\" to apply the price filter."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=350) | SUCCESS",
+      "url": "https://www.landwatch.com/maryland-land-for-sale/price-under-60000",
+      "action_status": "SUCCESS",
+      "thought": "The price filter \"$0 - $60,000\" is applied (319 listings now). I see \"Property Types\" at the bottom. Let me scroll down to find the houses property type."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(433, 459) -> click at (433, 459) | SUCCESS",
+      "url": "https://www.landwatch.com/maryland-land-for-sale/homes/price-under-60000",
+      "action_status": "SUCCESS",
+      "thought": "I found the Property Types section with a \"House\" option (3 listings). Let me select the \"House\" checkbox."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "CLICK coords(755, 683) -> click at (755, 683) | SUCCESS",
+      "url": "https://www.landwatch.com/maryland-land-for-sale/homes/price-under-60000",
+      "action_status": "SUCCESS",
+      "thought": "All three filters are applied: Maryland, House, $0 - $60,000. The button shows \"See 3 Listings\". Let me click it to view the results."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "TASK_COMPLETE -> ANSWER: Showed houses for sale in Maryland with a maximum price of $60,000 on LandWatch by applying three filters: Location = Maryland, Property Type = House, and Custom Price Max = $60,000. The results page displays \"Maryland Houses for Sale up to $60K - 1-3 of 3 Listings\". The 3 matching houses are:\n1. $45,900 - 1.67 Acres, 2 beds, 1 bath, 1,449 sqft - 13037 Savage River Road, Swanton, MD 21561, Garrett County\n2. $49,000 (Pending) - 1 Acre, 2 beds, 1 bath, 768 sqft - 2603 Toddville Rd, Toddville, MD 21672, Dorchester County\n3. $45,000 (Pending) - 1 Acre, 2 beds, 1 bath, 768 sqft - 2603 Toddville Road, Toddville, MD 21672, Dorchester County",
+      "url": "https://www.landwatch.com/maryland-land-for-sale/homes/price-under-60000",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

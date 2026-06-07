@@ -1,0 +1,201 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Show me the most popular open-source software on SourceForge that runs on Linux and macOS, belongs to the category of “Agentic AI”, is licensed under MIT, and has a production/stable development status.",
+  "task_id": "fe33894188d20d7469f37a9fd855e7ff_110325",
+  "agent_final_answer": "Shinkai: Local AI Agents\n\nThis is the most popular open-source software on SourceForge matching all the criteria:\n- Category: Agentic AI (under Artificial Intelligence)\n- Runs on: Linux and macOS (Mac)\n- License: MIT License\n- Development Status: Production/Stable\n- Sort order: Most Popular\n\nDescription: \"Shinkai allows you to create advanced AI (local) agents effortlessly.\" Shinkai is a free, open-source AI platform that lets anyone create powerful AI agents without coding.\n\nNote: The two listings appearing above it (Cloud Run / \"Go from Code to Production URL\" and Fortinet / \"Build Securely on AWS\") are sponsored advertisements, not category results, so they are excluded. The next-ranked real project after Shinkai was jyPOSH.",
+  "reference_length": 11,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://sourceforge.net/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(908, 711) -> click at (908, 711) | SUCCESS",
+      "url": "https://sourceforge.net/",
+      "action_status": "SUCCESS",
+      "thought": "I see a cookie banner. Let me accept it first."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(250, 66) -> click at (250, 66) | SUCCESS",
+      "url": "https://sourceforge.net/directory/linux/",
+      "action_status": "SUCCESS",
+      "thought": "The cookie banner is accepted. Now let me click on \"Open Source Software\" to browse the directory."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(276, 557) -> click at (276, 557) | SUCCESS",
+      "url": "https://sourceforge.net/directory/mac/?os=linux",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Open Source directory with Linux already filtered. Sort is \"Most Popular\". Now I need to add Mac OS. Let me click the Mac checkbox."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://sourceforge.net/directory/mac/?os=linux",
+      "action_status": "SUCCESS",
+      "thought": "Both Linux and Mac are checked. Now I need to find the \"Agentic AI\" category. Let me scroll down in the filter panel to find it or a \"More\" option in the Category section."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(102, 408) -> click at (102, 408) | SUCCESS",
+      "url": "https://sourceforge.net/directory/artificial-intelligence/mac/?os=linux",
+      "action_status": "SUCCESS",
+      "thought": "I can see the Category list. There's \"Artificial Intelligence (6,324)\" but I need \"Agentic AI\" which is likely a subcategory. Let me click on the \"Artificial Intelligence\" label to drill into it and reveal subcategories."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(90, 696) -> click at (90, 696) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux",
+      "action_status": "SUCCESS",
+      "thought": "The \"Agentic AI (871)\" subcategory appeared. Let me click on it."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux",
+      "action_status": "SUCCESS",
+      "thought": "The Agentic AI category is now applied with Linux and Mac. Now I need to add License (MIT) and Development Status (Production/Stable) filters. Let me scroll down the filter panel to find them."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux",
+      "action_status": "SUCCESS",
+      "thought": "I see subcategories. I need to keep scrolling to find License and Status sections. Let me scroll further."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux",
+      "action_status": "SUCCESS",
+      "thought": "Still in the Category section. Let me continue scrolling to find License and Status filters."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(38, 399) -> click at (38, 399) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux",
+      "action_status": "SUCCESS",
+      "thought": "I found the License section. MIT isn't directly visible, so I'll click \"More...\" under License to expand the options."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(102, 255) -> click at (102, 255) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux&license=osi-approved-open-source",
+      "action_status": "SUCCESS",
+      "thought": "MIT isn't shown directly. MIT is an OSI-approved license, so let me click on \"OSI-Approved Open Source\" to expand its sub-licenses."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=800) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux&license=osi-approved-open-source",
+      "action_status": "SUCCESS",
+      "thought": "OSI-Approved Open Source is now applied. Now I need to find MIT under it. Let me scroll down to the License section."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux&license=osi-approved-open-source",
+      "action_status": "SUCCESS",
+      "thought": "OSI-Approved Open Source is now applied. Now I need to find MIT under it. Let me scroll down to the License section."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "CLICK coords(55, 650) -> click at (55, 650) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux&license=osi-approved-open-source",
+      "action_status": "SUCCESS",
+      "thought": "The OSI sub-licenses are showing. MIT isn't visible yet, so I'll click \"More...\" under OSI-Approved Open Source to find MIT License."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux&license=osi-approved-open-source",
+      "action_status": "SUCCESS",
+      "thought": "The list expanded. Let me scroll down to find MIT License."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "CLICK coords(89, 639) -> click at (89, 639) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux&license=mit-license",
+      "action_status": "SUCCESS",
+      "thought": "I found \"MIT License (310)\". Let me click on it."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=800) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux&license=mit-license",
+      "action_status": "SUCCESS",
+      "thought": "MIT License is applied. Now I need the Development Status: Production/Stable filter. Let me scroll down to find the Status section."
+    },
+    {
+      "step": 18,
+      "screenshot": "0018.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=700) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?os=linux&license=mit-license",
+      "action_status": "SUCCESS",
+      "thought": "MIT License is applied. Now I need the Development Status: Production/Stable filter. Let me scroll down to find the Status section."
+    },
+    {
+      "step": 19,
+      "screenshot": "0019.png",
+      "action": "CLICK coords(81, 677) -> click at (81, 677) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?developmentstatus=5-production-stable&os=linux&license=mit-license",
+      "action_status": "SUCCESS",
+      "thought": "I found the Status section with \"Production/Stable (5)\". Let me click on it."
+    },
+    {
+      "step": 20,
+      "screenshot": "0020.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=450) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?developmentstatus=5-production-stable&os=linux&license=mit-license",
+      "action_status": "SUCCESS",
+      "thought": "All filters applied: Agentic AI, Mac, Linux, MIT License, Production/Stable. There are 5 results sorted by Most Popular. The first item appears to be a sponsored ad (Cloud Run). Let me scroll down to see the actual project results."
+    },
+    {
+      "step": 21,
+      "screenshot": "0021.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-250) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?developmentstatus=5-production-stable&os=linux&license=mit-license",
+      "action_status": "SUCCESS",
+      "thought": "I can see two sponsored ads (Cloud Run, Fortinet AWS) and then the first real project \"Shinkai: Local AI Agents\". Let me scroll up slightly to verify there's no project before Shinkai."
+    },
+    {
+      "step": 22,
+      "screenshot": "0022.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?developmentstatus=5-production-stable&os=linux&license=mit-license",
+      "action_status": "SUCCESS",
+      "thought": "Now let me scroll down to confirm Shinkai is the first real project and review all 5 results."
+    },
+    {
+      "step": 23,
+      "screenshot": "0023.png",
+      "action": "TASK_COMPLETE -> ANSWER: Shinkai: Local AI Agents\n\nThis is the most popular open-source software on SourceForge matching all the criteria:\n- Category: Agentic AI (under Artificial Intelligence)\n- Runs on: Linux and macOS (Mac)\n- License: MIT License\n- Development Status: Production/Stable\n- Sort order: Most Popular\n\nDescription: \"Shinkai allows you to create advanced AI (local) agents effortlessly.\" Shinkai is a free, open-source AI platform that lets anyone create powerful AI agents without coding.\n\nNote: The two listings appearing above it (Cloud Run / \"Go from Code to Production URL\" and Fortinet / \"Build Securely on AWS\") are sponsored advertisements, not category results, so they are excluded. The next-ranked real project after Shinkai was jyPOSH.",
+      "url": "https://sourceforge.net/directory/agentic-ai/mac/?developmentstatus=5-production-stable&os=linux&license=mit-license",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

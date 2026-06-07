@@ -1,0 +1,153 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find the address and phone of the Office of the Inspector General (OIG).",
+  "task_id": "d9a8689393effeed75ea0866e44e1def",
+  "agent_final_answer": "Office of the Inspector General (OIG), U.S. Department of Justice. Address: 950 Pennsylvania Avenue NW, Washington, D.C. 20530. Phone: (202) 514-3435 (Fax: (202) 353-0472).",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.justice.gov/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(966, 103) -> click at (966, 103) ; TYPE page -> type \"Office of the Inspector General\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://search.justice.gov/search?utf8=%E2%9C%93&affiliate=justice&query=Office+of+the+Inspector+General",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I'm on the DOJ homepage. Let me search for the Office of the Inspector General using the search box."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(599, 678) -> click at (599, 678) | SUCCESS",
+      "url": "https://search.justice.gov/search?utf8=%E2%9C%93&affiliate=justice&query=Office+of+the+Inspector+General",
+      "action_status": "SUCCESS",
+      "thought": "There's a result for the OIG page on justice.gov. Let me click on it."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(599, 765) -> click at (599, 765) | SUCCESS",
+      "url": "https://www.justice.gov/doj/office-inspector-general",
+      "action_status": "SUCCESS",
+      "thought": "The page scrolled slightly. Let me click on the justice.gov OIG link which is now near the bottom."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.justice.gov/doj/office-inspector-general",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the OIG page. Let me scroll down to find the address and phone contact information."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.justice.gov/doj/office-inspector-general",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the OIG page. Let me scroll down to find the address and phone contact information."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-1200) | SUCCESS",
+      "url": "https://www.justice.gov/doj/office-inspector-general",
+      "action_status": "SUCCESS",
+      "thought": "This Organization Manual page only has History, Mission, and Functions — no address or phone. Let me scroll back up and check the \"Contact Us\" page which may list component contact info."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-1200) | SUCCESS",
+      "url": "https://www.justice.gov/doj/office-inspector-general",
+      "action_status": "SUCCESS",
+      "thought": "This Organization Manual page only has History, Mission, and Functions — no address or phone. Let me scroll back up and check the \"Contact Us\" page which may list component contact info."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(1077, 59) -> click at (1077, 59) | SUCCESS",
+      "url": "https://www.justice.gov/contact-us",
+      "action_status": "SUCCESS",
+      "thought": "Let me click \"Contact Us\" in the header to find component contact information."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.justice.gov/contact-us",
+      "action_status": "SUCCESS",
+      "thought": "This Contact page may list DOJ components. Let me scroll down to look for OIG-specific contact info."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.justice.gov/contact-us",
+      "action_status": "SUCCESS",
+      "thought": "This Contact page may list DOJ components. Let me scroll down to look for OIG-specific contact info."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-600) | SUCCESS",
+      "url": "https://www.justice.gov/contact-us",
+      "action_status": "SUCCESS",
+      "thought": "There's a \"Component Contact Information page\" link. Let me scroll up slightly to bring it into view and click it."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "CLICK coords(980, 471) -> click at (980, 471) | SUCCESS",
+      "url": "https://www.justice.gov/component-contact-information",
+      "action_status": "SUCCESS",
+      "thought": "I can see the \"Component Contact Information page\" link. Let me click on it."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.justice.gov/component-contact-information",
+      "action_status": "SUCCESS",
+      "thought": "This page lists components with contact info. Let me scroll down to find \"Office of the Inspector General\"."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.justice.gov/component-contact-information",
+      "action_status": "SUCCESS",
+      "thought": "This page lists components with contact info. Let me scroll down to find \"Office of the Inspector General\"."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "CLICK coords(266, 436) -> click at (266, 436) | SUCCESS",
+      "url": "https://oig.justice.gov/about/directory",
+      "action_status": "SUCCESS",
+      "thought": "I found \"Office of the Inspector General\". Let me click on it."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "CLICK coords(632, 468) -> click at (632, 468) | SUCCESS",
+      "url": "https://oig.justice.gov/about/directory",
+      "action_status": "SUCCESS",
+      "thought": "This navigated to the OIG Office Directory. Let me expand the \"Headquarters\" section to find the address and phone."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "TASK_COMPLETE -> ANSWER: Office of the Inspector General (OIG), U.S. Department of Justice. Address: 950 Pennsylvania Avenue NW, Washington, D.C. 20530. Phone: (202) 514-3435 (Fax: (202) 353-0472).",
+      "url": "https://oig.justice.gov/about/directory",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

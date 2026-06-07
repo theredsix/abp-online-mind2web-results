@@ -1,0 +1,137 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Show me the page with average wait times for U.S. citizens arriving at Raleigh-Durham International Airport on 2025-03-12.",
+  "task_id": "0e5536aaad9d3462b06cf725e6ed535a",
+  "agent_final_answer": "Displayed the CBP Airport Wait Times (AWT) report page at awt.cbp.gov, titled \"Results for Raleigh-Durham International Airport from 2025-03-12 to 2025-03-12\" (Terminal 2).\n\nThe report includes a dedicated \"U.S. Citizen\" column group showing Average Wait Time (and Max Wait Time) per hourly interval:\n\nHour        | U.S. Citizen Avg Wait | Max Wait\n1300 - 1400 | 6 min                 | 15 min\n1400 - 1500 | 9 min                 | 30 min\n1600 - 1700 | 23 min                | 47 min\n1700 - 1800 | 44 min                | 92 min\n1900 - 2000 | 21 min                | 42 min\n\nCurrent View Averages for U.S. Citizens: Average Wait Time = 20 min, Max Wait Time = 45 min (Total 5 wait items).\n\nSteps: From cbp.gov, searched \"airport wait times\", opened the \"Airport Wait Times\" (awt.cbp.gov) result, selected \"Raleigh-Durham International Airport\", set the date range to 2025-03-12 to 2025-03-12, and clicked \"Create Report\".",
+  "reference_length": 11,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.cbp.gov/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(156, 194) -> click at (156, 194) | SUCCESS",
+      "url": "https://www.cbp.gov/",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the CBP homepage. There's no cookie banner visible. I need to find the airport wait times page. Let me explore the \"Travel\" menu, which likely contains wait time information."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(965, 131) -> click at (965, 131) ; TYPE page -> type \"airport wait times\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.cbp.gov/search?query=airport+wait+times#gsc.tab=0&gsc.q=airport%20wait%20times&gsc.page=1",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The Travel menu doesn't show a direct \"Airport Wait Times\" link. Per the guidelines, I'll use the site's search functionality. Let me click the search box and search for \"airport wait times\"."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(709, 389) -> click at (709, 389) | SUCCESS",
+      "url": "https://www.cbp.gov/search?query=airport+wait+times#gsc.tab=0&gsc.q=airport%20wait%20times&gsc.page=1",
+      "action_status": "SUCCESS",
+      "thought": "The search page loaded but results aren't showing yet. Let me click the search button to execute the search."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.cbp.gov/search?query=airport+wait+times#gsc.tab=0&gsc.q=airport%20wait%20times&gsc.page=1",
+      "action_status": "SUCCESS",
+      "thought": "Search results are showing. The first result is \"Advisories and Wait Times\". Let me scroll down to see the full list of results."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(364, 489) -> click at (364, 489) | SUCCESS",
+      "url": "https://awt.cbp.gov/",
+      "action_status": "SUCCESS",
+      "thought": "I can see \"Airport Wait Times | U.S. Customs and Border Protection\" at awt.cbp.gov - this is the CBP Airport Wait Times (AWT) tool. Let me click on it."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(632, 390) -> click at (632, 390) | SUCCESS",
+      "url": "https://awt.cbp.gov/",
+      "action_status": "SUCCESS",
+      "thought": "I'm now on the CBP Airport Wait Times (AWT) tool. I need to select Raleigh-Durham International Airport and set the date to 2025-03-12. Let me click the airport dropdown first."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "TYPE page -> type \"Raleigh\" | SUCCESS",
+      "url": "https://awt.cbp.gov/",
+      "action_status": "SUCCESS",
+      "thought": "The airport dropdown opened with a searchable input. Let me type \"Raleigh\" to filter for Raleigh-Durham International Airport."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(477, 430) -> click at (477, 430) | SUCCESS",
+      "url": "https://awt.cbp.gov/",
+      "action_status": "SUCCESS",
+      "thought": "The dropdown filtered to show \"Raleigh-Durham International Airport\". Let me click on it."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(450, 477) -> click at (450, 477) | SUCCESS",
+      "url": "https://awt.cbp.gov/",
+      "action_status": "SUCCESS",
+      "thought": "Raleigh-Durham International Airport is selected. Now I need to set the date range to 2025-03-12. Let me click on the start date field."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(378, 157) -> click at (378, 157) | SUCCESS",
+      "url": "https://awt.cbp.gov/",
+      "action_status": "SUCCESS",
+      "thought": "A date picker opened showing May 2026. I need to navigate back to March 2025. Let me click the \"previous year\" button (<<) to go back to May 2025."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(396, 157) -> click at (396, 157) ; CLICK coords(396, 157) -> click at (396, 157) | SUCCESS",
+      "url": "https://awt.cbp.gov/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The calendar now shows May 2025. I need March 2025, so I'll click the \"previous month\" button (<) twice."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "CLICK coords(501, 312) -> click at (501, 312) | SUCCESS",
+      "url": "https://awt.cbp.gov/",
+      "action_status": "SUCCESS",
+      "thought": "The calendar now shows March 2025. March 12 is a Wednesday (row 3, We column). Let me click on it to set the start date."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(501, 312) -> click at (501, 312) | SUCCESS",
+      "url": "https://awt.cbp.gov/",
+      "action_status": "SUCCESS",
+      "thought": "The start date is set to 2025-03-12. Now I need to set the end date. Since the task is for the single date 2025-03-12, I'll click March 12 again to set it as the end date."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "CLICK coords(632, 533) -> click at (632, 533) | SUCCESS",
+      "url": "https://awt.cbp.gov/Report",
+      "action_status": "SUCCESS",
+      "thought": "Both fields are set correctly: Raleigh-Durham International Airport with date range 2025-03-12 to 2025-03-12. Now let me click \"Create Report\" to generate the wait times report."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "TASK_COMPLETE -> ANSWER: Displayed the CBP Airport Wait Times (AWT) report page at awt.cbp.gov, titled \"Results for Raleigh-Durham International Airport from 2025-03-12 to 2025-03-12\" (Terminal 2).\n\nThe report includes a dedicated \"U.S. Citizen\" column group showing Average Wait Time (and Max Wait Time) per hourly interval:\n\nHour        | U.S. Citizen Avg Wait | Max Wait\n1300 - 1400 | 6 min                 | 15 min\n1400 - 1500 | 9 min                 | 30 min\n1600 - 1700 | 23 min                | 47 min\n1700 - 1800 | 44 min                | 92 min\n1900 - 2000 | 21 min                | 42 min\n\nCurrent View Averages for U.S. Citizens: Average Wait Time = 20 min, Max Wait Time = 45 min (Total 5 wait items).\n\nSteps: From cbp.gov, searched \"airport wait times\", opened the \"Airport Wait Times\" (awt.cbp.gov) result, selected \"Raleigh-Durham International Airport\", set the date range to 2025-03-12 to 2025-03-12, and clicked \"Create Report\".",
+      "url": "https://awt.cbp.gov/Report",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

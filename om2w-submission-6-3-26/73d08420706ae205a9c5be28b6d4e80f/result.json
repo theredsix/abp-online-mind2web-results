@@ -1,0 +1,73 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Show me the rules and cancellation for Alley Spring.",
+  "task_id": "73d08420706ae205a9c5be28b6d4e80f",
+  "agent_final_answer": "Alley Spring (Ozark National Scenic Riverways) - Rules & Cancellations:\n\nRESERVATION RULES:\n- Maximum Consecutive Stay: You may stay up to 14 nights during a visit at this campground. (When: 06/11/2007 - 12/31/2050)\n- Maximum Stay: You may stay up to 14 nights total at this campground within rolling 30 days. (When: 08/01/2018 - 12/31/2024)\n- Maximum Reservations per Transaction: You may pay for up to 4 reservations at one time within the same credit card transaction. (When: All Year)\n- Self Service Modifications After Arrival Allowed: This campground allows you to modify your reservation as a self service through your online account (My Reservations). This includes all modifications for remaining nights such as changing sites or leaving early. Past night can't be changed. (When: All year)\n\nIf I book this reservation today, what are my options to change or cancel? Reservations at these facilities prevent other visitors from using these sites, so planned changes should be made as far in advance as possible. You can make changes in My Reservations.\n\nCHANGES: If your new stay dates are completely different from your original stay dates, there is a $10 change fee (per reserved site). There are no additional fees for adding or removing nights to your stay or changing to a different campsite. Balances adjust based on your new stay's nightly rate.\n\nCANCELLATIONS: You can cancel the reservation any time before the date of your scheduled arrival. You will receive a refund for your stay, minus: $10 cancellation fee; any reservation fees (only if paid when booking); any previous change fees. Late cancellation penalties may also apply. What is \"Late\"? For individual campsites, a late cancellation applies starting from midnight 1 calendar day before your scheduled check-in. For cabins and group sites, a late cancellation applies starting from midnight 14 calendar days or fewer before your scheduled check-in. Late Fee: In addition to the fees above, a late cancellation will also subtract your first night's recreation use fee from any refund owed.\n\nDAY USE RULES: The above guidance for modifications, cancellations, and refunds does not apply to Day Use sites. Day Use sites forfeit the Day Use recreation use fee if cancelled less than 14 days before the arrival date (not to exceed the total paid for the original reservation).",
+  "reference_length": 3,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.recreation.gov/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(555, 341) -> click at (555, 341) ; TYPE page -> type \"Alley Spring\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.recreation.gov/search?q=Alley%20Spring",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I'm on recreation.gov. Let me search for \"Alley Spring\" using the search box."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(351, 407) -> click at (351, 407) | SUCCESS",
+      "url": "https://www.recreation.gov/camping/campgrounds/234046",
+      "action_status": "SUCCESS",
+      "thought": "The first result is \"Alley Spring\" - a camping/day use facility in Ozark National Scenic Riverways. Let me click on it to open its detail page."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(154, 462) -> click at (154, 462) | SUCCESS",
+      "url": "https://www.recreation.gov/search?q=Alley%20Spring",
+      "action_status": "SUCCESS",
+      "thought": "The click didn't navigate. Let me click on the image of the Alley Spring card."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(638, 652) -> click at (638, 652) | SUCCESS",
+      "url": "https://www.recreation.gov/camping/campgrounds/234045",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Alley Spring detail page. I can see a \"Reservation Rules\" link. The task asks for \"rules and cancellation\" - let me click on \"Reservation Rules\" to see those details."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(638, 652) -> click at (638, 652) | SUCCESS",
+      "url": "https://www.recreation.gov/search?q=Alley%20Spring",
+      "action_status": "SUCCESS",
+      "thought": "Now I'm on the correct Alley Spring detail page. Let me click on \"Reservation Rules\" to view the rules and cancellation information."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(638, 652) -> click at (638, 652) | SUCCESS",
+      "url": "https://www.recreation.gov/camping/campgrounds/234046?tab=fees",
+      "action_status": "SUCCESS",
+      "thought": "Now only the Alley Spring tab remains. Let me click on \"Reservation Rules\" link."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "TASK_COMPLETE -> ANSWER: Alley Spring (Ozark National Scenic Riverways) - Rules & Cancellations:\n\nRESERVATION RULES:\n- Maximum Consecutive Stay: You may stay up to 14 nights during a visit at this campground. (When: 06/11/2007 - 12/31/2050)\n- Maximum Stay: You may stay up to 14 nights total at this campground within rolling 30 days. (When: 08/01/2018 - 12/31/2024)\n- Maximum Reservations per Transaction: You may pay for up to 4 reservations at one time within the same credit card transaction. (When: All Year)\n- Self Service Modifications After Arrival Allowed: This campground allows you to modify your reservation as a self service through your online account (My Reservations). This includes all modifications for remaining nights such as changing sites or leaving early. Past night can't be changed. (When: All year)\n\nIf I book this reservation today, what are my options to change or cancel? Reservations at these facilities prevent other visitors from using these sites, so planned changes should be made as far in advance as possible. You can make changes in My Reservations.\n\nCHANGES: If your new stay dates are completely different from your original stay dates, there is a $10 change fee (per reserved site). There are no additional fees for adding or removing nights to your stay or changing to a different campsite. Balances adjust based on your new stay's nightly rate.\n\nCANCELLATIONS: You can cancel the reservation any time before the date of your scheduled arrival. You will receive a refund for your stay, minus: $10 cancellation fee; any reservation fees (only if paid when booking); any previous change fees. Late cancellation penalties may also apply. What is \"Late\"? For individual campsites, a late cancellation applies starting from midnight 1 calendar day before your scheduled check-in. For cabins and group sites, a late cancellation applies starting from midnight 14 calendar days or fewer before your scheduled check-in. Late Fee: In addition to the fees above, a late cancellation will also subtract your first night's recreation use fee from any refund owed.\n\nDAY USE RULES: The above guidance for modifications, cancellations, and refunds does not apply to Day Use sites. Day Use sites forfeit the Day Use recreation use fee if cancelled less than 14 days before the arrival date (not to exceed the total paid for the original reservation).",
+      "url": "https://www.recreation.gov/camping/campgrounds/234046?tab=fees",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

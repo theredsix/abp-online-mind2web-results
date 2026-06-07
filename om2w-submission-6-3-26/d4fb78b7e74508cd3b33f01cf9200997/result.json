@@ -1,0 +1,209 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Show the figure comparing Occupational Fatalities Trends between Ohio and New York.",
+  "task_id": "d4fb78b7e74508cd3b33f01cf9200997",
+  "agent_final_answer": "Successfully displayed the \"Occupational Fatalities Trends\" figure comparing Ohio and New York on americashealthrankings.org. Steps taken: searched \"Occupational Fatalities\", clicked \"Explore Occupational Fatalities\", changed the location to Ohio, clicked \"Compare States +\", and selected New York as State Two. The resulting State Comparison figure is a line chart titled \"Occupational Fatalities Trends\" with Y-axis \"Deaths per 100,000 workers\" and X-axis \"Data Year\" (1987-1989 through 2019-2021). It plots two trend lines - Ohio (circle markers) and New York (square markers) - both starting around 4-7 deaths per 100,000 in the late 1980s and gradually declining to roughly 3-4 by 2019-2021. Source: U.S. Department of Labor, Bureau of Labor Statistics, Census of Fatal Occupational Injuries.",
+  "reference_length": 12,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.americashealthrankings.org/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1228, 94) -> click at (1228, 94) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/",
+      "action_status": "SUCCESS",
+      "thought": "This is the America's Health Rankings homepage. Let me first close the survey popup, then search for \"Occupational Fatalities\"."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(1000, 44) -> click at (1000, 44) ; TYPE page -> type \"Occupational Fatalities\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.americashealthrankings.org/search?q=Occupational%20Fatalities",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The survey popup is closed. Now let me search for \"Occupational Fatalities\" using the search box."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(242, 451) -> click at (242, 451) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "The search found \"EXPLORE OCCUPATIONAL FATALITIES\" button. Let me click it to go to the measure data page."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(419, 286) -> click at (419, 286) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Occupational Fatalities page. There's a tutorial popup. Let me close it."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "The popup is closed. Now I need to find a Trends section that lets me compare states. Let me scroll down to explore the page."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "The popup is closed. Now I need to find a Trends section that lets me compare states. Let me scroll down to explore the page."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "This shows a map by state. I need to find a \"Trends\" section that allows comparing states. Let me continue scrolling down."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "This shows a map by state. I need to find a \"Trends\" section that allows comparing states. Let me continue scrolling down."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "I found the \"Occupational Fatalities Trends\" chart. It currently shows United States only. I need to add Ohio and New York. Let me scroll down to find state selection controls."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(717, 45) -> click at (717, 45) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "The Trends chart only shows United States with no visible state-add control here. Let me check the \"Explore Data\" menu for a state comparison tool."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(1159, 201) -> click at (1159, 201) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "The Explore Data menu doesn't have a direct compare tool. Let me close this and re-examine the Trends chart area more carefully, as it may have a state-comparison control. Let me close the menu first."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-2800) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "The measure page Trends chart shows only United States. To compare states, I likely need to select a state location first, which may reveal comparison options. Let me scroll up to the title and change the location."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(681, 214) -> click at (681, 214) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "I'm at the top. Let me click on \"United States\" to open the location selector."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "TYPE page -> type \"Ohio\" | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities",
+      "action_status": "SUCCESS",
+      "thought": "A State Search dropdown appeared. Let me type \"Ohio\" to select it."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "CLICK coords(723, 309) -> click at (723, 309) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities/OH",
+      "action_status": "SUCCESS",
+      "thought": "\"Ohio\" appears in the dropdown. Let me click on it."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities/OH",
+      "action_status": "SUCCESS",
+      "thought": "Now it shows \"Occupational Fatalities in Ohio\". Let me scroll down to the Trends section to see if I can now add New York for comparison."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities/OH",
+      "action_status": "SUCCESS",
+      "thought": "Now it shows \"Occupational Fatalities in Ohio\". Let me scroll down to the Trends section to see if I can now add New York for comparison."
+    },
+    {
+      "step": 18,
+      "screenshot": "0018.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities/OH",
+      "action_status": "SUCCESS",
+      "thought": "Now it shows \"Occupational Fatalities in Ohio\". Let me scroll down to the Trends section to see if I can now add New York for comparison."
+    },
+    {
+      "step": 19,
+      "screenshot": "0019.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities/OH",
+      "action_status": "SUCCESS",
+      "thought": "I can see the Occupational Fatalities Trends section. Let me scroll down to view the chart and any comparison controls."
+    },
+    {
+      "step": 20,
+      "screenshot": "0020.png",
+      "action": "CLICK coords(151, 756) -> click at (151, 756) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities/OH/compare",
+      "action_status": "SUCCESS",
+      "thought": "Now the Trends chart shows Ohio and United States, and there's a \"Compare States +\" link. Let me click it to add New York."
+    },
+    {
+      "step": 21,
+      "screenshot": "0021.png",
+      "action": "TYPE page -> type \"New York\" | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities/OH/compare",
+      "action_status": "SUCCESS",
+      "thought": "A \"State Comparison\" view opened with Ohio and a \"State Two\" dropdown. Let me type \"New York\"."
+    },
+    {
+      "step": 22,
+      "screenshot": "0022.png",
+      "action": "CLICK coords(804, 281) -> click at (804, 281) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities/OH/compare/NY",
+      "action_status": "SUCCESS",
+      "thought": "\"New York\" appears in the dropdown. Let me click on it."
+    },
+    {
+      "step": 23,
+      "screenshot": "0023.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=450) | SUCCESS",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities/OH/compare/NY",
+      "action_status": "SUCCESS",
+      "thought": "The chart is now rendering. Let me scroll down to view the full Trends comparison chart."
+    },
+    {
+      "step": 24,
+      "screenshot": "0024.png",
+      "action": "TASK_COMPLETE -> ANSWER: Successfully displayed the \"Occupational Fatalities Trends\" figure comparing Ohio and New York on americashealthrankings.org. Steps taken: searched \"Occupational Fatalities\", clicked \"Explore Occupational Fatalities\", changed the location to Ohio, clicked \"Compare States +\", and selected New York as State Two. The resulting State Comparison figure is a line chart titled \"Occupational Fatalities Trends\" with Y-axis \"Deaths per 100,000 workers\" and X-axis \"Data Year\" (1987-1989 through 2019-2021). It plots two trend lines - Ohio (circle markers) and New York (square markers) - both starting around 4-7 deaths per 100,000 in the late 1980s and gradually declining to roughly 3-4 by 2019-2021. Source: U.S. Department of Labor, Bureau of Labor Statistics, Census of Fatal Occupational Injuries.",
+      "url": "https://www.americashealthrankings.org/explore/measures/WorkFatalities/OH/compare/NY",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

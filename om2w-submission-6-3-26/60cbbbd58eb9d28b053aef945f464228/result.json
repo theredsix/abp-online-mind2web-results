@@ -1,0 +1,65 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Look up if the phone number 555555555 is a scam.",
+  "task_id": "60cbbbd58eb9d28b053aef945f464228",
+  "agent_final_answer": "Yes - the phone number 555555555 is associated with scams. On BBB Scam Tracker (Look Up a Scam), searching \"555555555\" returns 3 scam reports that reference this number:\n1. Tax Collection scam - business name used \"US tax consultant\" (voicemail claiming back taxes/missed filings), Victim Location: FL, USA 32707, Date Reported: September 17, 2025, Dollars Lost: $0.00.\n2. Online Purchase scam - business name used \"NsbShoeBot\", Victim Location: LA, USA 70043, Date Reported: August 25, 2021, Dollars Lost: $424.15.\n3. Online Purchase scam - business name used \"Multiple names\" (Facebook ad for tribal clothing), Victim Location: NY, USA 14094, Date Reported: September 28, 2020, Dollars Lost: $30.\n\nAll 3 results are scam reports referencing this number, so it is flagged as a scam.",
+  "reference_length": 6,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.bbb.org/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(975, 760) -> click at (975, 760) | SUCCESS",
+      "url": "https://www.bbb.org/",
+      "action_status": "SUCCESS",
+      "thought": "I see the BBB homepage with a cookie banner. Let me accept cookies first."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(684, 64) -> click at (684, 64) | SUCCESS",
+      "url": "https://www.bbb.org/",
+      "action_status": "SUCCESS",
+      "thought": "Cookies accepted. Now let me explore the Scam Tracker to look up the phone number. Let me click on \"Scam Tracker\"."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(689, 155) -> click at (689, 155) | SUCCESS",
+      "url": "https://www.bbb.org/scamtracker/lookupscam",
+      "action_status": "SUCCESS",
+      "thought": "The dropdown shows \"Look Up a Scam\". Let me click it."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(492, 355) -> click at (492, 355) ; TYPE page -> type \"555555555\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.bbb.org/scamtracker/lookupscam?q=all%3D555555555%26from%3D0",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I'm on the \"Look Up a Scam\" page. Let me search for the phone number 555555555."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://www.bbb.org/scamtracker/lookupscam?q=all%3D555555555%26from%3D0",
+      "action_status": "SUCCESS",
+      "thought": "The search returned 3 results for \"555555555\". The first is a \"Tax Collection\" scam. Let me record this and scroll to see all results."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "TASK_COMPLETE -> ANSWER: Yes - the phone number 555555555 is associated with scams. On BBB Scam Tracker (Look Up a Scam), searching \"555555555\" returns 3 scam reports that reference this number:\n1. Tax Collection scam - business name used \"US tax consultant\" (voicemail claiming back taxes/missed filings), Victim Location: FL, USA 32707, Date Reported: September 17, 2025, Dollars Lost: $0.00.\n2. Online Purchase scam - business name used \"NsbShoeBot\", Victim Location: LA, USA 70043, Date Reported: August 25, 2021, Dollars Lost: $424.15.\n3. Online Purchase scam - business name used \"Multiple names\" (Facebook ad for tribal clothing), Victim Location: NY, USA 14094, Date Reported: September 28, 2020, Dollars Lost: $30.\n\nAll 3 results are scam reports referencing this number, so it is flagged as a scam.",
+      "url": "https://www.bbb.org/scamtracker/lookupscam?q=all%3D555555555%26from%3D0",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find Farms land in Wilkes County, NC with the lowest price.",
+  "task_id": "9ef1a8972f375db59c0e6329e11b7939",
+  "agent_final_answer": "The lowest-priced Farms (Farms and Ranches) land listing in Wilkes County, NC is priced at $48,888. It is \"6.5 ACRES LAND IN GATED COMMUNITY WITH ELECTRICITY & INTERNET & PAVED ROADS\" - 6.5 Acres at 149 Chestnut Street, North Wilkesboro, NC 28659 (Wilkes County), listed by Matt Dagli, (336) 656-2912. (Sorted Wilkes County, NC results filtered to the \"Farms and Ranches\" property type by Price: Low to High; only 4 such listings exist, the next being $124,900.)",
+  "reference_length": 5,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.landwatch.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(563, 285) -> click at (563, 285) ; TYPE page -> type \"Wilkes County, NC\" | SUCCESS",
+      "url": "https://www.landwatch.com/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: "
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "TYPE page -> type \"Wilkes County\" | SUCCESS",
+      "url": "https://www.landwatch.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(421, 342) -> click at (421, 342) | SUCCESS",
+      "url": "https://www.landwatch.com/north-carolina-land-for-sale/wilkes-county",
+      "action_status": "SUCCESS",
+      "thought": "Now I see \"Wilkes County, NC\" suggestion. Let me click it."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(523, 552) -> click at (523, 552) | SUCCESS",
+      "url": "https://www.landwatch.com/north-carolina-land-for-sale/wilkes-county",
+      "action_status": "SUCCESS",
+      "thought": "A \"Introducing Map Search\" popup appeared. Let me dismiss it by clicking \"Continue to List View\"."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(1226, 158) -> click at (1226, 158) ; CLICK coords(846, 91) -> click at (846, 91) | SUCCESS",
+      "url": "https://www.landwatch.com/north-carolina-land-for-sale/wilkes-county",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: A \"Introducing Map Search\" popup appeared. Let me dismiss it by clicking \"Continue to List View\"."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.landwatch.com/north-carolina-land-for-sale/wilkes-county",
+      "action_status": "SUCCESS",
+      "thought": "A \"Introducing Map Search\" popup appeared. Let me dismiss it by clicking \"Continue to List View\"."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.landwatch.com/north-carolina-land-for-sale/wilkes-county",
+      "action_status": "SUCCESS",
+      "thought": "A \"Introducing Map Search\" popup appeared. Let me dismiss it by clicking \"Continue to List View\"."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(460, 583) -> click at (460, 583) | SUCCESS",
+      "url": "https://www.landwatch.com/north-carolina-land-for-sale/wilkes-county",
+      "action_status": "SUCCESS",
+      "thought": "A \"Introducing Map Search\" popup appeared. Let me dismiss it by clicking \"Continue to List View\"."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(433, 377) -> click at (433, 377) | SUCCESS",
+      "url": "https://www.landwatch.com/north-carolina-land-for-sale/wilkes-county/farms-ranches",
+      "action_status": "SUCCESS",
+      "thought": "A \"Introducing Map Search\" popup appeared. Let me dismiss it by clicking \"Continue to List View\"."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(755, 683) -> click at (755, 683) | SUCCESS",
+      "url": "https://www.landwatch.com/north-carolina-land-for-sale/wilkes-county/farms-ranches",
+      "action_status": "SUCCESS",
+      "thought": "A \"Introducing Map Search\" popup appeared. Let me dismiss it by clicking \"Continue to List View\"."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(1213, 236) -> click at (1213, 236) | SUCCESS",
+      "url": "https://www.landwatch.com/north-carolina-land-for-sale/wilkes-county/farms-ranches",
+      "action_status": "SUCCESS",
+      "thought": "A \"Introducing Map Search\" popup appeared. Let me dismiss it by clicking \"Continue to List View\"."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "CLICK coords(1042, 417) -> click at (1042, 417) | SUCCESS",
+      "url": "https://www.landwatch.com/north-carolina-land-for-sale/wilkes-county/farms-ranches/sort-price-low-high",
+      "action_status": "SUCCESS",
+      "thought": "Sort dropdown opened. Let me click \"Price: Low to High\"."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(468, 347) -> click at (468, 347) | SUCCESS",
+      "url": "https://www.landwatch.com/wilkes-county-north-carolina-farms-and-ranches-for-sale/pid/426366305",
+      "action_status": "SUCCESS",
+      "thought": "I found the listings sorted by price low to high. The lowest-priced one is $48,888. Let me record this and click into it to verify details."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "TASK_COMPLETE -> ANSWER: The lowest-priced Farms (Farms and Ranches) land listing in Wilkes County, NC is priced at $48,888. It is \"6.5 ACRES LAND IN GATED COMMUNITY WITH ELECTRICITY & INTERNET & PAVED ROADS\" - 6.5 Acres at 149 Chestnut Street, North Wilkesboro, NC 28659 (Wilkes County), listed by Matt Dagli, (336) 656-2912. (Sorted Wilkes County, NC results filtered to the \"Farms and Ranches\" property type by Price: Low to High; only 4 such listings exist, the next being $124,900.)",
+      "url": "https://www.landwatch.com/wilkes-county-north-carolina-farms-and-ranches-for-sale/pid/426366305",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

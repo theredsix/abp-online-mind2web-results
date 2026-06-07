@@ -1,0 +1,41 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find the app for iOS.",
+  "task_id": "52efbab520734ef9bf7c09ba0f62cdc8",
+  "agent_final_answer": "The iOS app is the \"Recreation.gov Mobile App.\" It is found on the Recreation.gov Mobile App page (reached via the \"Get the App\" link in the site footer, URL https://www.recreation.gov/mobile-app), where it is offered for iOS through the \"Download on the App Store\" button (an Android version is also available via Google Play). The app lets you find and reserve campsites, review location details for your trip, and access information on past and upcoming reservations.",
+  "reference_length": 2,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.recreation.gov/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=6000) | SUCCESS",
+      "url": "https://www.recreation.gov/",
+      "action_status": "SUCCESS",
+      "thought": "This is the recreation.gov homepage. The iOS app link is typically in the footer. Let me scroll to the bottom of the page."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(752, 560) -> click at (752, 560) | SUCCESS",
+      "url": "https://www.recreation.gov/mobile-app",
+      "action_status": "SUCCESS",
+      "thought": "I can see a \"Get the App\" link in the footer under \"Plan a Trip\". Let me click on it."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "TASK_COMPLETE -> ANSWER: The iOS app is the \"Recreation.gov Mobile App.\" It is found on the Recreation.gov Mobile App page (reached via the \"Get the App\" link in the site footer, URL https://www.recreation.gov/mobile-app), where it is offered for iOS through the \"Download on the App Store\" button (an Android version is also available via Google Play). The app lets you find and reserve campsites, review location details for your trip, and access information on past and upcoming reservations.",
+      "url": "https://www.recreation.gov/mobile-app",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Look for the best rated BBB accredited charity near 12023.",
+  "task_id": "05483c50cc9b04c8ac44c574758fb2bd",
+  "agent_final_answer": "The best rated BBB Accredited charity near 12023 is Walpole Chamber of Commerce, with a BBB Rating of A+ (the highest possible rating). After searching the \"Charity Foundations\" category near zip code 12023 and applying the \"BBB Accredited\" filter, only Walpole Chamber of Commerce appeared (listed twice - at 944B Main St, Walpole, MA 02081 and PO Box 361, Walpole, MA 02081), both rated A+. Phone: (508) 451-5840.",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.bbb.org/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(975, 760) -> click at (975, 760) | SUCCESS",
+      "url": "https://www.bbb.org/",
+      "action_status": "SUCCESS",
+      "thought": "I see the BBB homepage with a cookie banner. Let me accept cookies first."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(1109, 762) -> click at (1109, 762) | SUCCESS",
+      "url": "https://www.bbb.org/",
+      "action_status": "SUCCESS",
+      "thought": "Cookies are accepted. Let me dismiss the message and explore the page for a search function."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.bbb.org/",
+      "action_status": "SUCCESS",
+      "thought": "A search box is appearing at the bottom. Let me scroll down to see it fully."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(322, 395) -> click at (322, 395) ; TYPE page -> type \"charity\" | SUCCESS",
+      "url": "https://www.bbb.org/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: There's a \"Find a business\" search box. I'll search for charities near 12023. Let me click the Find field and type \"charity\"."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(196, 487) -> click at (196, 487) | SUCCESS",
+      "url": "https://www.bbb.org/",
+      "action_status": "SUCCESS",
+      "thought": "Autocomplete shows charity options. Let me select the \"Charity Foundations\" category."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(449, 478) -> click at (449, 478) ; CLICK coords(270, 478) -> click at (270, 478) ; TYPE page -> type \"12023\" | SUCCESS",
+      "url": "https://www.bbb.org/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Now I'll clear the \"Near\" field and enter 12023. Let me click the X to clear it."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(147, 571) -> click at (147, 571) | SUCCESS",
+      "url": "https://www.bbb.org/",
+      "action_status": "SUCCESS",
+      "thought": "The Near field shows 12023 with a suggestion. Let me click the \"12023\" suggestion."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(322, 543) -> click at (322, 543) | SUCCESS",
+      "url": "https://www.bbb.org/search?find_country=USA&find_entity=60382-000&find_latlng=42.598241%2C-74.154146&find_loc=12023&find_text=Charity%20Foundations&find_type=Category&page=1",
+      "action_status": "SUCCESS",
+      "thought": "Find is \"Charity Foundations\" and Near is \"12023\". Now let me click Search."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(104, 357) -> click at (104, 357) | SUCCESS",
+      "url": "https://www.bbb.org/search?find_country=USA&find_entity=60382-000&find_latlng=42.598241%2C-74.154146&find_loc=12023&find_text=Charity%20Foundations&find_type=Category&page=1&touched=1",
+      "action_status": "SUCCESS",
+      "thought": "The search returned 5 results. I need to filter by BBB Accredited and sort by rating. Let me click the \"BBB Accredited\" filter first."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(798, 466) -> click at (798, 466) | SUCCESS",
+      "url": "https://www.bbb.org/search?find_country=USA&find_entity=60382-000&find_latlng=42.598241%2C-74.154146&find_loc=12023&find_text=Charity%20Foundations&find_type=Category&page=1&touched=1",
+      "action_status": "SUCCESS",
+      "thought": "BBB Accredited filter applied - now 2 results. Let me sort by BBB Rating. I'll click the Sort By dropdown."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=450) | SUCCESS",
+      "url": "https://www.bbb.org/search?find_country=USA&find_entity=60382-000&find_latlng=42.598241%2C-74.154146&find_loc=12023&find_text=Charity%20Foundations&find_type=Category&page=1&touched=1",
+      "action_status": "SUCCESS",
+      "thought": "Only 2 results. Let me scroll down to see both and compare their ratings."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "TASK_COMPLETE -> ANSWER: The best rated BBB Accredited charity near 12023 is Walpole Chamber of Commerce, with a BBB Rating of A+ (the highest possible rating). After searching the \"Charity Foundations\" category near zip code 12023 and applying the \"BBB Accredited\" filter, only Walpole Chamber of Commerce appeared (listed twice - at 944B Main St, Walpole, MA 02081 and PO Box 361, Walpole, MA 02081), both rated A+. Phone: (508) 451-5840.",
+      "url": "https://www.bbb.org/search?find_country=USA&find_entity=60382-000&find_latlng=42.598241%2C-74.154146&find_loc=12023&find_text=Charity%20Foundations&find_type=Category&page=1&touched=1",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

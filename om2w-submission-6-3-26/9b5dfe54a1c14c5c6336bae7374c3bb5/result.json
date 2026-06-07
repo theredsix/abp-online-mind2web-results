@@ -1,0 +1,417 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find a UPS Access Point near SPRING, TX and services provided by them.",
+  "task_id": "9b5dfe54a1c14c5c6336bae7374c3bb5",
+  "agent_final_answer": null,
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.ups.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(683, 591) -> click at (683, 591) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "There's a cookie banner. Let me close it first."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(44, 68) -> click at (44, 68) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Cookie banner closed. Now I need to find the location finder. Let me click the location pin icon at top left."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(68, 241) -> click at (68, 241) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "A \"Find a UPS Location\" panel opened. Let me explore the \"Filter By\" options first to filter for UPS Access Points."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(90, 281) -> click at (90, 281) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Filter By expanded showing \"Location Type\" and \"Available Services\". Let me click \"Location Type\" to expand it."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(57, 316) -> click at (57, 316) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "I see all location types are checked. I'll uncheck \"All Locations\" to deselect everything, then select only \"UPS Access Point™\"."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(57, 404) -> click at (57, 404) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "All deselected. Now let me select only \"UPS Access Point™\"."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(252, 182) -> click at (252, 182) ; TYPE page -> type \"SPRING, TX\" | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: UPS Access Point™ is now selected. Now let me enter the address. I'll click the address field and type \"SPRING, TX\"."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(130, 225) -> click at (130, 225) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "An autocomplete dropdown appeared. Let me select the first suggestion \"Spring TX, USA\"."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(512, 182) -> click at (512, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "The address is set to \"Spring, TX, USA\" and Filter By shows (1). Now let me click \"Look Up\" to search."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(512, 182) -> click at (512, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Still no results. Let me click \"Look Up\" again to trigger the search."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(84, 242) -> click at (84, 242) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "This popup locator keeps showing \"No Results Found\". Let me test whether the widget works at all by temporarily including all location types. Let me open the filter."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "CLICK coords(57, 316) -> click at (57, 316) ; CLICK coords(512, 182) -> click at (512, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: UPS Access Point is still checked. Let me check \"All Locations\" to test if the widget returns any results at all."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(68, 242) -> click at (68, 242) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "The map now shows results, so the widget works. Let me re-apply the UPS Access Point filter. First open Filter By."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "CLICK coords(57, 316) -> click at (57, 316) ; CLICK coords(57, 404) -> click at (57, 404) ; CLICK coords(497, 182) -> click at (497, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: All are checked now. Let me deselect all, then select only UPS Access Point."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "CLICK coords(84, 242) -> click at (84, 242) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "The map shows results but the filter says (6), not what I want. Let me re-open the filter and set it correctly."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "CLICK coords(57, 404) -> click at (57, 404) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "All checkboxes appear unchecked now. Let me click only \"UPS Access Point™\" then Look Up."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "CLICK coords(497, 182) -> click at (497, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Only UPS Access Point™ is checked now. Let me click \"Look Up\"."
+    },
+    {
+      "step": 18,
+      "screenshot": "0018.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Now I have UPS Access Point results (markers 1-5). Let me scroll down in the panel to see the results list with details."
+    },
+    {
+      "step": 19,
+      "screenshot": "0019.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "The scroll zoomed the map. I need to scroll the panel itself, not the map. Let me scroll over the panel content below the map (the QR section area)."
+    },
+    {
+      "step": 20,
+      "screenshot": "0020.png",
+      "action": "CLICK coords(197, 352) -> click at (197, 352) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "The map shows 5 markers but the list says \"No Results Found\" - the list rendering seems glitchy. Let me click on map marker #1 to see its details directly."
+    },
+    {
+      "step": 21,
+      "screenshot": "0021.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-400) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "The DOM confirms the list cards aren't rendering in this popup widget, though the map has markers. This mini-locator is glitchy. Let me try the full location finder instead. First, let me scroll up and close this popup."
+    },
+    {
+      "step": 22,
+      "screenshot": "0022.png",
+      "action": "CLICK coords(306, 384) -> click at (306, 384) ; CLICK coords(178, 505) -> click at (178, 505) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: A Google POI info window opened from my earlier map click. Let me close it and click directly on UPS marker #1 to get UPS location details."
+    },
+    {
+      "step": 23,
+      "screenshot": "0023.png",
+      "action": "CLICK coords(545, 40) -> click at (545, 40) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Clicking the UPS marker highlighted it but showed no detail card. This popup's list is genuinely not rendering. Let me close it and find the full-page location finder via site navigation."
+    },
+    {
+      "step": 24,
+      "screenshot": "0024.png",
+      "action": "CLICK coords(386, 149) -> click at (386, 149) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "The popup is closed. Let me check the \"Products & Services\" menu for a dedicated location finder page."
+    },
+    {
+      "step": 25,
+      "screenshot": "0025.png",
+      "action": "CLICK coords(133, 471) -> click at (133, 471) | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "I see \"Pickup and Drop-off Options\" under Business Solutions. Let me click it to find a dedicated location finder."
+    },
+    {
+      "step": 26,
+      "screenshot": "0026.png",
+      "action": "CLICK coords(422, 525) -> click at (422, 525) | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "There's a \"View UPS Drop-off Locations\" button. Let me click it."
+    },
+    {
+      "step": 27,
+      "screenshot": "0027.png",
+      "action": "CLICK coords(205, 181) -> click at (205, 181) ; TYPE page -> type \"Spring, TX\" | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: This opens the same locator popup. Let me try a clean fresh search here. First, type the address."
+    },
+    {
+      "step": 28,
+      "screenshot": "0028.png",
+      "action": "CLICK coords(422, 525) -> click at (422, 525) | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "The popup closed and my text went to a header field. Let me reopen the locator and this time give it more time to render. Let me click \"View UPS Drop-off Locations\" again."
+    },
+    {
+      "step": 29,
+      "screenshot": "0029.png",
+      "action": "TYPE page -> type \"Spring, TX\" | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "Field cleared. Now let me type the address and select from autocomplete."
+    },
+    {
+      "step": 30,
+      "screenshot": "0030.png",
+      "action": "CLICK coords(512, 182) -> click at (512, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "The field shows \"Spring, TX\". Let me click \"Look Up\" to search."
+    },
+    {
+      "step": 31,
+      "screenshot": "0031.png",
+      "action": "CLICK coords(200, 188) -> click at (200, 188) ; PRESS_KEY page -> press BS | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Without a geocoded address (no autocomplete selection), even the map didn't load. Let me trigger autocomplete by editing the field. Let me click into the address field."
+    },
+    {
+      "step": 32,
+      "screenshot": "0032.png",
+      "action": "CLICK coords(130, 225) -> click at (130, 225) | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "Autocomplete appeared. Let me select \"Spring TX, USA\"."
+    },
+    {
+      "step": 33,
+      "screenshot": "0033.png",
+      "action": "CLICK coords(512, 182) -> click at (512, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "Now the address is geocoded as \"Spring, TX, USA\". Let me click \"Look Up\" and then wait with animation for the list to render."
+    },
+    {
+      "step": 34,
+      "screenshot": "0034.png",
+      "action": "CLICK coords(512, 182) -> click at (512, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "Still no map or results. The map iframe may load lazily. Let me click \"Look Up\" again."
+    },
+    {
+      "step": 35,
+      "screenshot": "0035.png",
+      "action": "CLICK coords(512, 182) -> click at (512, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "Let me click \"Look Up\" again, tagging the network requests so I can inspect the locator API response."
+    },
+    {
+      "step": 36,
+      "screenshot": "0036.png",
+      "action": "CLICK coords(559, 40) -> click at (559, 40) | SUCCESS",
+      "url": "https://www.ups.com/us/en/business-solutions/pickup-dropoff-options",
+      "action_status": "SUCCESS",
+      "thought": "This `aap-p.ups.com` endpoint is just a consent API, not the location data. The location search must come from a different call. The homepage popup did load the map with markers, so let me reproduce that and capture the location API. Let me close this popup and go to the homepage."
+    },
+    {
+      "step": 37,
+      "screenshot": "0037.png",
+      "action": "CLICK coords(59, 150) -> click at (59, 150) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Popup closed. Let me go to the homepage by clicking the UPS logo, where the locator successfully loaded the map earlier."
+    },
+    {
+      "step": 38,
+      "screenshot": "0038.png",
+      "action": "CLICK coords(44, 68) -> click at (44, 68) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Homepage loaded. Let me open the locator via the location pin icon."
+    },
+    {
+      "step": 39,
+      "screenshot": "0039.png",
+      "action": "CLICK coords(252, 182) -> click at (252, 182) ; TYPE page -> type \"Spring, TX\" | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Locator is open. Let me type the address and trigger autocomplete."
+    },
+    {
+      "step": 40,
+      "screenshot": "0040.png",
+      "action": "PRESS_KEY page -> press BS | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Let me trigger autocomplete with a backspace."
+    },
+    {
+      "step": 41,
+      "screenshot": "0041.png",
+      "action": "CLICK coords(130, 225) -> click at (130, 225) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Autocomplete is showing. Let me select \"Spring TX, USA\"."
+    },
+    {
+      "step": 42,
+      "screenshot": "0042.png",
+      "action": "CLICK coords(512, 182) -> click at (512, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Address geocoded. Now let me click \"Look Up\" and capture the network requests with a tag."
+    },
+    {
+      "step": 43,
+      "screenshot": "0043.png",
+      "action": "CLICK coords(512, 182) -> click at (512, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "This is just a consent API, not the location data. The map rendering is flaky. Earlier the map appeared after a second \"Look Up\". Let me click \"Look Up\" again."
+    },
+    {
+      "step": 44,
+      "screenshot": "0044.png",
+      "action": "CLICK coords(68, 242) -> click at (68, 242) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "The map isn't loading. Earlier it appeared after interacting with the filter. Let me open Filter By."
+    },
+    {
+      "step": 45,
+      "screenshot": "0045.png",
+      "action": "CLICK coords(90, 281) -> click at (90, 281) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "Let me expand Location Type to set the Access Point filter."
+    },
+    {
+      "step": 46,
+      "screenshot": "0046.png",
+      "action": "CLICK coords(57, 316) -> click at (57, 316) ; CLICK coords(57, 404) -> click at (57, 404) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Let me uncheck \"All Locations\" then select only \"UPS Access Point™\"."
+    },
+    {
+      "step": 47,
+      "screenshot": "0047.png",
+      "action": "CLICK coords(512, 182) -> click at (512, 182) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "UPS Access Point is selected. Let me click \"Look Up\" and then wait."
+    },
+    {
+      "step": 48,
+      "screenshot": "0048.png",
+      "action": "CLICK coords(199, 500) -> click at (199, 500) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "These are just consent/bot requests, not location data. Let me stop the network approach. The map shows markers — let me click directly on marker #2 (the closest blue pin) to open its detail."
+    },
+    {
+      "step": 49,
+      "screenshot": "0049.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=450) | SUCCESS",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": "SUCCESS",
+      "thought": "The map zoomed to street level and marker #2 appears selected. Let me scroll down in the panel to see if a detail card appeared."
+    },
+    {
+      "step": 50,
+      "screenshot": "0050.png",
+      "action": "TASK_COMPLETE -> ANSWER: ",
+      "url": "https://www.ups.com/us/en/home",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

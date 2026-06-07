@@ -1,0 +1,89 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find the nearest location to zip code 54620 that offers size 4 P.O. Boxes.",
+  "task_id": "7562d9b4e4829a44245aafce2e1f62db",
+  "agent_final_answer": "The nearest location to ZIP code 54620 that offers Size 4 (Size 4-L, 11\" x 11\") P.O. Boxes is the Sparta Post Office, located at 123 W Main St, Sparta, WI 54656 - 10.02 miles away. This location offers Size 1, Size 2, Size 3, and Size 4 boxes.",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.usps.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(582, 57) -> click at (582, 57) | SUCCESS",
+      "url": "https://www.usps.com/manage/",
+      "action_status": "SUCCESS",
+      "thought": "The USPS homepage is loaded. I need to find the P.O. Box locator tool. Let me click on the \"Receive\" menu to find P.O. Box options."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "HOVER coords(582, 57) -> hover at (582, 57) | SUCCESS",
+      "url": "https://www.usps.com/manage/",
+      "action_status": "SUCCESS",
+      "thought": "This is the Receive page. Let me hover over the \"Receive\" menu to see the dropdown submenu which should include P.O. Boxes."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(656, 483) -> click at (656, 483) | SUCCESS",
+      "url": "https://www.usps.com/manage/po-boxes.htm",
+      "action_status": "SUCCESS",
+      "thought": "The dropdown shows \"Rent or Renew PO Box\" under Tools. Let me click on it to access the P.O. Box locator."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(405, 581) -> click at (405, 581) ; TYPE page -> type \"54620\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://poboxes.usps.com/findBox.html?q=54620",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I'm on the \"Rent a PO Box\" page with a search field. Let me enter the zip code 54620."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(1154, 499) -> click at (1154, 499) | SUCCESS",
+      "url": "https://poboxes.usps.com/findBox.html?q=54620",
+      "action_status": "SUCCESS",
+      "thought": "Results are showing - 12 locations sorted by distance. I see size availability listed for each. There's a \"Filter Results\" option which could let me filter by Size 4. Let me click it to see the filter options."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(317, 661) -> click at (317, 661) | SUCCESS",
+      "url": "https://poboxes.usps.com/findBox.html?q=54620",
+      "action_status": "SUCCESS",
+      "thought": "The filter panel is open. I can see Box Size options including \"Size 4-L (11\" x 11\")\". Let me select Size 4-L to filter for locations offering size 4 P.O. Boxes."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://poboxes.usps.com/findBox.html?q=54620",
+      "action_status": "SUCCESS",
+      "thought": "Size 4-L is now checked. Let me scroll down to find the Apply button for the filter."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(632, 531) -> click at (632, 531) | SUCCESS",
+      "url": "https://poboxes.usps.com/findBox.html?q=54620",
+      "action_status": "SUCCESS",
+      "thought": "Size 4-L is checked and I can see the \"Apply Filters\" button. Let me click it."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "TASK_COMPLETE -> ANSWER: The nearest location to ZIP code 54620 that offers Size 4 (Size 4-L, 11\" x 11\") P.O. Boxes is the Sparta Post Office, located at 123 W Main St, Sparta, WI 54656 - 10.02 miles away. This location offers Size 1, Size 2, Size 3, and Size 4 boxes.",
+      "url": "https://poboxes.usps.com/findBox.html?q=54620",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

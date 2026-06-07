@@ -1,0 +1,137 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find the HGX H100 driver for Ubuntu 22.04 on AMD64 CPU.",
+  "task_id": "b4aa7315e31dfcdc52baf7771be260c9",
+  "agent_final_answer": "The HGX H100 driver for Ubuntu 22.04 on AMD64 CPU (Linux 64-bit) is the \"Data Center Driver for Ubuntu 22.04\".\n\nDetails:\n- Driver Version: 595.71.05\n- Release Date: Tue Apr 28, 2026\n- Operating System: Linux 64-bit Ubuntu 22.04\n- CUDA Toolkit: 13.2\n- Language: English (US)\n- File Size: 782.99 MB\n- Download Type: Recommended/Certified\n\nFound via NVIDIA Drivers > Manual Driver Search: Data Center / Tesla -> HGX-Series -> HGX H100 -> Linux 64-bit Ubuntu 22.04 (AMD64).",
+  "reference_length": 11,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.nvidia.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(869, 371) -> click at (869, 371) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/",
+      "action_status": "SUCCESS",
+      "thought": "There's a cookie banner. I'll accept it first, then navigate to the Drivers section."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(869, 371) -> click at (869, 371) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/",
+      "action_status": "SUCCESS",
+      "thought": "The banner is still showing. Let me click Accept All again."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(782, 22) -> click at (782, 22) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "action_status": "SUCCESS",
+      "thought": "The cookie banner is now dismissed. I'll click on \"Drivers\" in the top navigation."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(369, 268) -> click at (369, 268) ; TYPE page -> type \"HGX H100\" | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I'm on the Drivers page with a Manual Driver Search box. Let me search for the HGX H100."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=250) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "action_status": "SUCCESS",
+      "thought": "The autocomplete shows HGX H100 options for various OSes. I need to find Ubuntu 22.04 AMD64. Let me scroll down within the dropdown."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=250) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "action_status": "SUCCESS",
+      "thought": "Let me continue scrolling to find Ubuntu 22.04."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=300) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "action_status": "SUCCESS",
+      "thought": "Continuing to scroll for Ubuntu options."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=300) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "action_status": "SUCCESS",
+      "thought": "I can see Ubuntu options now, but these are ARM 64-bit. I need the AMD64 variant. Let me scroll a bit more."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(350, 701) -> click at (350, 701) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "action_status": "SUCCESS",
+      "thought": "I can see \"Linux 64-bit Ubuntu 22.04\" which corresponds to AMD64 (as opposed to ARM 64-bit). Let me click on it."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(542, 294) -> click at (542, 294) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "action_status": "SUCCESS",
+      "thought": "The search field now shows the HGX H100 Linux 64-bit Ubuntu 22.04 selection. Let me submit the search."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "PRESS_KEY page -> press ESCAPE ; CLICK coords(542, 311) -> click at (542, 311) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: A product dropdown appeared which seems unrelated. Let me click the search field and press Enter to submit the full query."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=200) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "action_status": "SUCCESS",
+      "thought": "The form is now populated with all the selections. Let me scroll down to find and click the search button."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(206, 563) -> click at (206, 563) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "action_status": "SUCCESS",
+      "thought": "The form is fully populated. Let me click \"Find\" to search for the driver."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "CLICK coords(1045, 679) -> click at (1045, 679) | SUCCESS",
+      "url": "https://www.nvidia.com/en-us/drivers/details/267433/",
+      "action_status": "SUCCESS",
+      "thought": "Let me click \"View\" to confirm the driver details including the CPU architecture."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "TASK_COMPLETE -> ANSWER: The HGX H100 driver for Ubuntu 22.04 on AMD64 CPU (Linux 64-bit) is the \"Data Center Driver for Ubuntu 22.04\".\n\nDetails:\n- Driver Version: 595.71.05\n- Release Date: Tue Apr 28, 2026\n- Operating System: Linux 64-bit Ubuntu 22.04\n- CUDA Toolkit: 13.2\n- Language: English (US)\n- File Size: 782.99 MB\n- Download Type: Recommended/Certified\n\nFound via NVIDIA Drivers > Manual Driver Search: Data Center / Tesla -> HGX-Series -> HGX H100 -> Linux 64-bit Ubuntu 22.04 (AMD64).",
+      "url": "https://www.nvidia.com/en-us/drivers/details/267433/",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

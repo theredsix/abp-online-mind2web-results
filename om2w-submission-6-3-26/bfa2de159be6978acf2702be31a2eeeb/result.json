@@ -1,0 +1,73 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Show me the options for a roundtrip leaving from Las Vegas on flexible dates on the interactive map on united.",
+  "task_id": "bfa2de159be6978acf2702be31a2eeeb",
+  "agent_final_answer": "Successfully displayed the options for a roundtrip leaving from Las Vegas on flexible dates using United's interactive map. On united.com I selected Roundtrip, checked \"Flexible dates\", set the origin to Las Vegas (LAS), left the destination blank, and clicked \"Find flights\". This opened United's \"Explore destinations\" interactive map (tagline: \"Not sure where to go? Use our interactive map to find flights to great destinations.\"). The map's controls confirm the search: Flying from = Las Vegas LAS, Search type = Roundtrip, Dates = Flexible dates, Max price = $2000. The interactive map plots destination options as blue dots across the US, Canada and Mexico, each labeled with a roundtrip price tag. Example prices visible on the map: $207, $254, $259, $285, $303, $331, $358, $387, $393, $395, $409, $411, $447, $491. A \"List of search results\" panel is also available to view the same options as a list.",
+  "reference_length": 12,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.united.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1027, 749) -> click at (1027, 749) | SUCCESS",
+      "url": "https://www.united.com/en/us",
+      "action_status": "SUCCESS",
+      "thought": "The page is loaded. First, I'll accept the cookie banner as required before any other interactions."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(489, 251) -> click at (489, 251) | SUCCESS",
+      "url": "https://www.united.com/en/us",
+      "action_status": "SUCCESS",
+      "thought": "The cookie banner is dismissed. Now I need to set up the roundtrip search. The task requires: roundtrip (already selected), from Las Vegas, flexible dates, and viewing on an interactive map. Let me first check the \"Flexible dates\" checkbox to see what options appear."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "TYPE page -> type \"Las Vegas\" | SUCCESS",
+      "url": "https://www.united.com/en/us",
+      "action_status": "SUCCESS",
+      "thought": "The From field is cleared and focused (showing \"Origin\" placeholder). Now let me type \"Las Vegas\" to set the origin."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(187, 404) -> click at (187, 404) | SUCCESS",
+      "url": "https://www.united.com/en/us",
+      "action_status": "SUCCESS",
+      "thought": "The autocomplete dropdown shows \"Las Vegas, NV, US (LAS)\". Let me click on it to select it."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(495, 568) -> click at (495, 568) | SUCCESS",
+      "url": "https://www.united.com/en/us/destination-map",
+      "action_status": "SUCCESS",
+      "thought": "Now let me click \"Find flights\" to proceed and see the options."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(1210, 110) -> click at (1210, 110) | SUCCESS",
+      "url": "https://www.united.com/en/us/destination-map",
+      "action_status": "SUCCESS",
+      "thought": "The interactive map has loaded. This is exactly the feature requested — \"Explore destinations\" with the text \"Not sure where to go? Use our interactive map to find flights to great destinations.\" It shows:\n- Flying from: Las Vegas LAS\n- Search type: Roundtrip\n- Dates: Flexible dates\n- Max price: $2000\n\nThe map displays destination options with prices ($347, $387, $297, $311, $375, etc.). Let me close the \"Sign into your account\" popup to get a cleaner view of the full map."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "TASK_COMPLETE -> ANSWER: Successfully displayed the options for a roundtrip leaving from Las Vegas on flexible dates using United's interactive map. On united.com I selected Roundtrip, checked \"Flexible dates\", set the origin to Las Vegas (LAS), left the destination blank, and clicked \"Find flights\". This opened United's \"Explore destinations\" interactive map (tagline: \"Not sure where to go? Use our interactive map to find flights to great destinations.\"). The map's controls confirm the search: Flying from = Las Vegas LAS, Search type = Roundtrip, Dates = Flexible dates, Max price = $2000. The interactive map plots destination options as blue dots across the US, Canada and Mexico, each labeled with a roundtrip price tag. Example prices visible on the map: $207, $254, $259, $285, $303, $331, $358, $387, $393, $395, $409, $411, $447, $491. A \"List of search results\" panel is also available to view the same options as a list.",
+      "url": "https://www.united.com/en/us/destination-map",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

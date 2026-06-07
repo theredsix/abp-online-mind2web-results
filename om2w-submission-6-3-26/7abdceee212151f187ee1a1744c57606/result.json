@@ -1,0 +1,169 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Can you show me the page with the filing fee for a self-petitioned I-140 application?",
+  "task_id": "7abdceee212151f187ee1a1744c57606",
+  "agent_final_answer": "I navigated to the page that shows the filing fee for a self-petitioned I-140 application: the USCIS \"G-1055, Fee Schedule\" page at https://www.uscis.gov/g-1055.\n\nPath taken: Searched \"I-140\" -> opened the I-140 form page -> its \"Filing Fee\" section links to the Fee Schedule page -> on the Fee Schedule page, used the \"Select a Form for Fee Information\" dropdown and selected \"I-140, Immigrant Petition for Alien Workers\".\n\nThe displayed fee table for the I-140 shows:\n- General Filing: $715 (Paper Filing Fee) / $665 (Online Filing Fee), plus additional fees if applicable.\n- Additional Fees - Asylum Program Fee:\n  a. Regular Petitioner: $600\n  b. Nonprofit: $0\n  c. Small Employer or self-petitioner: $300\n\nFor a self-petitioner, the Asylum Program Fee is $300 (row c), in addition to the General Filing fee ($715 paper / $665 online).",
+  "reference_length": 6,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.uscis.gov/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(770, 144) -> click at (770, 144) ; TYPE page -> type \"I-140\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.uscis.gov/search?query=I-140",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I'm on the USCIS homepage. The task asks for the page with the filing fee for a self-petitioned I-140 application. Let me use the search functionality to find the I-140 form page, which contains filing fee information."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(735, 410) -> click at (735, 410) ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.uscis.gov/search?query=I-140",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The search page loaded but results aren't displaying. Let me submit the query from the page's search field."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(589, 547) -> click at (589, 547) | SUCCESS",
+      "url": "https://www.uscis.gov/i-140",
+      "action_status": "SUCCESS",
+      "thought": "Search results appeared. The first result is the I-140 form page. Let me click on it."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(155, 520) -> click at (155, 520) | SUCCESS",
+      "url": "https://www.uscis.gov/forms/filing-fees",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the I-140 form page. There's a \"Filing Fees\" link in the left sidebar. The I-140 has different fees for self-petitioners vs. petitions filed by a company. Let me click \"Filing Fees\"."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "page -> NAVIGATE -> navigate to back | SUCCESS",
+      "url": "https://www.uscis.gov/i-140",
+      "action_status": "SUCCESS",
+      "thought": "This is a general Filing Fees page. The task wants the specific page showing the filing fee for a self-petitioned I-140. The I-140 form page itself should display its filing fee. Let me go back to the I-140 page and look at its fee section."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.uscis.gov/i-140",
+      "action_status": "SUCCESS",
+      "thought": "I'm back on the I-140 form page. Let me scroll down the main content to find the filing fee section specific to this form."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.uscis.gov/i-140",
+      "action_status": "SUCCESS",
+      "thought": "I'm back on the I-140 form page. Let me scroll down the main content to find the filing fee section specific to this form."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(762, 242) -> click at (762, 242) | SUCCESS",
+      "url": "https://www.uscis.gov/i-140",
+      "action_status": "SUCCESS",
+      "thought": "The I-140 form page has a \"Filing Fee\" accordion section. Let me expand it to see the fee details, including the self-petitioner fee."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(812, 298) -> click at (812, 298) | SUCCESS",
+      "url": "https://www.uscis.gov/g-1055",
+      "action_status": "SUCCESS",
+      "thought": "The Filing Fee section directs to the \"Fee Schedule\" page for the actual fee. The I-140 has different fees for self-petitioners. Let me click the \"Fee Schedule\" link."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.uscis.gov/g-1055",
+      "action_status": "SUCCESS",
+      "thought": "Let me scroll down to find the I-140 entry in the fee schedule to confirm it lists a self-petitioner fee."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.uscis.gov/g-1055",
+      "action_status": "SUCCESS",
+      "thought": "Let me scroll down to find the I-140 entry in the fee schedule to confirm it lists a self-petitioner fee."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.uscis.gov/g-1055",
+      "action_status": "SUCCESS",
+      "thought": "The page is largely descriptive with a downloadable fee schedule. Let me scroll further to check for an embedded fee table or lookup tool."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.uscis.gov/g-1055",
+      "action_status": "SUCCESS",
+      "thought": "The page is largely descriptive with a downloadable fee schedule. Let me scroll further to check for an embedded fee table or lookup tool."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "CLICK coords(762, 362) -> click at (762, 362) | SUCCESS",
+      "url": "https://www.uscis.gov/g-1055",
+      "action_status": "SUCCESS",
+      "thought": "Let me click the dropdown to open it."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-450) | SUCCESS",
+      "url": "https://www.uscis.gov/g-1055",
+      "action_status": "SUCCESS",
+      "thought": "The page is at the bottom; the dropdown scrolled out of view. Let me scroll up to bring the \"Select a Form for Fee Information\" dropdown into view."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "CLICK coords(762, 390) -> click at (762, 390) | SUCCESS",
+      "url": "https://www.uscis.gov/g-1055",
+      "action_status": "SUCCESS",
+      "thought": "Now the dropdown is visible at y=390. Let me click it to open the form selector."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "TYPE page -> type \"I-140\" | SUCCESS",
+      "url": "https://www.uscis.gov/g-1055",
+      "action_status": "SUCCESS",
+      "thought": "The dropdown is a searchable combobox. Let me type \"I-140\" to filter the options."
+    },
+    {
+      "step": 18,
+      "screenshot": "0018.png",
+      "action": "CLICK coords(565, 490) -> click at (565, 490) | SUCCESS",
+      "url": "https://www.uscis.gov/g-1055?form=i-140",
+      "action_status": "SUCCESS",
+      "thought": "The option \"I-140, Immigrant Petition for Alien Workers\" appeared. Let me click it."
+    },
+    {
+      "step": 19,
+      "screenshot": "0019.png",
+      "action": "TASK_COMPLETE -> ANSWER: I navigated to the page that shows the filing fee for a self-petitioned I-140 application: the USCIS \"G-1055, Fee Schedule\" page at https://www.uscis.gov/g-1055.\n\nPath taken: Searched \"I-140\" -> opened the I-140 form page -> its \"Filing Fee\" section links to the Fee Schedule page -> on the Fee Schedule page, used the \"Select a Form for Fee Information\" dropdown and selected \"I-140, Immigrant Petition for Alien Workers\".\n\nThe displayed fee table for the I-140 shows:\n- General Filing: $715 (Paper Filing Fee) / $665 (Online Filing Fee), plus additional fees if applicable.\n- Additional Fees - Asylum Program Fee:\n  a. Regular Petitioner: $600\n  b. Nonprofit: $0\n  c. Small Employer or self-petitioner: $300\n\nFor a self-petitioner, the Asylum Program Fee is $300 (row c), in addition to the General Filing fee ($715 paper / $665 online).",
+      "url": "https://www.uscis.gov/g-1055?form=i-140",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "What are the benefits and financial support a single person living in England, over the state pension age, unemployed, with no health conditions, or caring for someone with one, can get?",
+  "task_id": "ec78d3a635e417bc2a80d03ca93d7165",
+  "agent_final_answer": "Based on the GOV.UK \"Check benefits and financial support you can get\" tool, for a single person in England, over State Pension age, unemployed (not in paid work), with no health condition of their own but caring for someone with a disability/health condition at least 35 hours a week, no children, not already getting the listed means-tested benefits, and savings less than 16,000 pounds, you may be eligible for 7 things:\n\n1. Pension Credit - extra money if you are over State Pension age and on a low income.\n2. Housing Benefit - help to pay your rent if you have reached State Pension age (or are in supported, sheltered or temporary housing). Not available if savings are over 16,000 pounds, unless you get the Guarantee Credit element of Pension Credit.\n3. Winter Fuel Payment - paid automatically once you reach State Pension age; you get a letter in Oct/Nov. Clawed back by HMRC via tax if taxable income is over 35,000 pounds; you can opt out.\n4. Carer's Allowance - if you care for someone at least 35 hours a week and the person you care for is getting certain disability benefits.\n5. Council Tax Reduction - if you are on a low income or claim benefits.\n6. NHS Help with health costs - help with prescriptions, dental care, healthcare travel and other health costs, particularly if on a low income or getting certain benefits.\n7. Older person's bus pass - free bus travel once you reach State Pension age in England.\n\nIn addition, under \"Other benefits and financial support\": you may get a cost of living payment if getting certain benefits (paid automatically, no need to apply), help from your local council with essential costs like bills and food, and you can use a benefits calculator to estimate amounts.",
+  "reference_length": 16,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.gov.uk/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(269, 274) -> click at (269, 274) | SUCCESS",
+      "url": "https://www.gov.uk/",
+      "action_status": "SUCCESS",
+      "thought": "I'll accept the cookie banner first."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(443, 532) -> click at (443, 532) ; TYPE page -> type \"Check what benefits and financial support you can get\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.gov.uk/search/all?keywords=Check+what+benefits+and+financial+support+you+can+get",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Cookies accepted. The task describes the gov.uk \"Check what benefits and financial support you can get\" guided tool. Let me search for it."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(358, 341) -> click at (358, 341) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support",
+      "action_status": "SUCCESS",
+      "thought": "The first result is \"Check benefits and financial support you can get\" - this is the guided tool. Let me click on it."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(304, 502) -> click at (304, 502) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y",
+      "action_status": "SUCCESS",
+      "thought": "This is the guided tool. Let me click \"Check what you can get\" to start the questionnaire."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(174, 277) -> click at (174, 277) ; CLICK coords(201, 510) -> click at (201, 510) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y/england",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: First question: \"Where do you live?\" - Select England."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(174, 311) -> click at (174, 311) ; CLICK coords(201, 437) -> click at (201, 437) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y/england/yes",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: England recorded. Next: \"Are you State Pension age or over?\" - Task says over state pension age, so Yes."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(174, 391) -> click at (174, 391) ; CLICK coords(201, 516) -> click at (201, 516) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y/england/yes/no",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: \"Are you in paid work?\" - Task says unemployed, so \"No\"."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(174, 432) -> click at (174, 432) ; CLICK coords(201, 503) -> click at (201, 503) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y/england/yes/no/no",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: \"Do you have a disability or health condition?\" - Task says no health conditions, so \"No\"."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(174, 358) -> click at (174, 358) ; CLICK coords(201, 483) -> click at (201, 483) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y/england/yes/no/no/yes",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: \"Are you caring for someone with a disability or health condition for at least 35 hours a week?\" - Task says caring for someone with one, so \"Yes\"."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(174, 406) -> click at (174, 406) ; CLICK coords(201, 477) -> click at (201, 477) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y/england/yes/no/no/yes/no",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: \"Do you have children living with you?\" - Task describes a single person, no children mentioned, so \"No\"."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(174, 712) -> click at (174, 712) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y/england/yes/no/no/yes/no",
+      "action_status": "SUCCESS",
+      "thought": "\"Do you get any of the benefits included in the list?\" - Task doesn't mention currently receiving any, so \"No\". Let me select and continue."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=300) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y/england/yes/no/no/yes/no",
+      "action_status": "SUCCESS",
+      "thought": "\"No\" is selected. Now I need to scroll down to find the Continue button."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(201, 537) -> click at (201, 537) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y/england/yes/no/no/yes/no/no",
+      "action_status": "SUCCESS",
+      "thought": "\"No\" is selected. Now I need to scroll down to find the Continue button."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "CLICK coords(174, 497) -> click at (174, 497) ; CLICK coords(201, 622) -> click at (201, 622) | SUCCESS",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y/england/yes/no/no/yes/no/no/under_16000",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: \"How much money, savings and investments do you have?\" - Task describes an unemployed low-income person with no amount specified. I'll select \"Less than £16,000\" to reflect a typical low-income claimant."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "TASK_COMPLETE -> ANSWER: Based on the GOV.UK \"Check benefits and financial support you can get\" tool, for a single person in England, over State Pension age, unemployed (not in paid work), with no health condition of their own but caring for someone with a disability/health condition at least 35 hours a week, no children, not already getting the listed means-tested benefits, and savings less than 16,000 pounds, you may be eligible for 7 things:\n\n1. Pension Credit - extra money if you are over State Pension age and on a low income.\n2. Housing Benefit - help to pay your rent if you have reached State Pension age (or are in supported, sheltered or temporary housing). Not available if savings are over 16,000 pounds, unless you get the Guarantee Credit element of Pension Credit.\n3. Winter Fuel Payment - paid automatically once you reach State Pension age; you get a letter in Oct/Nov. Clawed back by HMRC via tax if taxable income is over 35,000 pounds; you can opt out.\n4. Carer's Allowance - if you care for someone at least 35 hours a week and the person you care for is getting certain disability benefits.\n5. Council Tax Reduction - if you are on a low income or claim benefits.\n6. NHS Help with health costs - help with prescriptions, dental care, healthcare travel and other health costs, particularly if on a low income or getting certain benefits.\n7. Older person's bus pass - free bus travel once you reach State Pension age in England.\n\nIn addition, under \"Other benefits and financial support\": you may get a cost of living payment if getting certain benefits (paid automatically, no need to apply), help from your local council with essential costs like bills and food, and you can use a benefits calculator to estimate amounts.",
+      "url": "https://www.gov.uk/check-benefits-financial-support/y/england/yes/no/no/yes/no/no/under_16000",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

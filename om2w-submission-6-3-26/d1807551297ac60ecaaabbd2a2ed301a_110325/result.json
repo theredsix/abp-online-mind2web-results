@@ -1,0 +1,113 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Show me a Dallas-based divorce lawyer who was once included in Top 50 Women Texas Super Lawyers list.",
+  "task_id": "d1807551297ac60ecaaabbd2a2ed301a_110325",
+  "agent_final_answer": "Katie L. Lewis is a Dallas-based divorce lawyer who was included in the Top 50: Women Texas Super Lawyers list.\n\nDetails from her Super Lawyers profile:\n- Firm: Katie L. Lewis, P.C. Family Law\n- Practice area: Family Law (divorce, custody, high-stakes property division); Board Certified in Family Law by the Texas Board of Legal Specialization\n- Location: 10440 N Central Expy, Suite 1100, Dallas, TX 75231\n- Phone: 214-461-5028 / 214-851-7318\n- Selected to Super Lawyers: 2013 - 2026\n- Top Lists: \"Top 50: Women Texas Super Lawyers: 2023 - 2026\" and \"Top 100: Dallas/Fort Worth Super Lawyers: 2023 - 2026\"",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://superlawyers.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(869, 638) -> click at (869, 638) ; TYPE page -> type \"divorce\" | SUCCESS",
+      "url": "https://www.superlawyers.com/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: This is the Super Lawyers website. I'll search for divorce lawyers in Dallas. Let me fill in the search form. First the legal issue field."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=300) | SUCCESS",
+      "url": "https://www.superlawyers.com/",
+      "action_status": "SUCCESS",
+      "thought": "I typed \"divorce\" and suggestions appeared. Let me scroll down to see the location field and the suggestion options."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(637, 587) -> click at (637, 587) | SUCCESS",
+      "url": "https://www.superlawyers.com/",
+      "action_status": "SUCCESS",
+      "thought": "I'll select \"Divorce\" from the suggestions."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "TYPE page -> type \"Dallas, TX\" | SUCCESS",
+      "url": "https://www.superlawyers.com/",
+      "action_status": "SUCCESS",
+      "thought": "The location field is cleared. Now I'll type \"Dallas, TX\"."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=200) | SUCCESS",
+      "url": "https://www.superlawyers.com/",
+      "action_status": "SUCCESS",
+      "thought": "Location is set to \"Dallas, TX\". Now let me find and click the \"Find lawyers\" button. Let me scroll down a bit to dismiss the dropdown and reveal the button."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(696, 347) -> click at (696, 347) | SUCCESS",
+      "url": "https://www.superlawyers.com/",
+      "action_status": "SUCCESS",
+      "thought": "A location dropdown appeared. I'll select \"Dallas, TX, USA\"."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(1039, 306) -> click at (1039, 306) | SUCCESS",
+      "url": "https://attorneys.superlawyers.com/divorce/texas/dallas/",
+      "action_status": "SUCCESS",
+      "thought": "Both fields are set: \"Divorce\" and \"Dallas, TX, USA\". Now I'll click \"Find lawyers\"."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(448, 531) -> click at (448, 531) | SUCCESS",
+      "url": "https://profiles.superlawyers.com/texas/plano/lawyer/erin-m-bogdanowicz/c7986c52-9652-4a87-aec2-d0eb76e7c751.html?adSubId=3436571",
+      "action_status": "SUCCESS",
+      "thought": "The search returned \"Top Rated Divorce Lawyers in Dallas, TX\". I need to find one who was once on the \"Top 50: Women - Texas Super Lawyers\" list. This info is typically in each lawyer's profile under honors/selectee history. Let me view the first lawyer's profile to understand the structure."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(154, 194) -> click at (154, 194) | SUCCESS",
+      "url": "https://attorneys.superlawyers.com/divorce/texas/dallas/",
+      "action_status": "SUCCESS",
+      "thought": "Erin Bogdanowicz is in Plano (not Dallas) and her Top Lists are \"Up-and-Coming\" Rising Stars lists, not \"Top 50: Women Texas Super Lawyers\". Not a match. Let me go back to results and check other lawyers. I'm looking for the \"Top 50: Women - Texas Super Lawyers\" honor in the Top Lists section, and a Dallas-based attorney."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(397, 531) -> click at (397, 531) | SUCCESS",
+      "url": "https://attorneys.superlawyers.com/divorce/texas/dallas/",
+      "action_status": "SUCCESS",
+      "thought": "Now Katie Lewis (Dallas, TX) is shown first. Let me check her profile for the \"Top 50: Women\" honor."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(345, 531) -> click at (345, 531) | SUCCESS",
+      "url": "https://profiles.superlawyers.com/texas/dallas/lawyer/katie-l-lewis/9d4fa132-9ba2-4283-9244-48d2d90f4ba0.html?adSubId=2851772",
+      "action_status": "SUCCESS",
+      "thought": "The click didn't navigate. Let me click directly on the name link."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "TASK_COMPLETE -> ANSWER: Katie L. Lewis is a Dallas-based divorce lawyer who was included in the Top 50: Women Texas Super Lawyers list.\n\nDetails from her Super Lawyers profile:\n- Firm: Katie L. Lewis, P.C. Family Law\n- Practice area: Family Law (divorce, custody, high-stakes property division); Board Certified in Family Law by the Texas Board of Legal Specialization\n- Location: 10440 N Central Expy, Suite 1100, Dallas, TX 75231\n- Phone: 214-461-5028 / 214-851-7318\n- Selected to Super Lawyers: 2013 - 2026\n- Top Lists: \"Top 50: Women Texas Super Lawyers: 2023 - 2026\" and \"Top 100: Dallas/Fort Worth Super Lawyers: 2023 - 2026\"",
+      "url": "https://profiles.superlawyers.com/texas/dallas/lawyer/katie-l-lewis/9d4fa132-9ba2-4283-9244-48d2d90f4ba0.html?adSubId=2851772",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

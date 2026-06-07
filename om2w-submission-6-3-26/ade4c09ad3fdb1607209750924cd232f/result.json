@@ -1,0 +1,57 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Compare available plans for the AeroAPI on Flightaware.",
+  "task_id": "ade4c09ad3fdb1607209750924cd232f",
+  "agent_final_answer": "AeroAPI on FlightAware offers 3 plans/tiers: Personal, Standard, and Premium.\n\nPURPOSE / OVERVIEW\n- Personal: Storage and distribution of derivative works for personal or academic purposes only.\n- Standard: For business or business-to-consumer purposes. Everything in Personal plus historical data, flight alerting, and email support.\n- Premium: For business, B2C, and all B2B commercial purposes. Everything in Standard plus advanced data sets (Aireon space-based ADS-B), Foresight Predictions, and enterprise-grade services with both email and phone support.\n\nFEATURE / API COMPARISON (Personal | Standard | Premium)\n- Alerts: No | Yes | Yes\n- FlightAware Foresight*: No | No | Yes\n- Aireon Space-Based ADS-B*: No | No | Yes\n- Historical Flight Data: No | Yes | Yes\n- Static maps and imagery: Yes | Yes | Yes\n\nPRICING DETAILS\n- Pricing model: per-query usage fees for all tiers. Personal includes up to $5 free per month (or $10 free per month for ADS-B feeders); Standard and Premium per-query fees are subject to a monthly minimum.\n- Monthly minimum fee: No minimum | $100/month | $1,000/month\n- Result set rate limit: 10 result sets/minute | 5 result sets/second | 100 result sets/second\n- History result set rate limit: N/A | 500,000 result sets/month | 500,000 result sets/month\n- Volume Discounting: No | Yes | Yes\n\nAUTHORIZED USERS / LICENSE\n- Internal Use for Business: No | Yes | Yes\n- Commercialization B2C: No | Yes | Yes\n- Commercialization B2B: No | No | Yes\n- Internal Use for Personal: Yes | Yes | Yes\n- Academic: Yes | Yes | Yes\n\nGENERAL / SUPPORT\n- Up-time guarantee: No | No | 99.5%\n- Email Support: No | Yes | Yes\n- Phone Support: No | No | Yes\n- Invoicing Available: No | No | Yes\n\nNote: * Foresight and Aireon Space-Based ADS-B require contacting FlightAware to enable, and some usage restrictions apply. Standard and Premium tiers are also eligible for volume discounting (the first $1,000/month is billed at list price, with discounts up to 94% off for monthly usage above $64,000).",
+  "reference_length": 4,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.flightaware.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1103, 754) -> click at (1103, 754) | SUCCESS",
+      "url": "https://www.flightaware.com/",
+      "action_status": "SUCCESS",
+      "thought": "I see the FlightAware homepage with a cookie banner. Let me accept cookies first."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(199, 31) -> click at (199, 31) | SUCCESS",
+      "url": "https://www.flightaware.com/",
+      "action_status": "SUCCESS",
+      "thought": "Cookies accepted. Now I need to find the AeroAPI. Let me explore the Products menu."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(426, 149) -> click at (426, 149) | SUCCESS",
+      "url": "https://www.flightaware.com/commercial/aeroapi/",
+      "action_status": "SUCCESS",
+      "thought": "I can see \"AeroAPI\" under DATA PRODUCTS. Let me click on it."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(140, 614) -> click at (140, 614) | SUCCESS",
+      "url": "https://www.flightaware.com/commercial/aeroapi/#pricing-cards",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the AeroAPI page. There's a \"View pricing tiers\" button. Let me click it to see the available plans."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "TASK_COMPLETE -> ANSWER: AeroAPI on FlightAware offers 3 plans/tiers: Personal, Standard, and Premium.\n\nPURPOSE / OVERVIEW\n- Personal: Storage and distribution of derivative works for personal or academic purposes only.\n- Standard: For business or business-to-consumer purposes. Everything in Personal plus historical data, flight alerting, and email support.\n- Premium: For business, B2C, and all B2B commercial purposes. Everything in Standard plus advanced data sets (Aireon space-based ADS-B), Foresight Predictions, and enterprise-grade services with both email and phone support.\n\nFEATURE / API COMPARISON (Personal | Standard | Premium)\n- Alerts: No | Yes | Yes\n- FlightAware Foresight*: No | No | Yes\n- Aireon Space-Based ADS-B*: No | No | Yes\n- Historical Flight Data: No | Yes | Yes\n- Static maps and imagery: Yes | Yes | Yes\n\nPRICING DETAILS\n- Pricing model: per-query usage fees for all tiers. Personal includes up to $5 free per month (or $10 free per month for ADS-B feeders); Standard and Premium per-query fees are subject to a monthly minimum.\n- Monthly minimum fee: No minimum | $100/month | $1,000/month\n- Result set rate limit: 10 result sets/minute | 5 result sets/second | 100 result sets/second\n- History result set rate limit: N/A | 500,000 result sets/month | 500,000 result sets/month\n- Volume Discounting: No | Yes | Yes\n\nAUTHORIZED USERS / LICENSE\n- Internal Use for Business: No | Yes | Yes\n- Commercialization B2C: No | Yes | Yes\n- Commercialization B2B: No | No | Yes\n- Internal Use for Personal: Yes | Yes | Yes\n- Academic: Yes | Yes | Yes\n\nGENERAL / SUPPORT\n- Up-time guarantee: No | No | 99.5%\n- Email Support: No | Yes | Yes\n- Phone Support: No | No | Yes\n- Invoicing Available: No | No | Yes\n\nNote: * Foresight and Aireon Space-Based ADS-B require contacting FlightAware to enable, and some usage restrictions apply. Standard and Premium tiers are also eligible for volume discounting (the first $1,000/month is billed at list price, with discounts up to 94% off for monthly usage above $64,000).",
+      "url": "https://www.flightaware.com/commercial/aeroapi/#pricing-cards",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

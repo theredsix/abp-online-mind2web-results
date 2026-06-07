@@ -1,0 +1,121 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find the next available date for Albion Basin.",
+  "task_id": "c09721cc937d4dcfb391a0bc2c574b28",
+  "agent_final_answer": "The next available date for Albion Basin (Uinta-Wasatch-Cache National Forest, near Sandy, Utah) is Sunday, July 12, 2026. The campsite availability grid's earliest viewable date is Saturday, July 11, 2026, where all sites are marked \"R\" (Reserved). The first available date is Sunday, July 12, 2026, at site #002 (marked \"FF\" = First Come, First Served). All standard reservable sites (003-026, 2021) remain Reserved through at least July 20, 2026.",
+  "reference_length": 3,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.recreation.gov/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(556, 341) -> click at (556, 341) ; TYPE page -> type \"Albion Basin\" | SUCCESS",
+      "url": "https://www.recreation.gov/",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I'm on the recreation.gov homepage. No cookie banner present. Let me search for \"Albion Basin\"."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(1031, 341) -> click at (1031, 341) | SUCCESS",
+      "url": "https://www.recreation.gov/search?q=Albion%20Basin",
+      "action_status": "SUCCESS",
+      "thought": "The text is entered. The autocomplete only shows a generic option. Let me click SEARCH to search."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(354, 407) -> click at (354, 407) | SUCCESS",
+      "url": "https://www.recreation.gov/camping/campgrounds/232010",
+      "action_status": "SUCCESS",
+      "thought": "Search results show \"Albion Basin\" camping in Uinta-Wasatch-Cache National Forest. Let me click on it."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(154, 456) -> click at (154, 456) | SUCCESS",
+      "url": "https://www.recreation.gov/search?q=Albion%20Basin",
+      "action_status": "SUCCESS",
+      "thought": "The click didn't navigate. Let me click on the Albion Basin image/card link."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.recreation.gov/search?q=Albion%20Basin",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Albion Basin Campground page. Let me scroll down to find the availability section/date picker."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.recreation.gov/camping/campgrounds/232010",
+      "action_status": "SUCCESS",
+      "thought": "Now I'm on the correct Albion Basin tab. Let me scroll down to find the availability/date picker section."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(700, 351) -> click at (700, 351) | SUCCESS",
+      "url": "https://www.recreation.gov/search?q=Albion%20Basin",
+      "action_status": "SUCCESS",
+      "thought": "I can see the campsite availability grid showing July dates. There's a \"Next Available\" button which will jump to the next available date. Let me click it."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(374, 351) -> click at (374, 351) | SUCCESS",
+      "url": "https://www.recreation.gov/search?q=Albion%20Basin",
+      "action_status": "SUCCESS",
+      "thought": "The grid didn't change — it already shows the next available window starting in July. Let me check the legend by clicking the info icon to understand \"R\" and \"FF\" markings."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "HOVER coords(309, 476) -> hover at (309, 476) | SUCCESS",
+      "url": "https://www.recreation.gov/camping/campgrounds/232010",
+      "action_status": "SUCCESS",
+      "thought": "Let me hover over a green \"FF\" cell to see its meaning via tooltip."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(309, 476) -> click at (309, 476) | SUCCESS",
+      "url": "https://www.recreation.gov/search?q=Albion%20Basin",
+      "action_status": "SUCCESS",
+      "thought": "The cells didn't show a tooltip. The green \"FF\" cells indicate availability. Let me click on a green cell for site 002 to confirm it's bookable and see what date gets selected."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "HOVER coords(374, 351) -> hover at (374, 351) | SUCCESS",
+      "url": "https://www.recreation.gov/camping/campgrounds/232010",
+      "action_status": "SUCCESS",
+      "thought": "Now I understand the grid. The facility info confirms: \"Two single sites are available on a First Come, First Served basis, sites #2 & #17.\" So \"FF\" = First Come, First Served (sites 002 and 017), and \"R\" = Reserved. All reservable sites (003-026, 2021) are reserved July 11-20.\n\nLet me verify the legend by hovering over the info icon to confirm what these codes mean."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "CLICK coords(630, 351) -> click at (630, 351) | SUCCESS",
+      "url": "https://www.recreation.gov/search?q=Albion%20Basin",
+      "action_status": "SUCCESS",
+      "thought": "The legend popover isn't rendering. Based on the facility info and grid data, I understand the codes: \"R\" = Reserved, \"FF\" = First Come, First Served (sites 002 & 017). Let me verify whether dates before July 11 exist by clicking the back \"5 Days\" button to confirm the next available date."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "TASK_COMPLETE -> ANSWER: The next available date for Albion Basin (Uinta-Wasatch-Cache National Forest, near Sandy, Utah) is Sunday, July 12, 2026. The campsite availability grid's earliest viewable date is Saturday, July 11, 2026, where all sites are marked \"R\" (Reserved). The first available date is Sunday, July 12, 2026, at site #002 (marked \"FF\" = First Come, First Served). All standard reservable sites (003-026, 2021) remain Reserved through at least July 20, 2026.",
+      "url": "https://www.recreation.gov/search?q=Albion%20Basin",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

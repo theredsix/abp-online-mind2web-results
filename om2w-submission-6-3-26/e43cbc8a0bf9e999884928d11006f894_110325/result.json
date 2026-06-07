@@ -1,0 +1,185 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Show me an event to do in Miami for 2 adults, that last between 1 to 3 hours per session, cost under $100 per person, and are available for booking between next Monday and next Friday, have a rating of 4.5+.",
+  "task_id": "e43cbc8a0bf9e999884928d11006f894_110325",
+  "agent_final_answer": "Recommended event in Miami: \"Ride jet skis in Miami and Biscayne Bay\" (Airbnb Experience).\n\nIt meets all the requirements:\n- Location: Miami\n- Guests: searched and available for 2 adults\n- Duration: 1.5 hours per session (within the 1-3 hour range)\n- Price: From $50 per guest (under $100 per person)\n- Booking availability: Jun 1, 2, and more dates (within next Monday Jun 1 to next Friday Jun 5)\n- Rating: 4.55 stars (4.5+), based on 1,114 reviews\n\nOther matching options shown in the same filtered results (Miami, 2 guests, Jun 1-5, 1-3 hrs, under $100/person):\n- \"Sunset Boat Tour: Mansions, Skyline & Cocktails\" - Miami Beach, 2 hours, from $53/guest, rating 4.9\n- \"Breathtaking Boat Miami Beach/Skyline\" - Miami Beach, 2 hours, from $79/guest, rating 4.91\n- \"Miami skyline and sandbar boat cruise\" - 3 hours, Jun 4 and 5, from $84/guest, rating 5.0",
+  "reference_length": 13,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.airbnb.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(404, 675) -> click at (404, 675) | SUCCESS",
+      "url": "https://www.airbnb.com/",
+      "action_status": "SUCCESS",
+      "thought": "I see the Airbnb homepage with a cookie banner. Let me accept cookies first."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(651, 40) -> click at (651, 40) | SUCCESS",
+      "url": "https://www.airbnb.com/experiences",
+      "action_status": "SUCCESS",
+      "thought": "Cookie banner is gone. The task is about an \"event\" in Miami, which corresponds to Airbnb's \"Experiences\". Let me click on the Experiences tab."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(350, 135) -> click at (350, 135) ; TYPE page -> type \"Miami\" | SUCCESS",
+      "url": "https://www.airbnb.com/experiences",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I'm on the Experiences tab. Now let me search for Miami. Let me click the \"Where\" field and type Miami."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(342, 231) -> click at (342, 231) | SUCCESS",
+      "url": "https://www.airbnb.com/experiences",
+      "action_status": "SUCCESS",
+      "thought": "A dropdown appeared with location suggestions. Let me click on \"Miami, FL\"."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(877, 213) -> click at (877, 213) | SUCCESS",
+      "url": "https://www.airbnb.com/experiences",
+      "action_status": "SUCCESS",
+      "thought": "The date picker is showing May 2026. Today is Sunday May 31. Next Monday is June 1, next Friday is June 5. I need to go to June. Let me click the right arrow to advance to June."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(638, 297) -> click at (638, 297) | SUCCESS",
+      "url": "https://www.airbnb.com/experiences",
+      "action_status": "SUCCESS",
+      "thought": "Now I'm on June 2026. Let me select June 1 (Monday) as the start date."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(828, 297) -> click at (828, 297) | SUCCESS",
+      "url": "https://www.airbnb.com/experiences",
+      "action_status": "SUCCESS",
+      "thought": "June 1 is selected. Now let me click June 5 (Friday) as the end date."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(860, 126) -> click at (860, 126) | SUCCESS",
+      "url": "https://www.airbnb.com/experiences",
+      "action_status": "SUCCESS",
+      "thought": "Date range \"Jun 1 - 5\" is set. Now let me set guests to 2 adults. Let me click on the \"Who\" field."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(984, 232) -> click at (984, 232) ; CLICK coords(984, 232) -> click at (984, 232) | SUCCESS",
+      "url": "https://www.airbnb.com/experiences",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The guests panel is open. Let me add 2 adults by clicking the \"+\" button twice."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(996, 126) -> click at (996, 126) | SUCCESS",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&location_bb=Qc9e0MKgPu1BzawewqCjIQ%3D%3D&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=autocomplete_click",
+      "action_status": "SUCCESS",
+      "thought": "2 adults set. Now let me click Search."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(841, 100) -> click at (841, 100) | SUCCESS",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&location_bb=Qc9e0MKgPu1BzawewqCjIQ%3D%3D&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=autocomplete_click",
+      "action_status": "SUCCESS",
+      "thought": "I have search results for Experiences in Miami, Jun 1-5, 2 guests. Now I need to apply filters for duration (1-3 hours), price (under $100/person), and rating (4.5+). Let me open the Filters panel."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&location_bb=Qc9e0MKgPu1BzawewqCjIQ%3D%3D&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=autocomplete_click",
+      "action_status": "SUCCESS",
+      "thought": "The Filters panel is open. I see Experience type and Traveler type. Let me scroll down within the panel to find price, duration, and rating filters."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(842, 624) -> click at (842, 624) ; TYPE page -> type \"99\" ; PRESS_KEY page -> press TAB | SUCCESS",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&location_bb=Qc9e0MKgPu1BzawewqCjIQ%3D%3D&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=autocomplete_click",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The maximum field is cleared. Now let me type 99."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "TYPE page -> type \"99\" ; PRESS_KEY page -> press TAB | SUCCESS",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&location_bb=Qc9e0MKgPu1BzawewqCjIQ%3D%3D&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=autocomplete_click",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The field is cleared and focused. Let me type 99 directly."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&location_bb=Qc9e0MKgPu1BzawewqCjIQ%3D%3D&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=autocomplete_click",
+      "action_status": "SUCCESS",
+      "thought": "Maximum is now $99 and results dropped to 93. Now let me scroll down to find the Duration and Rating filters."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "CLICK coords(395, 373) -> drag from (395, 373) to (472, 373) | SUCCESS",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&location_bb=Qc9e0MKgPu1BzawewqCjIQ%3D%3D&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=autocomplete_click",
+      "action_status": "SUCCESS",
+      "thought": "I found the Duration slider with marks: 30m, 1h, 1.5h, 2h, 3h, 4h, 5h+. The task wants 1-3 hours. Let me drag the left handle from 30m to 1h. First, let me drag the left handle to the 1h position."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "CLICK coords(868, 373) -> drag from (868, 373) to (712, 373) | SUCCESS",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&location_bb=Qc9e0MKgPu1BzawewqCjIQ%3D%3D&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=autocomplete_click",
+      "action_status": "SUCCESS",
+      "thought": "The left handle is at 1h now. Now let me drag the right handle from 5h+ to 3h."
+    },
+    {
+      "step": 18,
+      "screenshot": "0018.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&location_bb=Qc9e0MKgPu1BzawewqCjIQ%3D%3D&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=autocomplete_click",
+      "action_status": "SUCCESS",
+      "thought": "Duration is now set to 1h-3h, results dropped to 83. Now let me scroll down to look for a Rating filter."
+    },
+    {
+      "step": 19,
+      "screenshot": "0019.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&location_bb=Qc9e0MKgPu1BzawewqCjIQ%3D%3D&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=autocomplete_click",
+      "action_status": "SUCCESS",
+      "thought": "I see Time of day, Language, Accessibility. Let me scroll down more to check for a Rating filter."
+    },
+    {
+      "step": 20,
+      "screenshot": "0020.png",
+      "action": "CLICK coords(828, 723) -> click at (828, 723) | SUCCESS",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=filter_change&query=Miami%2C%20Florida%2C%20United%20States&experience_price_max=99&selected_filter_order%5B%5D=experience_price_max%3A99&selected_filter_order%5B%5D=min_duration%3A60&selected_filter_order%5B%5D=max_duration%3A180&update_selected_filters=false&min_duration=60&max_duration=180",
+      "action_status": "SUCCESS",
+      "thought": "There's no rating filter in the panel - the filters end with Accessibility features. Airbnb Experiences doesn't offer a rating filter, so I'll apply these filters and manually find a result with 4.5+ rating. Let me click \"Show 83 results\"."
+    },
+    {
+      "step": 21,
+      "screenshot": "0021.png",
+      "action": "TASK_COMPLETE -> ANSWER: Recommended event in Miami: \"Ride jet skis in Miami and Biscayne Bay\" (Airbnb Experience).\n\nIt meets all the requirements:\n- Location: Miami\n- Guests: searched and available for 2 adults\n- Duration: 1.5 hours per session (within the 1-3 hour range)\n- Price: From $50 per guest (under $100 per person)\n- Booking availability: Jun 1, 2, and more dates (within next Monday Jun 1 to next Friday Jun 5)\n- Rating: 4.55 stars (4.5+), based on 1,114 reviews\n\nOther matching options shown in the same filtered results (Miami, 2 guests, Jun 1-5, 1-3 hrs, under $100/person):\n- \"Sunset Boat Tour: Mansions, Skyline & Cocktails\" - Miami Beach, 2 hours, from $53/guest, rating 4.9\n- \"Breathtaking Boat Miami Beach/Skyline\" - Miami Beach, 2 hours, from $79/guest, rating 4.91\n- \"Miami skyline and sandbar boat cruise\" - 3 hours, Jun 4 and 5, from $84/guest, rating 5.0",
+      "url": "https://www.airbnb.com/s/Miami--FL/experiences?place_id=ChIJEcHIDqKw2YgRZU-t3XHylv8&refinement_paths%5B%5D=%2Fexperiences&acp_id=d956c3de-2834-44a1-ad2e-47bb567a6467&date_picker_type=calendar&checkin=2026-06-01&checkout=2026-06-05&adults=2&source=structured_search_input_header&search_type=filter_change&query=Miami%2C%20Florida%2C%20United%20States&experience_price_max=99&selected_filter_order%5B%5D=experience_price_max%3A99&selected_filter_order%5B%5D=min_duration%3A60&selected_filter_order%5B%5D=max_duration%3A180&update_selected_filters=false&min_duration=60&max_duration=180",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

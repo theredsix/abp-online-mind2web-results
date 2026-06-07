@@ -1,0 +1,105 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find the weight of baggage allowance for economy class on Qatar Airways.",
+  "task_id": "005be9dd91c95669d6ddde9ae667125c",
+  "agent_final_answer": "Qatar Airways Economy Class baggage allowance (weights):\n\nCarry-on baggage: 1 piece up to 7 kg (15 lb) for all Economy fare types. (For flights to/from Brazil, Economy customers can carry one piece up to 10 kg / 22 lb.)\n\nChecked baggage:\n- Flights to/from Africa or the Americas (piece concept): Economy Lite = 1 piece up to 23 kg (50 lb); Economy Classic / Convenience / Comfort = 2 pieces up to 23 kg (50 lb) each.\n- All other destinations (weight concept): Economy Lite = 20 kg (44 lb); Economy Classic = 25 kg (55 lb); Economy Convenience = 30 kg (66 lb); Economy Comfort = 35 kg (77 lb).",
+  "reference_length": 4,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.qatarairways.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1127, 735) -> click at (1127, 735) | SUCCESS",
+      "url": "https://www.qatarairways.com/en-us/homepage.html",
+      "action_status": "SUCCESS",
+      "thought": "I'll accept the cookie banner first."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(957, 83) -> click at (957, 83) | SUCCESS",
+      "url": "https://www.qatarairways.com/en-us/homepage.html",
+      "action_status": "SUCCESS",
+      "thought": "Cookie banner accepted. Let me use the search function to find baggage allowance information."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(500, 240) -> click at (500, 240) ; TYPE page -> type \"baggage allowance\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.qatarairways.com/en-us/search-results.html?searchString=baggage%20allowance&currentPagePath=/en-us/search-results.html",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: A search box opened. Let me search for baggage allowance."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(1066, 234) -> click at (1066, 234) | SUCCESS",
+      "url": "https://www.qatarairways.com/en-us/search-results.html?searchString=baggage%20allowance&currentPagePath=/en-us/search-results.html",
+      "action_status": "SUCCESS",
+      "thought": "The text is in the box but ENTER didn't submit. Let me click the Search button."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.qatarairways.com/en-us/search-results.html?searchString=baggage%20allowance&currentPagePath=/en-us/search-results.html",
+      "action_status": "SUCCESS",
+      "thought": "Let me scroll down to see the matching pages results."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(642, 379) -> click at (642, 379) | SUCCESS",
+      "url": "https://www.qatarairways.com/en-us/search-results.html?searchString=baggage%20allowance&currentPagePath=/en-us/search-results.html",
+      "action_status": "SUCCESS",
+      "thought": "The matching pages section is empty. Let me click \"Show more results\"."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(328, 342) -> click at (328, 342) | SUCCESS",
+      "url": "https://www.qatarairways.com/en-us/baggage/allowance.html",
+      "action_status": "SUCCESS",
+      "thought": "Found 48 results. The first one \"Baggage allowance - Carry-on and Checked Baggage\" looks most relevant. Let me click it."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.qatarairways.com/en-us/baggage/allowance.html",
+      "action_status": "SUCCESS",
+      "thought": "The baggage allowance page loaded. Let me scroll down to find the economy class baggage weight information."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.qatarairways.com/en-us/baggage/allowance.html",
+      "action_status": "SUCCESS",
+      "thought": "Let me continue scrolling to find the baggage allowance table with weight by class."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.qatarairways.com/en-us/baggage/allowance.html",
+      "action_status": "SUCCESS",
+      "thought": "Let me continue scrolling to find the baggage allowance table with weight by class."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "TASK_COMPLETE -> ANSWER: Qatar Airways Economy Class baggage allowance (weights):\n\nCarry-on baggage: 1 piece up to 7 kg (15 lb) for all Economy fare types. (For flights to/from Brazil, Economy customers can carry one piece up to 10 kg / 22 lb.)\n\nChecked baggage:\n- Flights to/from Africa or the Americas (piece concept): Economy Lite = 1 piece up to 23 kg (50 lb); Economy Classic / Convenience / Comfort = 2 pieces up to 23 kg (50 lb) each.\n- All other destinations (weight concept): Economy Lite = 20 kg (44 lb); Economy Classic = 25 kg (55 lb); Economy Convenience = 30 kg (66 lb); Economy Comfort = 35 kg (77 lb).",
+      "url": "https://www.qatarairways.com/en-us/baggage/allowance.html",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

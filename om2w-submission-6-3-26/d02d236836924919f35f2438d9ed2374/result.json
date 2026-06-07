@@ -1,0 +1,393 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Browse the top 250 movies and find one movie that is available on AMC+.",
+  "task_id": "d02d236836924919f35f2438d9ed2374",
+  "agent_final_answer": "GoodFellas (1990), directed by Martin Scorsese, is a movie in the IMDb Top 250 (ranked #17) that is available on AMC+. On its IMDb title page, the \"STREAMING\" section displays the AMC+ logo with the label \"Prime Video Channels\", confirming it can be streamed via AMC+ (as a Prime Video Channel). It is also available to rent/buy on Prime Video and Amazon.",
+  "reference_length": 22,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.imdb.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1216, 84) -> click at (1216, 84) | SUCCESS",
+      "url": "https://www.imdb.com/",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the IMDb homepage. There's a sign-in popup in the top right. Let me close it first, then navigate to the Top 250 list via the Menu."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(133, 27) -> click at (133, 27) | SUCCESS",
+      "url": "https://www.imdb.com/",
+      "action_status": "SUCCESS",
+      "thought": "The popup is closed. Now let me open the Menu to find the Top 250 list."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(232, 212) -> click at (232, 212) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "The menu is open. I'll click \"Top 250 movies\"."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(50, 658) -> click at (50, 658) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the IMDb Top 250 movies page. Per the guidelines, let me first check the filter controls before scrolling through the list. Let me click the filter button."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "A filter panel opened with Genres, Release Year, and IMDb Ratings. Let me scroll down within this panel to see if there's a streaming/watch options filter."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(946, 71) -> click at (946, 71) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "I found a \"WHERE TO WATCH\" filter, but it only lists Prime Video and Amazon options — no AMC+. This filter appears limited to Amazon-affiliated providers (IMDb is owned by Amazon). To find AMC+ availability, I'll need to check individual movie pages' \"Watch options\" sections, which pull full provider data from JustWatch. Let me close this filter and examine a movie page structure first."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "The filter is closed. Let me scroll down to view the movie list and examine the structure."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "CLICK coords(214, 382) -> click at (214, 382) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0111161/?ref_=chttp_t_1",
+      "action_status": "SUCCESS",
+      "thought": "I can see the ranked list with info icons. Let me click on the first movie's title to examine the \"Watch options\" structure on a detail page."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0111161/?ref_=chttp_t_1",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Shawshank Redemption detail page. Let me scroll down to find the \"Watch options\" / \"Where to Watch\" section."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "page -> NAVIGATE -> navigate to back | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "The watch box for Shawshank shows only \"RENT/BUY\" via Prime Video and Amazon — no streaming/AMC+. The data here is Amazon-centric. AMC+ is sold as a Prime Video Channel, so AMC+ titles would likely appear among the \"Prime Video (subscription)\" streaming titles (25 of them per the filter). Let me go back to the chart and apply that filter to narrow down candidates."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "CLICK coords(50, 257) -> click at (50, 257) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "I'm back at the chart. Let me click the filter button to open filters again."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-500) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "The filter didn't open, possibly due to the ad overlay. Let me scroll to the top first."
+    },
+    {
+      "step": 13,
+      "screenshot": "0013.png",
+      "action": "CLICK coords(50, 658) -> click at (50, 658) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "Now let me click the filter button."
+    },
+    {
+      "step": 14,
+      "screenshot": "0014.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "The filter panel is opening. Let me scroll down within it to reach the \"WHERE TO WATCH\" section."
+    },
+    {
+      "step": 15,
+      "screenshot": "0015.png",
+      "action": "CLICK coords(469, 402) -> click at (469, 402) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu&online_availability=amzn1.imdb.w2w.provider.prime_video.PRIME",
+      "action_status": "SUCCESS",
+      "thought": "I see the \"WHERE TO WATCH\" filter with \"Prime Video (subscription) (25)\". Since AMC+ is offered as a Prime Video Channel, AMC+ titles would fall under this subscription category. Let me click it to narrow to those 25 titles."
+    },
+    {
+      "step": 16,
+      "screenshot": "0016.png",
+      "action": "CLICK coords(946, 71) -> click at (946, 71) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu&online_availability=amzn1.imdb.w2w.provider.prime_video.PRIME",
+      "action_status": "SUCCESS",
+      "thought": "The filter is applied — now showing \"25 of 250\" titles, starting with #5 \"12 Angry Men\". Let me close the filter and view these 25 candidate titles."
+    },
+    {
+      "step": 17,
+      "screenshot": "0017.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=350) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu&online_availability=amzn1.imdb.w2w.provider.prime_video.PRIME",
+      "action_status": "SUCCESS",
+      "thought": "I have all 25 candidate titles. These are titles available via Prime Video subscription, which on IMDb includes Prime Video Channels like AMC+. Now I need to check individual watch boxes for explicit \"AMC+\" listings. Let me scroll down to see the list clearly first."
+    },
+    {
+      "step": 18,
+      "screenshot": "0018.png",
+      "action": "CLICK coords(161, 432) -> click at (161, 432) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0050083/?ref_=chttp_t_1",
+      "action_status": "SUCCESS",
+      "thought": "Let me open #5 \"12 Angry Men\" detail page to examine its full watch options."
+    },
+    {
+      "step": 19,
+      "screenshot": "0019.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0050083/?ref_=chttp_t_1",
+      "action_status": "SUCCESS",
+      "thought": "On the 12 Angry Men page. Let me scroll down to the watch options box."
+    },
+    {
+      "step": 20,
+      "screenshot": "0020.png",
+      "action": "CLICK coords(1183, 341) -> click at (1183, 341) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0050083/?ref_=chttp_t_1",
+      "action_status": "SUCCESS",
+      "thought": "The watch box shows a \"STREAMING\" section with Prime Video, Pluto TV, and a \"+3\" button for more providers. The data is rich (not just Amazon). Let me click \"+3\" to reveal the additional streaming services and check for AMC+."
+    },
+    {
+      "step": 21,
+      "screenshot": "0021.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=250) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0050083/?ref_=chttp_t_1",
+      "action_status": "SUCCESS",
+      "thought": "A modal opened with the full streaming list for 12 Angry Men: Prime Video, Pluto TV, Tubi, and more below. Let me scroll within this modal to see all options and check for AMC+."
+    },
+    {
+      "step": 22,
+      "screenshot": "0022.png",
+      "action": "PRESS_KEY page -> press ESCAPE | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0050083/?ref_=chttp_t_1",
+      "action_status": "SUCCESS",
+      "thought": "12 Angry Men shows STREAMING on Prime Video, Pluto TV, and Tubi — no AMC+. But this confirms the data is rich and US-based (Pluto, Tubi appear), so AMC+ should show for titles that have it. Let me close this modal and check whether the page text captures all providers (which would let me scan titles faster)."
+    },
+    {
+      "step": 23,
+      "screenshot": "0023.png",
+      "action": "page -> NAVIGATE -> navigate to back | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/",
+      "action_status": "SUCCESS",
+      "thought": "The page text shows \"STREAMING +3\" but provider names are images, not text — so I must expand the modal to read them. The chart filter only lists Amazon providers (Pluto TV/Tubi appear on movies but aren't filter options), so AMC+ isn't filterable. I'll check individual titles' watch boxes. AMC (the network) and AMC+ frequently carry gangster/action catalog films like Scarface and Die Hard, both in my candidate list. Let me go back to the filtered chart."
+    },
+    {
+      "step": 24,
+      "screenshot": "0024.png",
+      "action": "page -> NAVIGATE -> navigate to back | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "The back returned to the movie page (the modal added a history entry). Let me go back once more to reach the filtered chart."
+    },
+    {
+      "step": 25,
+      "screenshot": "0025.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=1300) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "The chart is unfiltered now (250 Titles). To check candidates efficiently while keeping my place, I'll open movies in new tabs via Ctrl+click. AMC and AMC+ are known for crime/gangster catalog films. Let me scroll down to find strong candidates like Goodfellas, Scarface, or Heat."
+    },
+    {
+      "step": 26,
+      "screenshot": "0026.png",
+      "action": "CLICK coords(224, 585) -> click at (224, 585) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "I see the top titles (mostly blockbusters). Let me test the new-tab workflow on a classic — \"The Good, the Bad and the Ugly\" (#10), an American Movie Classics-style western. I'll Ctrl+click to open it in a new tab, keeping the chart in place."
+    },
+    {
+      "step": 27,
+      "screenshot": "0027.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0060196/?ref_=chttp_t_10",
+      "action_status": "SUCCESS",
+      "thought": "Now let me scroll down to the watch box on this tab."
+    },
+    {
+      "step": 28,
+      "screenshot": "0028.png",
+      "action": "CLICK coords(1183, 348) -> click at (1183, 348) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0060196/?ref_=chttp_t_10",
+      "action_status": "SUCCESS",
+      "thought": "This title's STREAMING shows \"MGM+ (Prime Video Channels)\" plus \"+7\" more. This confirms Prime Video Channels (like MGM+, and potentially AMC+) appear here. Let me click \"+7\" to see all providers and check for AMC+."
+    },
+    {
+      "step": 29,
+      "screenshot": "0029.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=250) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0060196/?ref_=chttp_t_10",
+      "action_status": "SUCCESS",
+      "thought": "The modal shows STREAMING with MGM+, Fawesome, and more below. Let me scroll within the modal to see all providers and look for AMC+."
+    },
+    {
+      "step": 30,
+      "screenshot": "0030.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=250) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0060196/?ref_=chttp_t_10",
+      "action_status": "SUCCESS",
+      "thought": "Streaming so far: MGM+, Fawesome, MGM+ (subscription), Pluto TV, The Roku Channel, Tubi. No AMC+ yet. Let me scroll the modal further to see remaining providers."
+    },
+    {
+      "step": 31,
+      "screenshot": "0031.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-1500) | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "Now on the chart tab. Let me scroll to the top to access the search box."
+    },
+    {
+      "step": 32,
+      "screenshot": "0032.png",
+      "action": "CLICK coords(560, 27) -> click at (560, 27) ; TYPE page -> type \"The Pianist\" | SUCCESS",
+      "url": "https://www.imdb.com/chart/top/?ref_=hm_nv_menu",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I'm at the top with the search box. Let me search for \"The Pianist\" (a Studiocanal film, strong AMC+ candidate)."
+    },
+    {
+      "step": 33,
+      "screenshot": "0033.png",
+      "action": "CLICK coords(303, 90) -> click at (303, 90) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0253474/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Pianist",
+      "action_status": "SUCCESS",
+      "thought": "The top result is \"The Pianist (2002)\" with Adrien Brody. Let me click it."
+    },
+    {
+      "step": 34,
+      "screenshot": "0034.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0253474/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Pianist",
+      "action_status": "SUCCESS",
+      "thought": "On The Pianist page. Let me scroll down to the watch box."
+    },
+    {
+      "step": 35,
+      "screenshot": "0035.png",
+      "action": "CLICK coords(1183, 341) -> click at (1183, 341) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0253474/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Pianist",
+      "action_status": "SUCCESS",
+      "thought": "The Pianist's STREAMING shows CuriosityStream, howdy, and \"+7\". Let me expand to check for AMC+."
+    },
+    {
+      "step": 36,
+      "screenshot": "0036.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=250) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0253474/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Pianist",
+      "action_status": "SUCCESS",
+      "thought": "Let me scroll within The Pianist's modal to see all streaming providers."
+    },
+    {
+      "step": 37,
+      "screenshot": "0037.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=250) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0253474/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Pianist",
+      "action_status": "SUCCESS",
+      "thought": "The Pianist shows free/niche services (CuriosityStream, Howdy, Fawesome, Plex, Pluto TV, Roku, Tubi) — no AMC+ yet. Let me scroll a bit more to confirm the rest."
+    },
+    {
+      "step": 38,
+      "screenshot": "0038.png",
+      "action": "PRESS_KEY page -> press ESCAPE | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0253474/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Pianist",
+      "action_status": "SUCCESS",
+      "thought": "The text method works — one `browser_text` call on the open modal returns the complete provider list. The Pianist confirmed: no AMC+.\n\nThe data set is consistent: Amazon + FAST services + Prime Video Channels. AMC+ would appear as \"AMC+ with Prime Video Channels\" for titles in its catalog. AMC+ includes Shudder (horror), so let me check a Shudder-associated Top 250 horror classic: \"The Thing\" (1982). Let me close this modal."
+    },
+    {
+      "step": 39,
+      "screenshot": "0039.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-700) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0253474/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Pianist",
+      "action_status": "SUCCESS",
+      "thought": "Modal closed. Let me scroll up to access the search box to look up the next candidate."
+    },
+    {
+      "step": 40,
+      "screenshot": "0040.png",
+      "action": "CLICK coords(560, 27) -> click at (560, 27) ; TYPE page -> type \"The Thing 1982\" | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0253474/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Pianist",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The search box is accessible. Let me search for \"The Thing\" (1982)."
+    },
+    {
+      "step": 41,
+      "screenshot": "0041.png",
+      "action": "CLICK coords(298, 90) -> click at (298, 90) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0084787/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Thing%201982",
+      "action_status": "SUCCESS",
+      "thought": "The top result is \"The Thing (1982)\" with Kurt Russell. Let me click it."
+    },
+    {
+      "step": 42,
+      "screenshot": "0042.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0084787/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Thing%201982",
+      "action_status": "SUCCESS",
+      "thought": "On The Thing (1982). Let me scroll to the watch box."
+    },
+    {
+      "step": 43,
+      "screenshot": "0043.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=-700) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0084787/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Thing%201982",
+      "action_status": "SUCCESS",
+      "thought": "The Thing shows only RENT/BUY (Prime, Amazon) — no STREAMING section, so no AMC+. \n\n5 titles checked, no AMC+ yet. Let me reconsider: AMC (the network) is famously associated with airing Goodfellas constantly — suggesting a deep AMC Networks licensing deal that likely extends to AMC+ streaming. Let me check Goodfellas. First, scroll up to the search box."
+    },
+    {
+      "step": 44,
+      "screenshot": "0044.png",
+      "action": "CLICK coords(560, 27) -> click at (560, 27) ; TYPE page -> type \"Goodfellas\" | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0084787/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Thing%201982",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Let me search for \"Goodfellas\"."
+    },
+    {
+      "step": 45,
+      "screenshot": "0045.png",
+      "action": "CLICK coords(303, 90) -> click at (303, 90) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0099685/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Goodfellas",
+      "action_status": "SUCCESS",
+      "thought": "Top result is \"GoodFellas (1990)\". Let me click it."
+    },
+    {
+      "step": 46,
+      "screenshot": "0046.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=600) | SUCCESS",
+      "url": "https://www.imdb.com/title/tt0099685/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Goodfellas",
+      "action_status": "SUCCESS",
+      "thought": "On GoodFellas. Let me scroll to the watch box."
+    },
+    {
+      "step": 47,
+      "screenshot": "0047.png",
+      "action": "TASK_COMPLETE -> ANSWER: GoodFellas (1990), directed by Martin Scorsese, is a movie in the IMDb Top 250 (ranked #17) that is available on AMC+. On its IMDb title page, the \"STREAMING\" section displays the AMC+ logo with the label \"Prime Video Channels\", confirming it can be streamed via AMC+ (as a Prime Video Channel). It is also available to rent/buy on Prime Video and Amazon.",
+      "url": "https://www.imdb.com/title/tt0099685/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Goodfellas",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Find possible causes for the symptoms of chest pain which is sharp which is accompanied by anxiety.",
+  "task_id": "8103786e0e5976ebf961bd062d5f39cd",
+  "agent_final_answer": "Using the Mayo Clinic Symptom Checker for \"Chest pain in adults\" with the factors \"Sharp\" (pain best described as) and \"Anxiety\" (accompanied by), the possible causes are:\n1. Angina\n2. Heart attack\n3. Panic attacks and panic disorder\n4. Pericarditis\n5. Pleurisy\n6. Pulmonary embolism",
+  "reference_length": 9,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.mayoclinic.org/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(930, 739) -> click at (930, 739) ; TYPE page -> type \"symptom checker\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.mayoclinic.org/diseases-conditions/search-results?q=symptom%20checker",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: This is the Mayo Clinic homepage. The task asks me to find possible causes for \"sharp chest pain accompanied by anxiety.\" Mayo Clinic has a Symptom Checker tool. Let me search for it."
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(1220, 42) -> click at (1220, 42) | SUCCESS",
+      "url": "https://www.mayoclinic.org/diseases-conditions/search-results?q=symptom+checker",
+      "action_status": "SUCCESS",
+      "thought": "The search box only searches diseases & conditions. Let me use the main site search icon at the top right to find the Symptom Checker."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(256, 619) -> click at (256, 619) | SUCCESS",
+      "url": "https://www.mayoclinic.org/search/search-results?q=symptom+checker",
+      "action_status": "SUCCESS",
+      "thought": "There's a link to search the full website. Let me click it."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "CLICK coords(301, 206) -> click at (301, 206) | SUCCESS",
+      "url": "https://www.mayoclinic.org/symptom-checker/select-symptom/itt-20009075",
+      "action_status": "SUCCESS",
+      "thought": "The first result is \"Symptom Checker - Mayo Clinic\". Let me click it."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(386, 499) -> click at (386, 499) | SUCCESS",
+      "url": "https://www.mayoclinic.org/symptom-checker/chest-pain-in-adults-adult/related-factors/itt-20009075",
+      "action_status": "SUCCESS",
+      "thought": "I'm on the Symptom Checker with the 3-step process. Let me click \"Chest pain in adults\"."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(323, 651) -> click at (323, 651) | SUCCESS",
+      "url": "https://www.mayoclinic.org/symptom-checker/chest-pain-in-adults-adult/related-factors/itt-20009075",
+      "action_status": "SUCCESS",
+      "thought": "I'm on step 2 \"Select related factors\". I can see \"Pain best described as\" with a \"Sharp\" checkbox. Let me check \"Sharp\" first."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=500) | SUCCESS",
+      "url": "https://www.mayoclinic.org/symptom-checker/chest-pain-in-adults-adult/related-factors/itt-20009075",
+      "action_status": "SUCCESS",
+      "thought": "\"Sharp\" is now checked. Now I need to scroll down to find \"anxiety\" among the accompanying factors."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=450) | SUCCESS",
+      "url": "https://www.mayoclinic.org/symptom-checker/chest-pain-in-adults-adult/related-factors/itt-20009075",
+      "action_status": "SUCCESS",
+      "thought": "\"Sharp\" remains checked. I can see \"Accompanied by\" section at the bottom. Let me scroll down to find \"anxiety\"."
+    },
+    {
+      "step": 9,
+      "screenshot": "0009.png",
+      "action": "CLICK coords(323, 362) -> click at (323, 362) | SUCCESS",
+      "url": "https://www.mayoclinic.org/symptom-checker/chest-pain-in-adults-adult/related-factors/itt-20009075",
+      "action_status": "SUCCESS",
+      "thought": "I can see the \"Accompanied by\" section with \"Anxiety\" as the first option. Let me check \"Anxiety\", then click \"Find causes\"."
+    },
+    {
+      "step": 10,
+      "screenshot": "0010.png",
+      "action": "CLICK coords(717, 685) -> click at (717, 685) | SUCCESS",
+      "url": "https://www.mayoclinic.org/symptom-checker/chest-pain-in-adults-adult/related-factors/itt-20009075",
+      "action_status": "SUCCESS",
+      "thought": "\"Anxiety\" is now checked (blue). Now let me click \"Find causes\"."
+    },
+    {
+      "step": 11,
+      "screenshot": "0011.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=450) | SUCCESS",
+      "url": "https://www.mayoclinic.org/symptom-checker/chest-pain-in-adults-adult/related-factors/itt-20009075",
+      "action_status": "SUCCESS",
+      "thought": "I'm now on step 3 with the possible causes. So far I see: Angina, Heart attack, Panic attacks and panic disorder, Pericarditis, Pleurisy. Let me scroll down to see the full list."
+    },
+    {
+      "step": 12,
+      "screenshot": "0012.png",
+      "action": "TASK_COMPLETE -> ANSWER: Using the Mayo Clinic Symptom Checker for \"Chest pain in adults\" with the factors \"Sharp\" (pain best described as) and \"Anxiety\" (accompanied by), the possible causes are:\n1. Angina\n2. Heart attack\n3. Panic attacks and panic disorder\n4. Pericarditis\n5. Pleurisy\n6. Pulmonary embolism",
+      "url": "https://www.mayoclinic.org/symptom-checker/chest-pain-in-adults-adult/related-factors/itt-20009075",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}

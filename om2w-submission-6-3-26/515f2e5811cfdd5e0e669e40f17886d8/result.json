@@ -1,0 +1,81 @@
+{
+  "schema_version": "online-mind2web-v2",
+  "task": "Search for a new internal M2 Samsung SSD drive between $25 and $200.",
+  "task_id": "515f2e5811cfdd5e0e669e40f17886d8",
+  "agent_final_answer": "Searched Best Buy for \"Samsung internal M.2 SSD\" and applied filters Condition=New and Price=$25-$200, which returned 1 matching product: Samsung - 990 EVO SSD 1TB Internal SSD PCIe Gen 4x4 | Gen 5x2 M.2 2280, Speeds Up to 5,000MB/s, priced at $149.99 (4.8 stars, 318 reviews). This is a new internal M.2 Samsung SSD drive within the $25-$200 range.",
+  "reference_length": 8,
+  "action_history": [
+    {
+      "step": 0,
+      "screenshot": "0000.png",
+      "action": "page -> NAVIGATE -> Initial navigation to the provided URL | SUCCESS",
+      "url": "https://www.bestbuy.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 1,
+      "screenshot": "0001.png",
+      "action": "CLICK coords(1134, 251) -> click at (1134, 251) | SUCCESS",
+      "url": "https://www.bestbuy.com/",
+      "action_status": "SUCCESS",
+      "thought": null
+    },
+    {
+      "step": 2,
+      "screenshot": "0002.png",
+      "action": "CLICK coords(510, 195) -> click at (510, 195) ; TYPE page -> type \"Samsung internal M.2 SSD\" ; PRESS_KEY page -> press ENTER | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&st=Samsung%20internal%20M.2%20SSD",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: The popup is closed. Now let me search for Samsung internal M.2 SSD."
+    },
+    {
+      "step": 3,
+      "screenshot": "0003.png",
+      "action": "CLICK coords(97, 690) -> click at (97, 690) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=condition_facet%3DCondition%7ENew&st=Samsung+internal+M.2+SSD",
+      "action_status": "SUCCESS",
+      "thought": "Search results loaded. Let me apply the \"New\" condition filter first."
+    },
+    {
+      "step": 4,
+      "screenshot": "0004.png",
+      "action": "SCROLL page -> scroll (delta_x=0, delta_y=400) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=condition_facet%3DCondition%7ENew&st=Samsung+internal+M.2+SSD",
+      "action_status": "SUCCESS",
+      "thought": "The \"New\" filter is applied. Now I need to find the price filter. Let me scroll down the left filter panel to find a price range option."
+    },
+    {
+      "step": 5,
+      "screenshot": "0005.png",
+      "action": "CLICK coords(78, 470) -> click at (78, 470) ; TYPE page -> type \"25\" ; CLICK coords(184, 470) -> click at (184, 470) ; TYPE page -> type \"200\" | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=condition_facet%3DCondition%7ENew&st=Samsung+internal+M.2+SSD",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I can see the Price filter with Min/Max fields. Let me enter the custom range $25 to $200."
+    },
+    {
+      "step": 6,
+      "screenshot": "0006.png",
+      "action": "CLICK coords(78, 470) -> click at (78, 470) ; TYPE page -> type \"25\" | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=condition_facet%3DCondition%7ENew&st=Samsung+internal+M.2+SSD",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: I can see the Price filter with Min/Max fields. Let me enter the custom range $25 to $200."
+    },
+    {
+      "step": 7,
+      "screenshot": "0007.png",
+      "action": "CLICK coords(184, 470) -> click at (184, 470) ; TYPE page -> type \"200\" ; CLICK coords(256, 470) -> click at (256, 470) | SUCCESS",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=condition_facet%3DCondition%7ENew%5Ecurrentprice_facet%3DPrice%7E25+to+200&st=Samsung+internal+M.2+SSD",
+      "action_status": "SUCCESS",
+      "thought": "BATCHED_ACTION: Min price is set to 25. Now the Max price field and Set button."
+    },
+    {
+      "step": 8,
+      "screenshot": "0008.png",
+      "action": "TASK_COMPLETE -> ANSWER: Searched Best Buy for \"Samsung internal M.2 SSD\" and applied filters Condition=New and Price=$25-$200, which returned 1 matching product: Samsung - 990 EVO SSD 1TB Internal SSD PCIe Gen 4x4 | Gen 5x2 M.2 2280, Speeds Up to 5,000MB/s, priced at $149.99 (4.8 stars, 318 reviews). This is a new internal M.2 Samsung SSD drive within the $25-$200 range.",
+      "url": "https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&qp=condition_facet%3DCondition%7ENew%5Ecurrentprice_facet%3DPrice%7E25+to+200&st=Samsung+internal+M.2+SSD",
+      "action_status": null,
+      "thought": null
+    }
+  ]
+}
